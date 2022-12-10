@@ -2,7 +2,6 @@
 
 # Desarrollo
 
-
 #1. Del siguiente enlace, descarga los datos de soccer de la temporada 2019/2020de la primera división de la liga española: https://www.football-data.co.uk/spainm.php
 
 #2. Importa los datos a R como un Dataframe. NOTA: No olvides cambiar tu dirección de trabajo a la ruta donde descargaste tu archivo
