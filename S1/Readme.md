@@ -42,15 +42,23 @@ a) ¿Cuántos goles tuvo el partido con mayor empate?
 - " Marcador 1-1 49 partidos"
 
 ![Answer 5a](./assets/PostWorkS1i4-5a.png)
+
+(!Nota: Analizando la diagonal de empates)
+
 b) ¿En cuántos partidos ambos equipos empataron 0 a 0?
 
 - "Marcador 0-0 33 partido"
 
 ![Answer 5b](./assets/PostWorkS1i4-5b.png)
+
+(!Nota: Analizando la diagonal de empates)
+
 c) ¿En cuántos partidos el equipo local (HG) tuvo la mayor goleada sin dejar que el equipo visitante (AG) metiera un solo gol?
 
 - "Marcador 6-1 1 partido"
 
 ![Answer 5c](./assets/PostWorkS1i4-5c.png)
+
+(Nota: Analizando mayor gol local o visitante contra el cruce en el eje opuesto, iniciando de mayor a menor)
 
 Notas para los datos de soccer: <https://www.football-data.co.uk/notes.txt>>
