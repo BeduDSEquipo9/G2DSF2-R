@@ -51,12 +51,8 @@ A continuación aparecen una serie de objetivos que deberás cumplir, es un ejem
         ```r
         goals_major  <- 0
         for (i in 1:length(fthg)){
-         
           if (fthg[i] == ftag[i] & goals_major < fthg[i]) {
-            #print(fthg[i], ftag[i])
-            #if (goals_major < fthg[i]){
               goals_major <- fthg[i]
-            #}
           }
         }
         goals_major # 4
@@ -70,9 +66,7 @@ A continuación aparecen una serie de objetivos que deberás cumplir, es un ejem
         count_tie  <- 0
         for (i in 1:length(fthg)){
           if (fthg[i] == ftag[i] & fthg[i] == 0) {
-            #if (fthg[i] == 0){
-              count_tie <- count_tie + 1
-            #}
+            count_tie <- count_tie + 1
           }
         }
         count_tie # 33
@@ -86,9 +80,7 @@ A continuación aparecen una serie de objetivos que deberás cumplir, es un ejem
         count_major_goals  <- 0
         for (i in 1:length(fthg)){
           if (fthg[i] != ftag[i] & ftag[i] == 0) {
-            #if (ftag[i] == 0){
               count_major_goals <- count_major_goals + 1
-            #}
           }
         }
         count_major_goals # 103
