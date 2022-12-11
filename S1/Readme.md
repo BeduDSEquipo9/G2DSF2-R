@@ -95,7 +95,7 @@ A continuación aparecen una serie de objetivos que deberás cumplir, es un ejem
           }
         }
         major.goals.home
-        
+
         # Contamos aquellos partidos donde el equipo visitante no anotó goles.
         count.major.goals <-0
         for (i in 1:length(unique.names)) {
@@ -105,8 +105,8 @@ A continuación aparecen una serie de objetivos que deberás cumplir, es un ejem
         }
         count.major.goals # 8
         ```
-        
-        En 103 partidos el marcador quedo a favor del equipo local, sin haber ninguna anotación por parte del equipo visitante.
+
+        En 8 partidos el equipo visitante no anotó goles, donde además se registró la maxima goleada por el equipo local.
 
 ## Conclusión
 
