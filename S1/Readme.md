@@ -97,4 +97,4 @@ En este postwork se reforzarón los cocimiento adquiridos para:
 * Utilizar `help` para obtener ayuda sobre cualquier función en R.
 * El uso de estructuras de datos: vectores y matrices
 * El uso de ciclos `for` y condicionales `if`, `if-else`
-* El uso operaciones lógicas y comparaciones.
+* El uso operadores lógicos y condicionales.
