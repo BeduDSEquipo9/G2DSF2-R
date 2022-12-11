@@ -87,3 +87,14 @@ A continuación aparecen una serie de objetivos que deberás cumplir, es un ejem
         ```
         
         En 103 partidos el marcador quedo a favor del equipo local, sin haber ninguna anotación por parte del equipo visitante.
+
+## Conclusión
+
+En este postwork se reforzarón los cocimiento adquiridos para:
+
+* La carga de datasets
+* Concer datos generales de un dataset con `str` y `view`.
+* Utilizar `help` para obtener ayuda sobre cualquier función en R.
+* El uso de estructuras como vecores y matrices
+* El uso de ciclos `for` y condicionales `if`, `if-else`
+* El uso operaciones lógicas y comparaciones.
