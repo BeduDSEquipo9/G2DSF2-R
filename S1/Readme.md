@@ -77,13 +77,33 @@ A continuación aparecen una serie de objetivos que deberás cumplir, es un ejem
     3. En cuántos partidos el equipo local (HG) tuvo la mayor goleada sin dejar que el equipo visitante (AG) metiera un solo gol?
         
         ```r
-        count_major_goals  <- 0
-        for (i in 1:length(fthg)){
-          if (fthg[i] != ftag[i] & ftag[i] == 0) {
-              count_major_goals <- count_major_goals + 1
+        # Primero extraemos las mayores goleadas de cada equipo como local
+
+        unique.names <- unique(sp1$HomeTeam)
+        major.goals.home <- matrix(0, length(unique.names), 2)
+        home.teams <- sp1$HomeTeam
+
+        for (i in 1:length(unique.names)) {
+          for (j in 1:length(home.teams)) {
+            if( (unique.names[i] == home.teams[j]) & 
+                fthg[j] > major.goals.home[i,1] &
+                fthg[j] > ftag[j]){
+              major.goals.home[i, 1] <- fthg[j]
+              major.goals.home[i, 2] <- ftag[j]
+              #print(major.goals.home[i,1])
+            }
           }
         }
-        count_major_goals # 103
+        major.goals.home
+        
+        # Contamos aquellos partidos donde el equipo visitante no anotó goles.
+        count.major.goals <-0
+        for (i in 1:length(unique.names)) {
+          if(major.goals.home[i,2] == 0){
+            count.major.goals <- count.major.goals + 1
+          }
+        }
+        count.major.goals # 8
         ```
         
         En 103 partidos el marcador quedo a favor del equipo local, sin haber ninguna anotación por parte del equipo visitante.

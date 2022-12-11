@@ -73,14 +73,31 @@ count_tie # 33
 #  c) ¿En cuántos partidos el equipo local (HG) tuvo la mayor goleada sin dejar 
 #que el equipo visitante (AG) metiera un solo gol?
 
-count_major_goals  <- 0
-for (i in 1:length(fthg)){
-  if (fthg[i] != ftag[i] & ftag[i] == 0) {
-    #if (ftag[i] == 0){
-      count_major_goals <- count_major_goals + 1
-    #}
+# Primero extraemos las mayores goleadas de cada equipo como local
+unique.names <- unique(sp1$HomeTeam)
+major.goals.home <- matrix(0, length(unique.names), 2)
+home.teams <- sp1$HomeTeam
+
+for (i in 1:length(unique.names)) {
+  for (j in 1:length(home.teams)) {
+    if( (unique.names[i] == home.teams[j]) & 
+        fthg[j] > major.goals.home[i,1] &
+        fthg[j] > ftag[j]){
+      major.goals.home[i, 1] <- fthg[j]
+      major.goals.home[i, 2] <- ftag[j]
+      #print(major.goals.home[i,1])
+    }
   }
 }
-count_major_goals
+major.goals.home
+
+# Contamos aquellos partidos donde el equipo visitante no anotó goles.
+count.major.goals <-0
+for (i in 1:length(unique.names)) {
+  if(major.goals.home[i,2] == 0){
+    count.major.goals <- count.major.goals + 1
+  }
+}
+count.major.goals # 8
   
 #  __Notas para los datos de soccer:__ https://www.football-data.co.uk/notes.txt
