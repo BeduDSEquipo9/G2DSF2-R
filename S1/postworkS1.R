@@ -1,5 +1,7 @@
 # Postwork Sesión 1.
 
+Christian Millán
+
 #### Objetivo
 
 "El Postwork tiene como objetivo que practiques los comandos básicos aprendidos 
