@@ -48,7 +48,6 @@ Y  0.9012 0.3496 0.1580 1.0000
 Sea su matriz de graficos de puntos:
 
 ```
-
 > pairs(~ Y + X1 + X2 + X3, 
 +       data = dfxy, gap = 0.4, cex.labels = 2)
 ```

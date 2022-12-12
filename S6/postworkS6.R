@@ -85,4 +85,15 @@ summary(m2)
 
   De los resultados anteriores, podemos concluir que el Es mas eficiente invertir el presupuesto total de ventas en Radio (X1) y Televisión (X2)"
 
+StanRes2 <- rstandard(m2)
+StanRes2
+?par
+??mfrow
+par(mfrow = c(2, 2))
+plot(TV, StanRes2, ylab = "Residuales Estandarizados")
+plot(Radio, StanRes2, ylab = "Residuales Estandarizados")
+plot(Newspaper, StanRes2, ylab = "Residuales Estandarizados")
+qqnorm(StanRes2)
+qqline(StanRes2)
 
+shapiro.test(StanRes2)
