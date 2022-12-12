@@ -21,10 +21,10 @@ class(Global.ts)
 "2) Realiza una gráfica de la serie de tiempo anterior"
 ?plot;
 plot(Global.ts,
-      main = "Serie de Temperatura Global",
+      main = "Serie de Temperatura (°C) vs Tiempo",
       sub = "Serie mensual (Ene 1856-Dic 2005)"
       xlab = "Tiempo", 
-      ylab = "Temperaturas (°C)", 
+      ylab = "Temps (°C)", 
       )
  
 "3) Ahora realiza una gráfica de la serie de tiempo anterior, transformando a la 
