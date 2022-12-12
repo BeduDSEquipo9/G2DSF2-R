@@ -91,6 +91,12 @@ qnorm(p=0.48, mean=media, sd=devstd)
 "6) ¿Cuáles son los valores del total de cargos internacionales que dejan exactamente al centro el 80% de probabilidad?"
 qnorm(p=0.80, mean=media, sd=devstd)
 
+liminf<-qnorm(p=0.10, mean=media, sd=devstd)
+liminf;
+limsup<-qnorm(p=0.90, mean=media, sd=devstd)
+limsup;
+liminf;limisup
+
 
 
 

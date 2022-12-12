@@ -79,6 +79,15 @@ Una vez que hayas seleccionado el modelo, realiza lo siguiente:
 6) ¿Cuáles son los valores del total de cargos internacionales que dejan exactamente al centro el 80% de probabilidad?
 
 ```
-an=media, sd=devstd)
-[1] 3.398972
+liminf<-qnorm(p=0.10, mean=media, sd=devstd)
+> liminf;
+[1] 1.798583
+> limsup<-qnorm(p=0.90, mean=media, sd=devstd)
+> limsup;
+[1] 3.73058
+> liminf;limisup
+[1] 1.798583
+[1] 3.73058
 ```
+
+rango de valores de (1.798583 : 3.73058]
