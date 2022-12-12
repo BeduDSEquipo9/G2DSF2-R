@@ -1,5 +1,11 @@
 # Postwork Sesión 2
 
+#### Objetivo
+
+- Conocer algunas de las bases de datos disponibles en `R`
+- Observar algunas características y manipular los DataFrames con `dplyr`
+- Realizar visualizaciones con `ggplot`
+
 #### Desarrollo
 
 1) Inspecciona el DataSet iris_meaniris` disponible directamente en R. Identifica las variables que contiene y su tipo, asegúrate de que no hayan datos faltantes y
