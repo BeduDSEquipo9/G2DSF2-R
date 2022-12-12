@@ -1,19 +1,11 @@
 # Postwork Sesión 2
 
-#### Objetivo
-
-- Conocer algunas de las bases de datos disponibles en `R`
-- Observar algunas características y manipular los DataFrames con `dplyr`
-- Realizar visualizaciones con `ggplot`
-
 #### Desarrollo
 
 1) Inspecciona el DataSet iris_meaniris` disponible directamente en R. Identifica las variables que contiene y su tipo, asegúrate de que no hayan datos faltantes y
 que los datos se encuentran listos para usarse.
 
 ```
-
-
 class(iris)#Id tipo de dato
 str(iris);#ver estructura
 head(iris);#Encabezado
@@ -47,17 +39,17 @@ sum(complete.cases(iris))
 ?geom_point
 ?theme_light()
 
-graficaIdSpeciesxColorTamanoSepalPetal <- ggplot(iris, aes(x = Sepal.Length, 
+grafica1 <- ggplot(iris, aes(x = Sepal.Length, 
                       y = Sepal.Width, 
                       color = Species, 
                       size = Petal.Width
                       )
             ) +  geom_point(shape = 10, alpha = 0.5);
 
-graficaIdSpeciesxColorTamanoSepalPetal;
+grafica1;
 ```
 
-![Graf1](./assets/graf2.png)
+![Grafica1](./assets/Rplot1.png)
 
 3) Crea una tabla llamada `iris_mean` que contenga el promedio de todas las variables agrupadas por `Species`.
 
@@ -76,7 +68,7 @@ View(iris_mean);
 4) Con esta tabla, agrega a tu gráfica anterior otra geometría de puntos para agregar los promedios en la visualización. Asegúrate que el primer argumento de la geometría sea el nombre de tu tabla y que los parámetros sean `shape = 23`, `size = 4`, `fill = "black"` y `stroke = 2`. También agrega etiquetas, temas y los cambios necesarios para mejorar tu visualización.
 
 ```
-graf2 <- graficaIdSpeciesxColorTamanoSepalPetal +
+grafica2 <- grafica1 +
         geom_point(
           data = iris_mean, #primer argumento de la geometría sea el nombre de tu tabla
           shape = 23, #`shape = 23`
@@ -87,7 +79,7 @@ graf2 <- graficaIdSpeciesxColorTamanoSepalPetal +
                    x = "Largo Sepalo",
                    y = "Ancho Sepalo"
                    ) +   theme_light()
-graf2
+grafica2
 ```
 
-![Graf2](./assets/graf2.png)
+![Grafica2](./assets/Rplot2.png)
