@@ -85,6 +85,12 @@ summary(m2)
 
   De los resultados anteriores, podemos concluir que el Es mas eficiente invertir el presupuesto total de ventas en Radio (X1) y Televisión (X2)"
 
+## SUPUESTOS DEL MODELO DE REGRESIÓN LINEAL Y PREDICCIÓN
+"El modelo de regresión lineal clásico establece ciertos supuestos en el término 
+de error:
+1) Eltérmino de error no tiene correlación significativa con las variables 
+explicativas. En caso contrario, tendríamos un problema de endogeneidad.
+2) El término de error sigue una distribución normal"
 StanRes2 <- rstandard(m2)
 StanRes2
 ?par
