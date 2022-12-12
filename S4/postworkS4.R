@@ -96,7 +96,16 @@ liminf;
 limsup<-qnorm(p=0.90, mean=media, sd=devstd)
 limsup;
 liminf;limisup
-
+"Probando la secuencia de resultados"
+?seq
+x <- seq(0.1,0.9,by=.01)
+y <- qnorm(x,mean=media, sd=devstd)
+xy=data.frame(x,y)
+str(xy)
+View(xy)
+?plot
+plot(xy)
+lines(lowess(xy))
 
 
 

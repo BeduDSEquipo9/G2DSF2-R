@@ -91,3 +91,18 @@ liminf<-qnorm(p=0.10, mean=media, sd=devstd)
 ```
 
 rango de valores de (1.798583 : 3.73058]
+
+```
+> x <- seq(0.1,0.9,by=.01)
+> y <- qnorm(x,mean=media, sd=devstd)
+> xy=data.frame(x,y)
+> str(xy)
+'data.frame': 81 obs. of  2 variables:
+ $ x: num  0.1 0.11 0.12 0.13 0.14 0.15 0.16 0.17 0.18 0.19 ...
+ $ y: num  1.8 1.84 1.88 1.92 1.95 ...
+> View(xy)
+> plot(xy)
+> lines(lowess(xy))
+```
+
+![Plot de rango obtenido](./assets/Rplot02.png)
