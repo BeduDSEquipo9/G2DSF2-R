@@ -2,7 +2,7 @@
 
 url = "https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-07/Data/global.txt"
 Global <- scan(url, sep="")
-class(Global)
+
 class(Global)   #Id tipo de dato
 str(Global);    #Identificar structura del dataframe
 head(Global);   #Leer inicio del datagrama
@@ -22,29 +22,29 @@ class(Global.ts)
 ?plot;
 plot(Global.ts,
       main = "Serie de Temperatura (°C) vs Tiempo",
-      sub = "Serie mensual (Ene 1856-Dic 2005)"
+      sub = "Serie mensual (Ene 1856-Dic 2005)",
       xlab = "Tiempo", 
       ylab = "Temps (°C)", 
       )
  
 "3) Ahora realiza una gráfica de la serie de tiempo anterior, transformando a la 
 primera diferencia:"
-?diff
+?diff #Lagged Differences
 plot(diff(Global.ts),
        xlab = "", 
        ylab = "")
-      title(main = "Serie de Temperatura Global",
-            xlab = "Tiempo", ylab = "Dif log-Serie",
-            sub = "Gráfica de la serie de tiempo anterior, transformando a la 1era diferencia:")
+      title(main = "Serie de Temperatura (°C) vs Tiempo 1era Diff",
+            xlab = "Tiempo", ylab = "DifFerencia en base log",
+            sub = "Gráfica de la serie de tiempo en 1era diferencia:")
  
 #4) ¿Consideras que la serie es estacionaria en niveles o en primera diferencia?
-# En primera diferencia
+# En 1era
  
 #5) Con base en tu respuesta anterior, obten las funciones de autocorrelación y 
 #autocorrelación parcial?
-?acf;
+?acf; #Auto- and Cross- Covariance and -Correlation Function Estimation
 acf(diff(Global.ts))
-?pacf;
+?pacf; #Partial Auto- and Cross- Covariance and -Correlation Function Estimation
 pacf(diff(Global.ts))
  
 "6) De acuerdo con lo observado en las gráficas anteriores, se sugiere un modelo ARIMA
