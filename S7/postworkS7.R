@@ -51,15 +51,76 @@ pacf(diff(Global.ts))
 con AR(1), I(1) y MA desde 1 a 4 rezagos Estima los diferentes modelos ARIMA propuestos:"
 ?arima;
 arima(Global.ts, order = c(1, 1, 1))
+"
+Call:
+arima(x = Global.ts, order = c(1, 1, 1))
+
+Coefficients:
+         ar1      ma1
+      0.3797  -0.8700
+s.e.  0.0433   0.0293
+
+sigma^2 estimated as 0.01644:  log likelihood = 1142.13,  aic = -2278.26
+> arima(Global.ts, order = c(1, 1, 2))
+
+Call:
+arima(x = Global.ts, order = c(1, 1, 2))
+
+Coefficients:
+         ar1      ma1     ma2
+      0.7593  -1.2992  0.3190
+s.e.  0.0354   0.0487  0.0452
+
+sigma^2 estimated as 0.01616:  log likelihood = 1157.48,  aic = -2306.96"
+
 arima(Global.ts, order = c(1, 1, 2))
+
+"
+Call:
+arima(x = Global.ts, order = c(1, 1, 3))
+
+Coefficients:
+         ar1      ma1     ma2     ma3
+      0.8171  -1.3518  0.3087  0.0575
+s.e.  0.0406   0.0490  0.0407  0.0326
+
+sigma^2 estimated as 0.01613:  log likelihood = 1158.94,  aic = -2307.88"
+
 arima(Global.ts, order = c(1, 1, 3))
+"
+Call:
+arima(x = Global.ts, order = c(1, 1, 4))
+
+Coefficients:
+         ar1      ma1     ma2     ma3     ma4
+      0.8704  -1.4030  0.3478  0.0053  0.0600
+s.e.  0.0335   0.0411  0.0438  0.0401  0.0273
+
+sigma^2 estimated as 0.01609:  log likelihood = 1161.2,  aic = -2310.39"
+
 arima(Global.ts, order = c(1, 1, 4))
+"
+Call:
+arima(x = Global.ts, order = c(1, 1, 4))
+
+Coefficients:
+         ar1      ma1     ma2     ma3     ma4
+      0.8704  -1.4030  0.3478  0.0053  0.0600
+s.e.  0.0335   0.0411  0.0438  0.0401  0.0273
+
+sigma^2 estimated as 0.01609:  log likelihood = 1161.2,  aic = -2310.39"
+
  
 "7) Con base en el criterio de Akaike, estima el mejor modelo ARIMA y realiza una 
 predicción de 12 periodos (meses)"
 
-fit <- arima(Global.ts, order = c(1, 1, 4))
-?predict?
-pr <- predict(fit, 12)$pred 
+modelo<-arima(Global.ts, order = c(1, 1, 4))
+?predict
+pr <- predict(modelo, 12)$pred 
  
+"> pr
+           Jan       Feb       Mar       Apr       May       Jun       Jul
+2006 0.3944191 0.4109006 0.4241679 0.4249647 0.4256583 0.4262620 0.4267875
+           Aug       Sep       Oct       Nov       Dec
+2006 0.4272449 0.4276430 0.4279895 0.4282911 0.4285537"
 
