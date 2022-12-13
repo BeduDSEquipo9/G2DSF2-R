@@ -43,7 +43,10 @@ names(df);  #Etiquetas tags del objeto
 length(df); #Longitud del Objeto
 View(df);   #Data Viewer
  
-"#     Plantea el problema del caso 
+"1) Plantea el problema del caso 
+Una estimación de las inseguridad alimentaria en el hogar, con base en loas 
+datos. 
+
 La mayoría de las personas afirman que los hogares con menor nivel 
 socioeconómico tienden a gastar más en productos no saludables que las personas 
 con mayores niveles socioeconómicos y que esto, entre otros determinantes, lleva
@@ -51,8 +54,10 @@ a que un hogar presente cierta inseguridad alimentaria.
 Ho: A nse5f <= X (ln_alns>ln_als) IA==1
 Ha: A nse5f > X  (ln_alns<ln_als) IA==0 
 
-#     Realiza un análisis descriptivo de la información"
-"Analisis Variable a Variable o todas de golpe"
+2)  Realiza un análisis descriptivo de la información 
+(Analisis Variable a Variable o todas de golpe)"
+varianzas,
+
 
 df$nse5f<-factor(df$nse5f, labels = c("Bajo","Medio bajo", "Medio", "Medio alto", "Alto"))
 df$refin<-factor(df$refin, labels = c("No", "Si"))
@@ -92,12 +97,24 @@ ggplot(df, aes(x = numpeho)) +
 k = ceiling(sqrt(length(df$numpeho)))
 ac = (max(df$numpeho)-min(df$numpeho))/k
 
+"3) Calcula probabilidades que nos permitan entender el problema en México"
+tC: lns ls ingreso IA
 
-#     Calcula probabilidades que nos permitan entender el problema en México
-#     Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
-#     Estima un modelo de regresión, lineal o logístico, para identificar los determinantes de la inseguridad alimentaria en México
-#     Escribe tu análisis en un archivo README.MD y tu código en un script de R y publica ambos en un repositorio de Github.
+"4) Plantea hipótesis estadísticas y concluye sobre ellas para entender el 
+problema en México"
 
-# Recuerda
+"5) Estima un modelo de regresión, lineal o logístico, para identificar los 
+determinantes de la inseguridad alimentaria en México"
 
-# Todo tu planteamiento deberá estar correctamente desarrollado y deberás analizar e interpretar todos tus resultados para poder dar una conclusión final al problema planteado.
+Logaritmica
+
+betas cruzadas cmparacion de modelos. para obtener modelo MASS::
+  m1<-lm(IA ~VAriable de estudio + ...    +e ) 
+anova varinzas iguales
+
+
+"6) Escribe tu análisis en un archivo README.MD y tu código en un script de R y 
+pública ambos en un repositorio de Github.
+Todo tu planteamiento deberá estar correctamente desarrollado y deberás 
+analizar e interpretar todos tus resultados para poder dar una conclusión final 
+al problema planteado."
