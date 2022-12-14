@@ -305,6 +305,7 @@ kurtosis(df_clean2$ln_alns)  #LeptoCurtica
 
 ##################### 3. probabilidades que nos permitan entender el problema en México ############################
 
+################### La distribución de la variable aleatoria  #########################
 curve(dnorm(x, mean = promedioGAS, sd = sdGAS), from=0, to=10, 
       col='blue', main = "Densidad de Probabilidad Normal",
       ylab = "f(x)", xlab = "X")
@@ -312,5 +313,42 @@ curve(dnorm(x, mean = promedioGAS, sd = sdGAS), from=0, to=10,
 
 hist(df_clean2$ln_als, freq = FALSE, main = "Curva densidad", ylab = "Densidad")
 lines(density(df_clean2$ln_als), lwd = 2, col = 'red')
+
+
+# Distribución Teorica
+
+hist(df_clean2$ln_als, prob=T, main="Histogramas de Gastos Alimenticios Saludables")
+
+curve(dnorm(x, mean = promedioGAS, sd = sdGAS), from=0, to=10, 
+      col='blue', main = "Densidad de Probabilidad Normal",
+      ylab = "f(x)", xlab = "X")
+
+
+# Probabilidad P( ln_als<= 6)
+
+d_normal <- pnorm(q=6, mean=promedioGAS, sd = sdGAS, lower.tail = TRUE)
+d_normal
+
+q_normal <- qnorm(p=0.3901862, mean=promedioGAS, sd = sdGAS)
+q_normal
+
+
+# Probabilidad P(ln_als >= 8)
+
+d_normal <- pnorm(q=8, mean=promedioGAS, sd = sdGAS, lower.tail = FALSE)
+d_normal
+
+q_normal <- qnorm(p=0.004322172, mean=promedioGAS, sd = sdGAS)
+q_normal
+
+
+#Probabilidad P(6<=ln_als<=8)
+
+d_normal <- pnorm(q=8, mean=promedioGAS, sd = sdGAS) - pnorm(q=6, mean=promedioGAS, sd = sdGAS)
+d_normal
+
+q_normal <- qnorm(p=0.6054916, mean=promedioGAS, sd = sdGAS)
+q_normal
+
 
 
