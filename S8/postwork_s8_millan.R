@@ -9,14 +9,19 @@ library(ggplot2)
 library(moments)
 
 setwd("~/dev/R/s8")
-df <- read.csv("inseguridad_alimentaria_bedu.csv")
+#df <- read.csv("inseguridad_alimentaria_bedu.csv")
+df <- read.csv("https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-08/Postwork/inseguridad_alimentaria_bedu.csv")
 # Primera vista de los datos
 names(df)
 str(df)
 summary(df)
 #View(df)
+"Estos primeros pasos permiten concer la estructura de los datos y un resumen
+de estadísticos para cada columna del conjunto de datos"
 
 # Limpieza de los datos
+"Después de revisar la estructura, se realiza la conversion de algunas de las 
+representaciones de las características de tipo int a factor"
 ## Conversión de tipos
 "Convertir nse5f a categórica ordinal"
 df$nse5f <- factor(df$nse5f, 
@@ -39,153 +44,120 @@ df$sexojef <- factor(df$sexojef,
 df$IA <- factor(df$IA, 
                      levels = c(0, 1),
                      labels = c("No", "Si"))
+"Adicional, se realizar una conversión de las variables ln_als y ln_alns que están
+expresadas en logaritmo natural"
 df$als <- exp(df$ln_als) 
 df$alns <- exp(df$ln_alns)
 
-str(df)
-summary(df)
+"Se realiza un conversión de los datos atípicos extremos mediante la sustitución 
+de un valor tope, esto solo con la finalidad de mejora la visualizaciones graficas
+que se realizarán en los siguientes pasos"
+df$alns <- replace(df$alns, df$alns > 2320,2320) 
+df$als <- replace(df$als, df$als > 3800,3800) 
+
+# #View(df)
+# str(df)
+# summary(df)
 
 ## NAs
+"Se realiza un conteo de el número de NAs por columnas que lo reflejaron en str()"
 sum(complete.cases(df)) #20280 vs 40809 obs. el 50% esta incompleto
 sum(complete.cases(df$edadjef)) # 35792 Borrar o media o mean
 sum(complete.cases(df$sexojef)) # 35818 Borrar o llenar con
 sum(complete.cases(df$ln_als))  # 40022 Borrar o llenar??
 sum(complete.cases(df$ln_alns)) # 23305 Borrar o llenar??
 
+# ## Fill NAs 
+# # Solo llenamos edad jefe
+# df$edadjef[is.na(df$edadjef)] <- mean(df$edadjef, na.rm = TRUE)
+# df$sexojef[is.na(df$sexojef)] <- Mode(df$sexojef, na.rm = TRUE)
+# summary(df)
 
 ### borrrar
+"Se realiza la eliminación de aquellos registros que estan incompletos en cualquier
+de las características del conjunto de datos"
 df.clean <- df[complete.cases(df),]
 #
 str(df.clean)
 summary(df.clean)
+"Nuevamente se realiza un análisis con summary, se concluye que la eluiminación
+de los NAs no afecta la tendencia de promedios, medianas y cuartiles."
 #View(df.clean)
+
 # Exploración de los datos
-
 ## ADES
+"Antes de realizar un análisis estadístico es importante realizar una inspección
+visual de los datos"
 
-## graficas de puntos 
+"De acuerdo a la descripción del problema es necesario identificar patrones de 
+gatos en alimentos saludables y no saudables, por lo que en primer lugar se realizar
+la inspección visal univariable de als y alns"
+## graficas de cajas 
+
 boxplot(df.clean$als,
-        ylab="als",
-        main="als")
+        ylab="Unidades gastadas",
+        main="Gasto en alimentos saludables")
 
-ggplot(df, aes(x=IA, y = ln_als)) + 
-  geom_point()
-"Es mejor"
-# ggplot(df.clean, 
-#        aes(x=IA,
-#            y=ln_als,
-#            fill=IA))+
-#   geom_boxplot()+
-#   labs(x="IAs", 
-#        y="ln_als",
-#        title = "ln_als segun IA")+
-#   theme(legend.position = "none")+
-#   theme(panel.background = element_blank(), 
-#         panel.grid.major = element_blank(),
-#         panel.grid.minor = element_blank())
+boxplot(df.clean$alns,
+        ylab="Unidades gastadas",
+        main="Gasto en alimentos NO saludables")
+
+"Ahora se relaiza una visualzación de las variables als y alns con respecto a los factores
+destacados por la descripcción del problema:
+- Nivel socioeconómico
+- Si el hogar cuenta con recursos financieros extra
+- Si presenta o no inseguridad alimentaria
+"
+
+# Alimentos saludables
+ggplot(df.clean, 
+       aes(x=nse5f,
+           y=als,
+           fill=nse5f))+
+  geom_boxplot()+
+  labs(x="Nivel socioecónomico", 
+       y="Unidades gastadas",
+       title = "Gastos alimentos saludables segun nivel socieconómico")+
+  theme(legend.position = "none")+
+  theme(panel.background = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+ggplot(df.clean, 
+       aes(x=refin,
+           y=als,
+           fill=refin))+
+  geom_boxplot()+
+  labs(x="Recursos financieros distintos al ingreso laboral", 
+       y="Unidades gastadas",
+       title = "Gastos alimentos saludables segun recursos financieros distintos al ingreso laboral")+
+  theme(legend.position = "none")+
+  theme(panel.background = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
 
 ggplot(df.clean, 
        aes(x=IA,
            y=als,
            fill=IA))+
   geom_boxplot(alpha=0.7)+
-  labs(x="IA", 
-       y="als",
-       title = "als segun IA")+
+  labs(x="Inseguridad Alimentaria en el hogar", 
+       y="Unidades gastadas",
+       title = "Gastos alimentos saludables segun Inseguridad Alimentaria en el hogar")+
   theme(legend.position = "none")+
   theme(panel.background = element_blank(), 
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank())
 
-ggplot(df.clean, 
-       aes(x=refin,
-           y=als,
-           fill=refin))+
-  geom_boxplot()+
-  labs(x="refin", 
-       y="als",
-       title = "als segun refin")+
-  theme(legend.position = "none")+
-  theme(panel.background = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank())
-
+# Alimentos no saludables
 ggplot(df.clean, 
        aes(x=nse5f,
-           y=ln_als,
+           y=alns,
            fill=nse5f))+
   geom_boxplot()+
-  labs(x="nse5f", 
-       y="ln_als",
-       title = "ln_als segun nse5f")+
-  theme(legend.position = "none")+
-  theme(panel.background = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank())
-
-ggplot(df.clean, 
-       aes(x=nse5f,
-           y=als,
-           fill=nse5f))+
-  geom_boxplot()+
-  labs(x="nse5f", 
-       y="als",
-       title = "als segun nse5f")+
-  theme(legend.position = "none")+
-  theme(panel.background = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank())
-
-ggplot(df.clean, 
-       aes(x=refin,
-           y=als,
-           fill=refin))+
-  geom_boxplot()+
-  labs(x="refin", 
-       y="als",
-       title = "als segun refin")+
-  theme(legend.position = "none")+
-  theme(panel.background = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank())
-
-ggplot(df, aes(x=IA, y = ln_alns)) + 
-  geom_point()
-"Mejor"
-ggplot(df,  
-       aes(x=IA,
-           y=ln_alns,
-           fill=IA))+
-  geom_boxplot()+
-  labs(x="IAs", 
-       y="ln_alns",
-       title = "ln_alns segun IA")+
-  theme(legend.position = "none")+
-  theme(panel.background = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank())
-
-ggplot(df.clean, 
-       aes(x=nse5f,
-           y=ln_alns,
-           fill=nse5f))+
-  geom_boxplot()+
-  labs(x="nse5f", 
-       y="ln_alns",
-       title = "ln_alns segun nse5f")+
-  theme(legend.position = "none")+
-  theme(panel.background = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank())
-
-ggplot(df.clean, 
-       aes(x=refin,
-           y=ln_alns,
-           fill=refin))+
-  geom_boxplot()+
-  labs(x="refinf", 
-       y="ln_alns",
-       title = "ln_alns segun refin")+
+  labs(x="nivel socieconómico", 
+       y="Unidades gastadas",
+       title = "Gastos alimentos NO saludables segun nivel socieconómico")+
   theme(legend.position = "none")+
   theme(panel.background = element_blank(), 
         panel.grid.major = element_blank(),
@@ -196,165 +168,113 @@ ggplot(df.clean,
            y=alns,
            fill=refin))+
   geom_boxplot()+
-  labs(x="refinf", 
-       y="alns",
-       title = "alns segun refin")+
+  labs(x="Recursos financieros distintos al ingreso laboral", 
+       y="Unidades gastadas",
+       title = "Gastos alimentos NO saludables segun recursos financieros distintos al ingreso laboral")+
   theme(legend.position = "none")+
   theme(panel.background = element_blank(), 
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank())
 
-ggplot(df, aes(x=ln_als, y = ln_alns, color = IA, size = nse5f)) + 
-  geom_point(shape = 1, alpha = 0.7)
-## histogrmas
-freq <- table(df$nse5f)
+ggplot(df.clean, 
+       aes(x=IA,
+           y=alns,
+           fill=IA))+
+  geom_boxplot()+
+  labs(x="Inseguridad Alimentaria en el hogar", 
+       y="Unidades gastadas",
+       title = "Gastos alimentos NO saludables segun Inseguridad Alimentaria en el hogar")+
+  theme(legend.position = "none")+
+  theme(panel.background = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+#########################
+
+## histogramas
+# freq <- table(df$nse5f)
+# freq # Esto se tienen en str()
+# transform(freq, 
+#           rel.freq=prop.table(Freq)) #frecuencia relativa
+
+
+freq <- table(df$IA)
 freq # Esto se tienen en str()
-transform(freq, 
+transform(freq,
           rel.freq=prop.table(Freq)) #frecuencia relativa
 
 # nse5f (Nivel socieconómico del hogar)
 ggplot(df, aes(x = nse5f)) +
-  geom_bar()
+  geom_bar()+
+  labs(x="Nivel socieconómico del hogar", y="Cantidad de casos",
+       title="Nivel socieconómico del hogar")
 
 # refin (Recursos financieros distintos al ingreso laboral)
 ggplot(df, aes(x = refin)) +
-  geom_bar()
+  geom_bar()+
+  labs(x="Recursos financieros distintos al ingreso laboral", y="Cantidad de casos",
+       title="Recursos financieros distintos al ingreso laboral")
 
-freq.IA <- table(df$IA)
-freq.IA # Esto se tienen en str()
-transform(freq.IA, 
-          rel.freq=prop.table(Freq)) #frecuencia relativa
+# freq.IA <- table(df$IA)
+# freq.IA # Esto se tienen en str()
+# transform(freq.IA, 
+#           rel.freq=prop.table(Freq)) #frecuencia relativa
+
 # IA (Inseguridad alimentaria en el hogar)
 ggplot(df, aes(x = IA)) +
-  geom_bar()
+  geom_bar() +
+  labs(x="Inseguridad Aimentaria en el hogar", y="Cantidad de casos",
+       title="Inseguridad Alimentaria en el hogar")
 
-# 
-k = ceiling(sqrt(length(df.clean$ln_als)))
-ac = (max(df.clean$ln_als)-min(df.clean$ln_als))/k
-bins <- seq(min(df.clean$ln_als), max(df.clean$ln_als), by = ac)
-bins
-ln_als.clases <- cut(df.clean$ln_als, breaks = bins, include.lowest=TRUE, dig.lab = 8)
-ln_als.clases
-dist.freq <- table(ln_als.clases)
-
-transform(dist.freq, 
-          rel.freq=prop.table(Freq), 
-          cum.freq=cumsum(prop.table(Freq)))
-
-
-# ggplot(df, aes(ln_als)) +
-#   geom_histogram(bins = 50) + 
-#   labs(title = "Histograma", 
-#        x = "ln_als",
-#        y = "Frequency") + 
-#   theme_classic()
-
-
-ggplot(df, 
-       aes(als), fill='pink', color = 'red') +
-  geom_histogram() + #bins = 50, binwidth = 1000
-  labs(title = "Histograma", 
-       x = "als",
-       y = "Frequency") + 
-  #xlim(c(0, 2000))+
+ggplot(df.clean, 
+       aes(als)) +
+  geom_histogram()
+  labs(title = "Gasto en alimentos saludables", 
+       x = "Gasto en alimentos saludables",
+       y = "Unidades gastadas") + 
   theme_classic()
 
-# acmulado ggplo
-# ggplot(df, aes(ln_als)) +
-#   geom_histogram(aes(y = cumsum(..count..)), bins = 50) + 
-#   labs(title = "Histograma acumulado", 
-#        x = "ln_als",
-#        y = "Frequency") + 
-#   theme_classic()
-
-ggplot(df, aes(als)) +
+ggplot(df.clean, aes(als)) +
   geom_histogram(aes(y = cumsum(..count..)), bins = 50) + 
-  labs(title = "Histograma acumulado", 
-       x = "als",
-       y = "Frequency") + 
+  labs(title = "Gasto en alimentos saludables acumulados", 
+       x = "Gasto en alimentos saludables",
+       y = "Unidades gastadas") + 
   theme_classic()
 
-# ggplot(df, aes(ln_alns)) +
-#   geom_histogram(bins = 50) + 
-#   labs(title = "Histogra ma", 
-#        x = "ln_alns",
-#        y = "Frequency") + 
-#   theme_classic()
-
-ggplot(df, aes(alns)) +
+ggplot(df.clean, aes(alns)) +
   geom_histogram(bins = 50) + 
-  labs(title = "Histogra ma", 
-       x = "alns",
-       y = "Frequency") + 
+  labs(title = "Gasto en alimentos NO saludables", 
+       x = "Gasto en alimentos NO saludable",
+       y = "Unidades gastadas") + 
   theme_classic()
 
-# ggplot(df, aes(ln_alns)) +
-#   geom_histogram(aes(y = cumsum(..count..)), bins = 50) + 
-#   labs(title = "Histograma acumulado", 
-#        x = "ln_als",
-#        y = "Frequency") + 
-#   theme_classic()
-
-ggplot(df, aes(alns)) +
+ggplot(df.clean, aes(alns)) +
   geom_histogram(aes(y = cumsum(..count..)), bins = 50) + 
-  labs(title = "Histograma acumulado", 
-       x = "als",
-       y = "Frequency") + 
+  labs(title = "Gasto en alimentos NO saludables acumulado", 
+       x = "Gasto en alimentos NO saludables",
+       y = "Unidades gastadas") + 
   theme_classic()
 
+# Otros histogramas
 ggplot(df, aes(numpeho)) +
   geom_histogram(bins = 16) + 
-  labs(title = "Histogra ma", 
-       x = "numpeho",
+  labs(title = "Número de personas en el hogar", 
+       x = "Número de personas en el hogar",
        y = "Frequency") + 
   theme_classic()
 
 ggplot(df, aes(edadjef)) +
   geom_histogram(bins = 20) + 
-  labs(title = "Histogra ma", 
-       x = "edadjef",
+  labs(title = "Edad del jefe/a de familia", 
+       x = "Edad del jefe/a de familia",
        y = "Frequency") + 
   theme_classic()
 
 ggplot(df, aes(añosedu)) +
   geom_histogram(bins = 5) + 
-  labs(title = "Histogra ma", 
-       x = "añosedu",
+  labs(title = "Años de educación del jefe de familia", 
+       x = "Años de educación del jefe de familia",
        y = "Frequency") + 
   theme_classic()
-
-
-boxplot(df$ln_als, horizontal = TRUE)
-boxplot(df$ln_alns, horizontal = TRUE)
-
-boxplot(df.clean$nse5f, horizontal = TRUE)
-boxplot(df.clean$ln_als, horizontal = TRUE) # Datos atípicos
-boxplot(df.clean$ln_alns, horizontal = TRUE) # Datos atípìcos
-
-boxplot(df.clean$als, horizontal = TRUE) # Datos atípicos
-boxplot(df.clean$alns, horizontal = TRUE) # Datos atípìcos
-
-
-# Medidas descriptivas para ln_als
-## Medidas de tendencia central
-mean(df.clean$ln_als)
-median(df.clean$ln_als)
-Mode(df.clean$ln_als)
-# Medidas de dispersión
-var(df.clean$ln_als)
-sd(df.clean$ln_als)
-#### Coeficiente de variación***
-sd(df.clean$ln_als)/mean(df.clean$ln_als) * 100 #si > 25% ->no son homogéneos 10.40
-# Medidad de posición
-cuartiles <- quantile(df.clean$ln_als, probs = c(0.25, 0.50, 0.75))
-cuartiles
-deciles <-quantile(df.clean$ln_als, probs = c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9))
-deciles
-percentiles <- quantile(df.clean$ln_als, probs = seq(0.01,0.99, by=0.01))
-percentiles
-# Medidas de forma
-skewness(df.clean$ln_als) # #s > 0 Sesgo a la derecha s = 0 Simétrica s < 0 Sesgo a la izquierda
-kurtosis(df.clean$ln_als) # #Leptocúrtica k > 3 #Mesocúrtica k = 3 Platocúrtica k < 3
 
 # Medidas descriptivas para als
 ## Medidas de tendencia central
@@ -378,29 +298,6 @@ skewness(df.clean$als) # #s > 0 Sesgo a la derecha s = 0 Simétrica s < 0 Sesgo 
 kurtosis(df.clean$als) # #Leptocúrtica k > 3 #Mesocúrtica k = 3 Platocúrtica k < 3
 
 
-
-# Medidas descriptivas para ln_alns
-## Medidas de tendencia central
-mean(df.clean$ln_alns) 
-median(df.clean$ln_alns)
-Mode(df.clean$ln_alns)
-# Medidas de dispersión
-var(df.clean$ln_alns)
-sd(df.clean$ln_alns)
-#### Coeficiente de variación***
-sd(df.clean$ln_alns)/mean(df.clean$ln_alns) * 100 #si > 25% ->no son homogéneos 24.84
-# Medidad de posición
-cuartiles <- quantile(df.clean$ln_alns, probs = c(0.25, 0.50, 0.75))
-cuartiles
-deciles <-quantile(df.clean$ln_alns, probs = c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9))
-deciles
-percentiles <- quantile(df.clean$ln_alns, probs = seq(0.01,0.99, by=0.01))
-percentiles
-# Medidas de forma
-skewness(df.clean$ln_alns) # #s > 0 Sesgo a la derecha s = 0 Simétrica s < 0 Sesgo a la izquierda
-kurtosis(df.clean$ln_alns) # #Leptocúrtica k > 3 #Mesocúrtica k = 3 Platocúrtica k < 3
-
-
 # Medidas descriptivas para alns
 ## Medidas de tendencia central
 mean(df.clean$alns)
@@ -422,102 +319,40 @@ percentiles
 skewness(df.clean$alns) # #s > 0 Sesgo a la derecha s = 0 Simétrica s < 0 Sesgo a la izquierda
 kurtosis(df.clean$alns) # #Leptocúrtica k > 3 #Mesocúrtica k = 3 Platocúrtica k < 3
 
-# Coeficiente de correlación de Pearson
-df.select1 <- select(df.clean, numpeho, edadjef, añosedu, ln_als, ln_alns)
-corr_matrix <- round(cor(df.select1),4)
-corr_matrix
+# Medidas descriptivas para alns X GRUPO
+## Medidas de tendencia central
+mean.bajo <- mean(df.clean[df.clean$nse5f == 'Bajo', "alns"])
+mean.medio.bajo <- mean(df.clean[df.clean$nse5f == "Medio bajo", "alns"])
+mean.medio <- mean(df.clean[df.clean$nse5f == "Medio", "alns"])
+mean.medio.alto <- mean(df.clean[df.clean$nse5f == "Medio alto", "alns"])
+mean.alto <- mean(df.clean[df.clean$nse5f == 'Alto', "alns"])
 
+sd.bajo <- sd(df.clean[df.clean$nse5f == 'Bajo', "alns"])
+sd.medio.bajo <- sd(df.clean[df.clean$nse5f == "Medio bajo", "alns"])
+sd.medio <- sd(df.clean[df.clean$nse5f == "Medio", "alns"])
+sd.medio.alto <- sd(df.clean[df.clean$nse5f == "Medio alto", "alns"])
+sd.alto <- sd(df.clean[df.clean$nse5f == 'Alto', "alns"])
+
+(cv.bajo <- sd.bajo/mean.bajo * 100) 
+(cv.medio.bajo <- sd.medio.bajo/mean.medio.bajo * 100) 
+(cv.medio <- sd.medio/mean.medio * 100) 
+(cv.medio.alto <- sd.medio.alto/mean.medio.alto * 100) 
+(cv.alto <- sd.alto/mean.alto * 100) 
+
+
+#df.clean[df.clean$nse5f == 'Bajo', "alns"]
+
+# Coeficiente de correlación de Pearson
 df.select2 <- select(df.clean, numpeho, edadjef, añosedu, als, alns)
 corr_matrix <- round(cor(df.select2),4)
 corr_matrix
 
-pairs(df.select1)
 pairs(df.select2)
 
 
-ggplot(df.select1, aes(x=ln_als, y=numpeho)) + 
-  geom_point() +                                     
-  stat_smooth(method = "lm",
-              formula = y ~ x,
-              geom = "smooth") +
-  labs(title = "Gráfica de dispersión", 
-       x = "ln_als",
-       y = "numpeho") + 
-  theme_classic()
-
-ggplot(df.select2, aes(x=als, y=numpeho)) + 
-  geom_point() +                                     
-  stat_smooth(method = "lm",
-              formula = y ~ x,
-              geom = "smooth") +
-  labs(title = "Gráfica de dispersión", 
-       x = "als",
-       y = "numpeho") + 
-  theme_classic()
-
-ggplot(df.select1, aes(x=ln_alns, y=numpeho)) + 
-  geom_point() +                                     
-  stat_smooth(method = "lm",
-              formula = y ~ x,
-              geom = "smooth") +
-  labs(title = "Gráfica de dispersión", 
-       x = "ln_alns",
-       y = "numpeho") + 
-  theme_classic()
-
-ggplot(df.select2, aes(x=alns, y=numpeho)) + 
-  geom_point() +                                     
-  stat_smooth(method = "lm",
-              formula = y ~ x,
-              geom = "smooth") +
-  labs(title = "Gráfica de dispersión", 
-       x = "alns",
-       y = "numpeho") + 
-  theme_classic()
-
-ggplot(df.select1, aes(x=ln_als, y=añosedu)) + 
-  geom_point() +                                     
-  stat_smooth(method = "lm",
-              formula = y ~ x,
-              geom = "smooth") +
-  labs(title = "Gráfica de dispersión", 
-       x = "ln_als",
-       y = "añosedu") + 
-  theme_classic()
-
-ggplot(df.select2, aes(x=als, y=añosedu)) + 
-  geom_point() +                                     
-  stat_smooth(method = "lm",
-              formula = y ~ x,
-              geom = "smooth") +
-  labs(title = "Gráfica de dispersión", 
-       x = "als",
-       y = "añosedu") + 
-  theme_classic()
-
-ggplot(df.select1, aes(x=ln_alns, y=añosedu)) + 
-  geom_point() +                                     
-  stat_smooth(method = "lm",
-              formula = y ~ x,
-              geom = "smooth") +
-  labs(title = "Gráfica de dispersión", 
-       x = "ln_alns",
-       y = "añosedu") + 
-  theme_classic()
-
-ggplot(df.select2, aes(x=alns, y=añosedu)) + 
-  geom_point() +                                     
-  stat_smooth(method = "lm",
-              formula = y ~ x,
-              geom = "smooth") +
-  labs(title = "Gráfica de dispersión", 
-       x = "alns",
-       y = "añosedu") + 
-  theme_classic()
-
 ## Ensayo de Bernoulli y Distribución normal
 n <- 11471
-p <- 0.67
+p <- 0.74
 count <- c()
 for (i in seq(n)) {
   x <- sample(c("Si", "No"), size = 1, prob = c(p, 1-p))
@@ -531,79 +366,79 @@ for (i in seq(n)) {
 
 barplot(table(count)/length(count), 
         main = "Experimento de Bernoulli", 
-        xlab = "Resultado",
-        names = c("Si", "No"))
+        xlab = "Simalación de Inseguridad Alimentaria (Bernoulli)",
+        names = c("No", "Si"))
 
 
-binom <- rbinom(n = 111471, size = 10, prob = 0.67)
+binom <- rbinom(n = 111471, size = 10, prob = 0.74)
 barplot(table(binom)/length(binom),
         main = "Distribución Binomial", 
         xlab = "# de familias con Inseguridad Alimentaria en el hogar")
 
-"Un familia tiene una probabilidad de 0.67 de presentar Inseguridad Alimentaria 
+"Un familia tiene una probabilidad de 0.74 de presentar Inseguridad Alimentaria 
 en el hogar en México. Si al día se evaluan 10 familias, 
 
 ¿cuál es la probabilidad de que menos de 4 familias presenten Inseguridad Alimentaria 
 en el hogar?"
-pbinom(q = 3, size = 10, prob = 0.67, lower.tail = TRUE) #P(X<=x)  0.01854895
+pbinom(q = 3, size = 10, prob = 0.74, lower.tail = TRUE) #P(X<=x)  0.0044618
 
 "¿cuál es la probabilidad de que más de 8 familias presenten Inseguridad Alimentaria 
 en el hogar?"
-pbinom(q = 8, size = 10, prob = 0.67, lower.tail = FALSE) #P(X<=x) 0.1080099
+pbinom(q = 8, size = 10, prob = 0.74, lower.tail = FALSE) #P(X>x)  0.222245
 
 "¿cuál es la probabilidad de que 7 familias presenten Inseguridad Alimentaria 
 en el hogar?" 
-dbinom(x = 7, size = 10, prob = 0.67) #  0.2613646
+dbinom(x = 7, size = 10, prob = 0.74) #  0.2562851
 
 
 ## Distribución normal
 "El gasto als de una familia mexicana tiene una distribución normal cuya media 
 es 651.0853 unidades con desviación estándar de 368.805"
 #als
+mean.als <- 593.8028
+sd.als <- 356.9995
 {
-  curve(dnorm(x, mean = 651.0853, sd = 368.805), from = 0, to = 2000, 
+  curve(dnorm(x, mean = mean.als, sd = sd.als), from = 0, to = 2000, 
       col='blue', main = "Densidad Normal - als",
       ylab = "f(x)", xlab = "X")
   abline(v =651.0853 , lwd = 0.5, lty = 2)
   }
 
-mean <- 651.0853
-sd <- 368.805
-x <- seq(-4, 4, 0.01)*sd + mean
-y <- dnorm(x, mean = mean, sd = sd) 
+x <- seq(-4, 4, 0.01)*sd.als + mean.als
+y <- dnorm(x, mean = mean.als, sd = sd.als) 
 
 plot(x, y, type = "l", xlab = "X", ylab = "f(x)",
      main = "Densidad de Probabilidad Normal", 
-     sub = expression(paste(mu == 651.0853, " y ", sigma == 368.805)))
+     sub = expression(paste(mu == mean.als, " y ", sigma == mean.als)))
 
-integrate(dnorm, lower = x[1], upper = x[length(x)], mean=mean, sd = sd)
+integrate(dnorm, lower = x[1], upper = x[length(x)], mean=mean.als, sd = sd.als)
 
 "Calcula P(X <= 312): (salario mínimo 2023 frontera, 207 resto país) " 
-pnorm(q = 312, mean = mean, sd = sd, lower.tail = TRUE) # 0.178939
+pnorm(q = 312, mean = mean.als, sd = sd.als, lower.tail = TRUE) # 0.2149494
 
 par(mfrow = c(2, 2))
 plot(x, y, type = "l", xlab = "", ylab = "")
-title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == 651.0853, " y ", sigma == 368.805)))
+title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == mean.als, " y ", sigma == sd.als)))
 
 polygon(c(min(x), x[x<=312], 312), c(0, y[x<=312], 0), col="red")
 
 "Calcula P(X <= 312): (salario mínimo 2023)" 
-pnorm(q = 312, mean = mean, sd = sd, lower.tail = TRUE) #
+pnorm(q = 312, mean = mean.als, sd = sd.als, lower.tail = TRUE) #
 
 "Calcula P(0 <= X <= 312):"
-pnorm(q = 312, mean = mean, sd = sd) - pnorm(q = 0, mean = mean, sd = sd) #  0.14019
+pnorm(q = 312, mean = mean.als, sd = sd.als) - pnorm(q = 0, mean = mean, sd = sd) #  0.14019
 
 plot(x, y, type = "l", xlab="", ylab="")
-title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == 651.0853, " y ", sigma == 368.805)))
+title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == mean.als, " y ", sigma == mean.als)))
 
 polygon(c(0, x[x>=0 & x<=312], 312), c(0, y[x>=0 & x<=312], 0), col="green")
 
 
 "Calcula P(X >= 312):"
-pnorm(q = 312, mean = mean, sd = sd, lower.tail = FALSE) # 0.821061
+pnorm(q = 312, mean = mean.als, sd = sd.als, lower.tail = FALSE) # 0.821061
 
 plot(x, y, type = "l", xlab="", ylab="")
-title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == 651.0853, " y ", sigma == 368.805)))
+title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == mean.als, " y ", sigma == sd.als)))
 
 polygon(c(312, x[x>=312], max(x)), c(0, y[x>=312], 0), col="blue")
 
@@ -611,5 +446,96 @@ dev.off()
 
 "Como con cualquier otra distribución, también podemos calcular los cuantiles de la 
 distribución, es decir podemos encontrar el valor b, tal que P(X <= b) = 0.75:"
-b <- qnorm(p = 0.75, mean = mean, sd = sd)
+b <- qnorm(p = 0.75, mean = mean.als, sd = sd.als)
 b
+
+## Falta hacer lo mismo con alns
+##############################################################################
+
+##############################################################################
+
+
+
+### Considerando la siguiente creencia
+"La mayoría de las personas afirman que los hogares con menor nivel socioeconómico 
+tienden a gastar más en productos no saludables que las personas con mayores 
+niveles socioeconómicos y que esto, entre otros determinantes, lleva a que un 
+hogar presente cierta inseguridad alimentaria.
+
+Hipótesis
+
+Planteamiento de hipótesis:
+Ho: alns_nse5f_bajo <= alns_nse5f_alto 
+Ha: alns_nse5f_bajo > alns_nse5f_alto
+"
+var.test(df.clean[df.clean$nse5f == 'Bajo', "alns"],
+         df.clean[df.clean$nse5f == 'Alto', "alns"],
+         ratio = 1, alternative = "two.sided")
+
+# El p-value 2.2e-16 < 0.01 Las varianzas son DIFERENTES
+t.test(x = df.clean[df.clean$nse5f == 'Bajo', "alns"], y = df.clean[df.clean$nse5f == 'Alto', "alns"],
+       alternative = "greater",
+       mu = 0, var.equal = FALSE)
+"EEE para rechazar la hipótesis nula,es decir que el consumo de nivel socieconómico bajo en alns es mayor al nicel socieconómico alto"
+
+
+
+### Hacer otra prueba similar
+
+"
+Planteamiento de hipótesis:
+  Ho: alns_nse5f_bajo <= alns_nse5f_alto 
+Ha: alns_nse5f_bajo > alns_nse5f_alto
+"
+var.test(df.clean[df.clean$nse5f == 'Bajo' | df.clean$nse5f == 'Medio bajo' | df.clean$nse5f == 'Medio', "alns"],
+         df.clean[df.clean$nse5f == 'Medio alto' | df.clean$nse5f == 'Alto', "alns"],
+         ratio = 1, alternative = "two.sided")
+
+# El p-value 2.2e-16 < 0.01 Las varianzas son DIFERENTES
+t.test(x = df.clean[df.clean$nse5f == 'Bajo' | df.clean$nse5f == 'Medio bajo' | df.clean$nse5f == 'Medio', "alns"], 
+       y = df.clean[df.clean$nse5f == 'Medio alto' | df.clean$nse5f == 'Alto', "alns"],
+       alternative = "greater",
+       mu = 0, var.equal = FALSE)
+"EEE para rechazar la hipótesis nula,es decir que el consumo de nivel socieconómico bajo en alns es mayor al nicel socieconómico alto"
+
+################
+# En promedio, no existe diferencia en el consumo alns en los 5 grupos.
+
+# Ho: prom_alns_bajo = prom_alns_medio_bajo = prom_alns_medio = prom_alns_medio_alto = prom_alns_alto 
+# Ha: AL menos uno es diferente
+
+anova <- aov(df.clean$alns ~ df.clean$nse5f,
+             data = df.clean)
+
+summary(anova)
+
+#Nivel de significancia es de  0.01
+# p-value =  2e-16 < 0.01
+# A nivel de confianza estándar 99%, EEE para rechazar Ho, es decir,
+# en promedio, al menos el consumo alns en uno de los grupos es diferente
+
+#################### LRegression
+
+d <- select(df.clean, als, alns, refin, nse5f, IA)
+#d <- d %>% mutate( nse5ff = as.integer(nse5f), refinn = as.integer(refin),
+                   #IAA = as.integer(IA)) %>% select(als, alns, refinn, nse5ff, IAA)
+View(d)
+
+summary(d)
+
+lr <- glm(IA ~ als + alns + refin + nse5f, data = d, family = "binomial")
+summary(lr)
+# para interpretar quitar logaritmos
+exp(coef(lr))
+confint(lr)
+pseudo_r2.1 <- (lr$null.deviance - lr$deviance)/lr$null.deviance
+pseudo_r2.1
+
+
+lr2 <- glm(IA ~ alns + refin + nse5f, data = d, family = "binomial")
+summary(lr2)
+# para interpretar quitar logaritmos
+exp(coef(lr2))
+
+pseudo_r2.2 <- (lr2$null.deviance - lr2$deviance)/lr2$null.deviance
+pseudo_r2.2
