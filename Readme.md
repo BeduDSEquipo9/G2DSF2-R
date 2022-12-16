@@ -10,6 +10,6 @@
 
 - [gusgtzh](https://github.com/orgs/BeduDSEquipo9/people/)
 
-- [Cristian Millan](https://github.com/orgs/BeduDSEquipo9/people/iamaro82)
+- [Isidro Amaro](https://github.com/orgs/BeduDSEquipo9/people/iamaro82)
 
-- [Tomás Henández](https://github.com/orgs/BeduDSEquipo9/people/TomsHdez)
+- [Tomás Hernández](https://github.com/orgs/BeduDSEquipo9/people/TomsHdez)
