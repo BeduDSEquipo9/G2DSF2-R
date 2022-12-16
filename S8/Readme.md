@@ -20,7 +20,7 @@ Después de revisar los datos  originales en R, se realizó la limpieza de los d
 Dado que en los requisitos del problema se solicita analizar los patrones de los gastos en alimentos saludables (aln) y gastos en alimentos no saludables (alns)  en los hogares mexicanos en relación a la variables: nivel socioeconómico (nse), si el hogar tienen recursos financieros extras al ingreso (refin) y si presenta o no inseguridad alimentaria (IA). Se presentan las siguientes gráficas para realizar un análisis exploratorio de los datos previo al cálculo de las medidas descriptivas de las variables mencionadas anteriormente.
 
 En la siguiente sección nos enfocamos en primer lugar, en las variables: als, alns.
-![gráfica de boxplot de als](./assets/boxplota_ls.png)
+![gráfica de boxplot de als](./assets/boxplot_als.png)
 
 Gráfica 1. Los gasto en alimentos saludables (als)  muestran un mínimo: 3.0, primer cuartil: 345.0, media: 593.98 , mediana: 530.5, tercer cuartil: 760.0 y máximo: 5640
 
@@ -49,7 +49,8 @@ als vs IA
 
 Gráfica 5. Muestra las medidas de tendencia central de als, de acuerdo a si presentaron o no inseguridad alimentaria en el hogar (IA). Las medias muestran niveles de consumo promedio similares, con una ligero gasto mayor de als por las familias que no presentaron IA. Sin embargo, no podemos concluir que esto sea correcto puesto que la variable no es homogénea.
 
-![gráfica de boxplot de alns vs  refin)(./assets/boxplot_alns_vs_ refin.png)
+![gráfica de boxplot de alns vs refin](./assets/boxplot_alns_vs_refin.png)
+
 alns vs  refin
 
 Gráfica 6. Muestra las medidas de tendencia central de alns, con respecto a las familia que indicaron recursos financieros distintos al ingreso laboral. En el gráfico se puede observar que las medias muestran niveles de consumo promedio similares, sin embargo, el promedio de gastos de aquellos que no presentan recursos financieros al ingreso laborales es ligeramente mayor a los que sí lo presentan. Este análisis exploratorio de los datos no puede ser considerado correcto dado que la variable alns no es homogénea.
@@ -59,7 +60,7 @@ alns vs nes5f
 
 Gráfica 7. El gráfico muestra  las medidas de tendencia central de als según el nivel socioeconómico de los hogares consultados.  Se observa que los promedios de consumo de als se incrementan conforme aumenta el nivel socioeconómico, sin embargo, no es posible realizar una conclusión a partir del análisis exploratorio de los datos, puesto que se sabe que la variable no es homogénea.
 
-![gráfica de boxplot de alns vs  IA)(./assets/boxplot_alns_vs_ IA.png)
+![gráfica de boxplot de alns vs  IA](./assets/boxplot_alns_vs_IA.png)
 alns vs IA
 
 Gráfica 8.
