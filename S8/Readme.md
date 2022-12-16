@@ -70,7 +70,7 @@ Gráfica 7. El gráfico muestra  las medidas de tendencia central de als según 
 ![gráfica de boxplot de alns vs  IA](./assets/boxplot_alns_vs_IA.png)
 alns vs IA
 
-Gráfica 8.
+Gráfica 8. Se observa que las medidas de tendencia central de alns, con respecto a las familias que presentan Inseguridad se acercan. Si bien las medias presentan valores similares cercanos a cero, el análisis de los datos no puede ser considerado correcto dado que la variable alns no es homogénea.
 
 Para continuar el análisis de als y alns se realizaron histogramas que permitan conocer la frecuencia de los gastos que reportaron las familias.
 
