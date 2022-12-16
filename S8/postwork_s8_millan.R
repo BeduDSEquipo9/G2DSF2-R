@@ -453,7 +453,62 @@ b
 ##############################################################################
 
 ##############################################################################
+"El gasto alns de una familia mexicana tiene una distribución normal cuya media 
+es 651.0853 unidades con desviación estándar de 368.805"
+#alns
+mean.alns <- 107.89
+sd.alns <- 145.76
+{
+  curve(dnorm(x, mean = mean.alns, sd = sd.alns), from = 0, to = 2000, 
+        col='blue', main = "Densidad Normal - alns",
+        ylab = "f(x)", xlab = "X")
+  abline(v =107.89 , lwd = 0.5, lty = 2)
+}
 
+x <- seq(-4, 4, 0.01)*sd.alns + mean.alns
+y <- dnorm(x, mean = mean.alns, sd = sd.alns) 
+
+plot(x, y, type = "l", xlab = "X", ylab = "f(x)",
+     main = "Densidad de Probabilidad Normal", 
+     sub = expression(paste(mu == mean.alns, " y ", sigma == mean.alns)))
+
+integrate(dnorm, lower = x[1], upper = x[length(x)], mean=mean.alns, sd = sd.alns)
+
+"Calcula P(X <= 312): (salario mínimo 2023 frontera, 207 resto país) " 
+pnorm(q = 312, mean = mean.alns, sd = sd.alns, lower.tail = TRUE) # 0.2149494
+
+par(mfrow = c(2, 2))
+plot(x, y, type = "l", xlab = "", ylab = "")
+title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == mean.alns, " y ", sigma == sd.alns)))
+
+polygon(c(min(x), x[x<=312], 312), c(0, y[x<=312], 0), col="red")
+
+"Calcula P(X <= 312): (salario mínimo 2023)" 
+pnorm(q = 312, mean = mean.alns, sd = sd.alns, lower.tail = TRUE) #
+
+"Calcula P(0 <= X <= 312):"
+pnorm(q = 312, mean = mean.alns, sd = sd.alns) - pnorm(q = 0, mean = mean.alns, sd = sd.alns) #  0.14019
+
+plot(x, y, type = "l", xlab="", ylab="")
+title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == mean.alns, " y ", sigma == mean.alns)))
+
+polygon(c(0, x[x>=0 & x<=312], 312), c(0, y[x>=0 & x<=312], 0), col="green")
+
+
+"Calcula P(X >= 312):"
+pnorm(q = 312, mean = mean.alns, sd = sd.alns, lower.tail = FALSE) # 0.821061
+
+plot(x, y, type = "l", xlab="", ylab="")
+title(main = "Densidad de Probabilidad Normal", sub = expression(paste(mu == mean.alns, " y ", sigma == sd.alns)))
+
+polygon(c(312, x[x>=312], max(x)), c(0, y[x>=312], 0), col="blue")
+
+dev.off()
+
+"Como con cualquier otra distribución, también podemos calcular los cuantiles de la 
+distribución, es decir podemos encontrar el valor b, tal que P(X <= b) = 0.75:"
+b <- qnorm(p = 0.75, mean = mean.alns, sd = sd.alns)
+b
 
 
 ### Considerando la siguiente creencia
