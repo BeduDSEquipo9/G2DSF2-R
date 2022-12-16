@@ -1,8 +1,8 @@
 # Postwork sesión 8
 
-# Análisis de la Inseguridad Alimentaria en México
+## Análisis de la Inseguridad Alimentaria en México
 
-#### DESARROLLO
+### DESARROLLO
 
 Un centro de salud nutricional está interesado en analizar estadísticamente y probabilísticamente los patrones de gasto en alimentos saludables y no saludables en los hogares mexicanos con base en su nivel socioeconómico, en si el hogar tiene recursos financieros extrar al ingreso y en si presenta o no inseguridad alimentaria. Además, está interesado en un modelo que le permita identificar los determinantes socioeconómicos de la inseguridad alimentaria.
 

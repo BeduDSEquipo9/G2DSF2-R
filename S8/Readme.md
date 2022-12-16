@@ -1,4 +1,10 @@
-## 1. Plantea el problema del caso
+# Postwork sesión 8
+
+## Análisis de la Inseguridad Alimentaria en México
+
+### DESARROLLO
+
+#### 1. Plantea el problema del caso
 
 De acuerdo a (Shamah-Levy, 2014) la inseguridad alimentaria se define como la disponibilidad limitada o incierta de alimentos nutricionalmente adecuados e inocuos; o la capacidad limitada e incierta de adquirir alimentos adecuados en formas socialmente aceptables. En México, casi una cuarta parte de la población enfrenta algún nivel de inseguridad alimentaria (1).
 
@@ -8,7 +14,7 @@ Adicionalmente, se plantea el supuesto de que los hogares con menor nivel socioe
 
 En el presente trabajo, se analizará la información disponible a fin de concluir, con argumentos estadísticos y probabilísticos, si el supuesto planteado tiene mérito o no y se sugerirá un modelo que explique lo mejor posible el fenómeno de la inseguridad alimentaria en el hogar.
 
-## 2. Realiza un análisis descriptivo de la información
+#### 2. Realiza un análisis descriptivo de la información
 
 La base de datos proporcionada contiene un total de 40,809 observaciones con 10 variables. En la Tabla 1 se describen las variables.
 
@@ -50,7 +56,6 @@ als vs IA
 Gráfica 5. Muestra las medidas de tendencia central de als, de acuerdo a si presentaron o no inseguridad alimentaria en el hogar (IA). Las medias muestran niveles de consumo promedio similares, con una ligero gasto mayor de als por las familias que no presentaron IA. Sin embargo, no podemos concluir que esto sea correcto puesto que la variable no es homogénea.
 
 ![gráfica de boxplot de alns vs refin](./assets/boxplot_alns_vs_refin.png)
-
 alns vs  refin
 
 Gráfica 6. Muestra las medidas de tendencia central de alns, con respecto a las familia que indicaron recursos financieros distintos al ingreso laboral. En el gráfico se puede observar que las medias muestran niveles de consumo promedio similares, sin embargo, el promedio de gastos de aquellos que no presentan recursos financieros al ingreso laborales es ligeramente mayor a los que sí lo presentan. Este análisis exploratorio de los datos no puede ser considerado correcto dado que la variable alns no es homogénea.
@@ -78,7 +83,7 @@ En la Gráfica X, se muestra que el 74% de las familias que participaron en la m
 
 En esta segunda sección, primero se realizó un análisis visual de los datos, para después realizar un análisis descriptivo de los datos. Los resultados obtenidos en los coeficientes de variación indican que el promedio no es confiable para dar respuesta a las cuestiones planteadas en la sección uno, incluso la mediana y las medidas de posición no son concluyentes debido a la cantidad de datos atípicos que muestra la base de datos utilizada. Por lo tanto realizaremos en la siguiente sección un análisis probabilístico que nos permite explicar el problema.
 
-3. Cálculo de probabilidades para entender el problema en México.
+#### 3. Cálculo de probabilidades para entender el problema en México
 
 Calcula probabilidades que nos permitan entender el problema en México
 
@@ -111,8 +116,10 @@ probabilidad:  0.08070942
 
 Gráfica 13
 
-## 5. Estima un modelo de regresión, lineal o logístico, para identificar los determinantes de la inseguridad alimentaria en México
+#### 5. Estima un modelo de regresión, lineal o logístico, para identificar los determinantes de la inseguridad alimentaria en México
 
 Como se busca entender qué factores influyen en la inseguridad alimentaria se define IA como la variable objetivo o dependiente. Debido a que ésta es de tipo dicotómico, lo apropiado para modelarla es una regresión logística y no una lineal.
+
+### Recursos
 
 Consultado en: ![Inseguridad Alimentaria casi un cuarto de la población mexicana] (<https://unamglobal.unam.mx/inseguridad-alimentaria-casi-un-cuarto-de-la-poblacion-mexicana/> ). Fecha de consulta: 12/12/2022.
