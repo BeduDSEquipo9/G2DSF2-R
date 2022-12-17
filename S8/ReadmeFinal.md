@@ -38,16 +38,19 @@ Gráfica 1. Los gasto en alimentos saludables (ln_als)  muestran un mínimo: 1.0
 Gráfica 2. Los gastos en alimentos saludables (alns) muestran un mínimo: 0.0, primer cuartil: 3.4, media: 4.11 , mediana: 4.0, tercer cuartil: 4.86 y máximo: 8.29
 </div>
 
-En las Gráficas 1 y 2, se muestran las medidas de tendencia central y de posición. Además, se calculó la desviación estándar para als:  0.68  y alns:  1.04, con la finalidad de calcular el coeficiente de variación. El coeficiente de variación de als es 11.12% y de alns es de 25.28%. Ambos coeficientes de variación son menores o iguales a 25% por lo que se puede concluir que los datos para ambas variables son homogéneos. Este supuesto se puede inferir gráficamente debido a que las cajas son cortas en ambos gráficos (ver Gráfico 1 y Gráfico 2). Adicional se observar algunos datos atípicos en la parte inferior y superior de las cajas.
+En las Gráficas 1 y 2, se muestran las medidas de tendencia central y de posición. Además, se calculó la desviación estándar para __als__:  0.68  y __alns__:  1.04, con la finalidad de calcular el coeficiente de variación. El __coeficiente de variación__ de als es 11.12% y de alns es de 25.28%. Ambos coeficientes de variación son menores o iguales a 25% por lo que se puede concluir que los datos para ambas variables son homogéneos. Este supuesto se puede inferir gráficamente debido a que las cajas son cortas en ambos gráficos (ver Gráfico 1 y Gráfico 2). Adicional se observar algunos datos atípicos en la parte inferior y superior de las cajas.
 
-Para continuar con el análisis de estas dos variables se analizan  visualmente las gráficas de caja de aln de acuerdo al nivel socioeconómico (nse), ver Gráfica 3,  de acuerdo al recursos financieros distintos al ingreso laboral (ver Gráfica 4) y de la misma forma para inseguridad alimentaria .
+Para continuar con el análisis de estas dos variables se analizan  visualmente las gráficas de caja de aln de acuerdo al __nivel socioeconómico__ (__nse5f__), ver Gráfica 3,  de acuerdo al recursos financieros distintos al ingreso laboral (ver Gráfica 4) y de la misma forma para inseguridad alimentaria .
 <div style="text-align: center;">
 
 ![gráfica de boxplot de als vs nes5f](./assets/boxplot_als_vs_nes5f.png)
 
 Gráfica 3. En esta gráfica se muestran las medidas descriptivas de aln en cada nivel socioeconómico. Las medias son: (bajo = 5.8, medio bajo = 6.03, medio = 6.17, medio alto = 6.32 y alto = 6.53). Desviación estándar (bajo = 0.76, medio bajo = 0.66, medio = 0.60, medio alto = 0.59 y alto =  0.58). Coeficiente de variación (bajo =13.18%, medio bajo = 11.08%, medio = 9.84%, medio alto =  9.43% y alto =  8.93%).
 </div>
-Los promedio en la Gráfica 3 muestran que el promedio de gasto de alimentos saludables (als) se incrementa de acuerdo al nivel socioeconómico.
+
+Los promedio en la Gráfica 3 muestran que el promedio de __gasto de alimentos saludables__ (__als__) se incrementa de acuerdo al nivel socioeconómico.
+
+<br/>
 <div style="text-align: center;">
 
 ![gráfica de boxplot de als vs refin](./assets/boxplot_als_vs_refin.png)
