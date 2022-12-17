@@ -6,7 +6,7 @@
 
 #### 1. Plantea el problema del caso
 
-De acuerdo a (Shamah-Levy, 2014) la inseguridad alimentaria se define como la disponibilidad limitada o incierta de alimentos nutricionalmente adecuados e inocuos; o la capacidad limitada e incierta de adquirir alimentos adecuados en formas socialmente aceptables. En México, casi una cuarta parte de la población enfrenta algún nivel de inseguridad alimentaria (1).
+De acuerdo a (Shamah-Levy, 2014) la inseguridad alimentaria se define como la disponibilidad limitada o incierta de alimentos nutricionalmente adecuados e inocuos; o la capacidad limitada e incierta de adquirir alimentos adecuados en formas socialmente aceptables. En México, casi una cuarta parte de la población enfrenta algún nivel de inseguridad alimentaria. [^1]
 
 Por ello, un centro de salud nutricional está interesado en analizar estadísticamente y probabilísticamente el fenómeno de la inseguridad alimentaria para poder desarrollar un modelo que permita identificar los determinantes socioeconómicos detrás de ella.
 
@@ -21,7 +21,7 @@ La base de datos proporcionada contiene un total de 40,809 observaciones con 10 
 Tabla 1. Descripción de los datos proporcionados.
 <!-- ![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png) -->
 
-<img src="https://github.com/BeduDSEquipo9/G2DSF2-R/blob/S8Dev/S8/assets/Tabla_de_Variables.png" height="500" alt="Tabla 1. Descripción de los datos proporcionados."/>
+<center></center><img src="./assets/Tabla_de_Variables.png" height="400" alt="Tabla 1. Descripción de los datos proporcionados."/></center>
 
 Después de revisar los datos  originales en R, se realizó la limpieza de los datos y el cambio de algunos tipos de datos para facilitar la manipulación del análisis. En particular, se realizó el cambio de las variables: logaritmo natural de gastos en alimentos saludables y logaritmo natural de gastos en alimentos no saludables aplicando el antilogaritmo para una mejor interpretación de las cifras. Por último, se eliminaron 20,529 registros que presentaron datos incompletos en alguna variable.
 
@@ -289,4 +289,4 @@ De este modo, se recomendó un modelo que explica el fenómeno de la inseguridad
 
 ## Recursos
 
-Consultado en: ![Inseguridad Alimentaria casi un cuarto de la población mexicana] (<https://unamglobal.unam.mx/inseguridad-alimentaria-casi-un-cuarto-de-la-poblacion-mexicana/> ). Fecha de consulta: 12/12/2022.
+[^1]:Inseguridad Alimentaria casi un cuarto de la población mexicana (<https://unamglobal.unam.mx/inseguridad-alimentaria-casi-un-cuarto-de-la-poblacion-mexicana>) Fecha de consulta: 12/12/2022.
