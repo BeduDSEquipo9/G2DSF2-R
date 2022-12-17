@@ -1,4 +1,5 @@
 <div style="text-align: justify;">
+
 # Postwork sesión 8
 
 ## Análisis de la Inseguridad Alimentaria en México
@@ -23,7 +24,7 @@ Tabla 1. Descripción de los datos proporcionados.
 <!-- ![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png) -->
 
 <p align="center" width="100%">
-<img src="./assets/Tabla_de_Variables.png" width="60%" alt="Tabla 1. Descripción de los datos proporcionados."/>
+    <img src="./assets/Tabla_de_Variables.png" width="80%" alt="Tabla 1. Descripción de los datos proporcionados."/>
 </p>
 
 Después de revisar los datos  originales en R, se realizó la limpieza de los datos y el cambio de algunos tipos de datos para facilitar la manipulación del análisis. En particular, se realizó el cambio de las variables: __logaritmo natural de gastos en alimentos saludables__ y __logaritmo natural de gastos en alimentos no saludables__ aplicando el antilogaritmo para una mejor interpretación de las cifras. Por último, se eliminaron 20,529 registros que presentaron datos incompletos en alguna variable.
@@ -31,23 +32,31 @@ Después de revisar los datos  originales en R, se realizó la limpieza de los d
 Dado que en los requisitos del problema se solicita analizar los patrones de los __gastos en alimentos saludables (aln)__ y __gastos en alimentos no saludables (alns)__  en los hogares mexicanos en relación a la variables: nivel socioeconómico (nse), si el hogar tienen recursos financieros extras al ingreso (refin) y si presenta o no inseguridad alimentaria (IA). Se presentan las siguientes gráficas para realizar un análisis exploratorio de los datos previo al cálculo de las medidas descriptivas de las variables mencionadas anteriormente.
 
 En la siguiente sección nos enfocamos en primer lugar, en las variables: als, alns.
-<p align="right" width="100%">
 
-![gráfica de boxplot de als](./assets/boxplot_als.png)
-
+<!-- ![Gráfica de boxplot de als](./assets/boxplot_als.png) -->
+<p align="center" width="100%">
+    <img src="./assets/boxplot_als.png" width="80%" alt="Gráfica de boxplot de als"/>
+</p>
 Gráfica 1. Los gasto en alimentos saludables (ln_als)  muestran un mínimo: 1.09, primer cuartil: 5.84, media: 6.19 , mediana: 6.27, tercer cuartil: 6.63 y máximo: 8.6
 
-![gráfica de boxplot de alns](./assets/boxplot_alns.png)
-
-Gráfica 2. Los gastos en alimentos saludables (alns) muestran un mínimo: 0.0, primer cuartil: 3.4, media: 4.11 , mediana: 4.0, tercer cuartil: 4.86 y máximo: 8.29
+<!-- ![Gráfica de boxplot de alns](./assets/boxplot_alns.png) -->
+<p align="center" width="100%">
+    <img src="./assets/boxplot_alns.png" width="80%" alt="Gráfica de boxplot de alns."/>
 </p>
 
+<div align="center" width="100%">
+Gráfica 2. Los gastos en alimentos saludables (alns) muestran un mínimo: 0.0, primer cuartil: 3.4, media: 4.11 , mediana: 4.0, tercer cuartil: 4.86 y máximo: 8.29
+</div>
+<br>
 En las Gráficas 1 y 2, se muestran las medidas de tendencia central y de posición. Además, se calculó la desviación estándar para __als__:  0.68  y __alns__:  1.04, con la finalidad de calcular el coeficiente de variación. El __coeficiente de variación__ de als es 11.12% y de alns es de 25.28%. Ambos coeficientes de variación son menores o iguales a 25% por lo que se puede concluir que los datos para ambas variables son homogéneos. Este supuesto se puede inferir gráficamente debido a que las cajas son cortas en ambos gráficos (ver Gráfico 1 y Gráfico 2). Adicional se observar algunos datos atípicos en la parte inferior y superior de las cajas.
 
+<br>
 Para continuar con el análisis de estas dos variables se analizan  visualmente las gráficas de caja de aln de acuerdo al __nivel socioeconómico__ (__nse5f__), ver Gráfica 3,  de acuerdo al recursos financieros distintos al ingreso laboral (ver Gráfica 4) y de la misma forma para inseguridad alimentaria .
-<div style="text-align: center;">
 
-![gráfica de boxplot de als vs nes5f](./assets/boxplot_als_vs_nes5f.png)
+<!-- ![Gráfica de boxplot de als vs nes5f](./assets/boxplot_als_vs_nes5f.png) -->
+<p align="center" width="100%">
+    <img src="./assets/boxplot_als_vs_nes5f.png" width="80%" alt="Gráfica de boxplot de als vs nes5f"/>
+</p>
 
 Gráfica 3. En esta gráfica se muestran las medidas descriptivas de aln en cada nivel socioeconómico. Las medias son: (bajo = 5.8, medio bajo = 6.03, medio = 6.17, medio alto = 6.32 y alto = 6.53). Desviación estándar (bajo = 0.76, medio bajo = 0.66, medio = 0.60, medio alto = 0.59 y alto =  0.58). Coeficiente de variación (bajo =13.18%, medio bajo = 11.08%, medio = 9.84%, medio alto =  9.43% y alto =  8.93%).
 </div>
