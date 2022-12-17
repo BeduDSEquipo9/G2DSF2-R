@@ -23,7 +23,7 @@ Tabla 1. Descripción de los datos proporcionados.
 <!-- ![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png) -->
 
 <p align="center" width="100%">
-<img src="./assets/Tabla_de_Variables.png" width="30%" alt="Tabla 1. Descripción de los datos proporcionados."/>
+<img src="./assets/Tabla_de_Variables.png" width="60%" alt="Tabla 1. Descripción de los datos proporcionados."/>
 </p>
 
 Después de revisar los datos  originales en R, se realizó la limpieza de los datos y el cambio de algunos tipos de datos para facilitar la manipulación del análisis. En particular, se realizó el cambio de las variables: __logaritmo natural de gastos en alimentos saludables__ y __logaritmo natural de gastos en alimentos no saludables__ aplicando el antilogaritmo para una mejor interpretación de las cifras. Por último, se eliminaron 20,529 registros que presentaron datos incompletos en alguna variable.
