@@ -25,7 +25,7 @@ Después de revisar los datos  originales en R, se realizó la limpieza de los d
 Dado que en los requisitos del problema se solicita analizar los patrones de los gastos en alimentos saludables (aln) y gastos en alimentos no saludables (alns)  en los hogares mexicanos en relación a la variables: nivel socioeconómico (nse), si el hogar tienen recursos financieros extras al ingreso (refin) y si presenta o no inseguridad alimentaria (IA). Se presentan las siguientes gráficas para realizar un análisis exploratorio de los datos previo al cálculo de las medidas descriptivas de las variables mencionadas anteriormente.
 
 En la siguiente sección nos enfocamos en primer lugar, en las variables: als, alns.
-![gráfica de boxplot de als](./assets/boxplota_ls.png)
+![gráfica de boxplot de als](./assets/boxplot_als.png)
 
 Gráfica 1. Los gasto en alimentos saludables (ln_als)  muestran un mínimo: 1.09, primer cuartil: 5.84, media: 6.19 , mediana: 6.27, tercer cuartil: 6.63 y máximo: 8.6
 
