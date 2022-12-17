@@ -19,9 +19,12 @@ En el presente trabajo, se analizará la información disponible a fin de conclu
 La base de datos proporcionada contiene un total de 40,809 observaciones con 10 variables. En la Tabla 1 se describen las variables.
 
 Tabla 1. Descripción de los datos proporcionados.
-![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png)
+<!-- ![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png) -->
 
-Después de revisar los datos  originales en R, se realizó la limpieza de los datos y el cambio de algunos tipos de datos para facilitar la manipulación del análisis. En particular, se realizó el cambio de las variables: logaritmo natural de gastos en alimentos saludables y logaritmo natural de gastos en alimentos no saludables aplicando el antilogaritmo para una mejor interpretación de las cifras. Por último, se eliminaron 20,529 registros que presentaron datos incompletos en alguna variable.  
+<img src="https://github.com/BeduDSEquipo9/G2DSF2-R/blob/S8Dev/S8/assets/Tabla_de_Variables.png" height="500" alt="Tabla 1. Descripción de los datos proporcionados."/>
+
+Después de revisar los datos  originales en R, se realizó la limpieza de los datos y el cambio de algunos tipos de datos para facilitar la manipulación del análisis. En particular, se realizó el cambio de las variables: logaritmo natural de gastos en alimentos saludables y logaritmo natural de gastos en alimentos no saludables aplicando el antilogaritmo para una mejor interpretación de las cifras. Por último, se eliminaron 20,529 registros que presentaron datos incompletos en alguna variable.
+
 Dado que en los requisitos del problema se solicita analizar los patrones de los gastos en alimentos saludables (aln) y gastos en alimentos no saludables (alns)  en los hogares mexicanos en relación a la variables: nivel socioeconómico (nse), si el hogar tienen recursos financieros extras al ingreso (refin) y si presenta o no inseguridad alimentaria (IA). Se presentan las siguientes gráficas para realizar un análisis exploratorio de los datos previo al cálculo de las medidas descriptivas de las variables mencionadas anteriormente.
 
 En la siguiente sección nos enfocamos en primer lugar, en las variables: als, alns.
@@ -43,7 +46,7 @@ Gráfica 3. En esta gráfica se muestran las medidas descriptivas de aln en cada
 
 Los promedio en la Gráfica 3 muestran que el promedio de gasto de alimentos saludables (als) se incrementa de acuerdo al nivel socioeconómico.
 
-![gráfica de boxplot de als vs  refin](./assets/boxplot_als_vs_refin.png)
+![gráfica de boxplot de als vs refin](./assets/boxplot_als_vs_refin.png)
 
 Gráfico 4. Muestra las medidas de tendencia central de als, si la familia indicó recursos financieros distintos al ingreso laboral. Media ( No = 6.17, Si =  6.24), Desviación estándar (No = 0.68, Si = 0.69. Coeficiente de variación (No = 11.20%, Si = 11.08%).
 
@@ -61,29 +64,31 @@ Gráfica 6. El gráfico muestra  las medidas de tendencia central de alns según
 
 Se observa que los promedios de consumo de als se incrementan conforme aumenta el nivel socioeconómico, sin embargo, ???.
 
-![gráfica de boxplot de alns vs  refin)(./assets/boxplot_alns_vs_refin.png)
+![gráfica de boxplot de alns vs  refin](./assets/boxplot_alns_vs_refin.png)
 
 Gráfica 7. Muestra las medidas de tendencia central de alns, con respecto a las familia que indicaron recursos financieros distintos al ingreso laboral. Media ( No = 4.12, Si =  4.10), Desviación estándar (No = 1.04, Si = 1.04. Coeficiente de variación (No =  25.33%, Si = 25.44%).
 
 En la gráfica 7 se puede observar que las medias muestran niveles de consumo promedio similares, sin embargo, el promedio de gastos de aquellos que no presentan recursos financieros al ingreso laborales es ligeramente mayor a los que sí lo presentan.
 
-![gráfica de boxplot de alns vs  IA)(./assets/boxplot_alns_vs_IA.png)
+![gráfica de boxplot de alns vs IA](./assets/boxplot_alns_vs_IA.png)
 
 Gráfica 8. Se observa que las medidas de tendencia central de alns, con respecto a las familias que presentan Inseguridad se acercan. Media ( No = 4.33, Si =  4.03), Desviación estándar (No = 1.07, Si = 1.07). Coeficiente de variación (No = 24.81%, Si = 26.64%).
 
 Las medias muestran niveles de consumo promedio similares, con una  gasto promedio mayor de alns por las familias que no presentaron IA.
 
 En las Gráficas 3 y 6 permiten comparar los gastos promedio en alimentos saludables y no saludables en los distintos niveles socioeconómicos. Se observa que a mayor nivel socioeconómico el promedio de gasto es mayor.
+
 En cuanto al gasto promedio de alimentos saludables y no saludables de acuerdo a si existe recursos financieros distintos al ingreso laboral, son muy similares por lo que no parece se un indicador de comparación. En la gráfica 4 y 6 se observan una tendencia de promedios iguales, para ambos tipos de alimentos (saludables y no saludables).
+
 Con respecto a al gasto promedio de alimentos saludables y no saludables de acuerdo a si presenta o no seguridad alimentaria, el análisis mostró que quienes gastan más en alimentos saludables son lo que pertenecen al grupo de que no presentan seguridad alimentaria (ver Gráfica 5). pero también son los que más gastan en alimentos no saludables (Gráfica 8).
 
 Para continuar el análisis de als y alns se realizaron histogramas que permitan conocer la frecuencia de los gastos que reportaron las familias, tanto de alimentos saludables y no saludables.
 
-![Histograma de als)(./assets/histograma_als.png)
+![Histograma de als](./assets/histograma_als.png)
 
 Gráfico 9. Histograma de frecuencia de gasto de alimentos saludables (als). Las medidas de forma indican que tienen un sesgo a la izquierda (skewness = -1.19) y una forma leptocúrtica (curtosis = 6.6).
 
-![Histograma de als)(./assets/histograma_alns.png)
+![Histograma de alns](./assets/histograma_alns.png)
 
 Gráfico 10. Histograma de frecuencia de gasto de alimentos no saludables (alns). Las medidas de forma indican que es simétrica (skewness = 0.24 ) y una forma platocúrtica (curtosis = 2.57).
 
@@ -91,7 +96,7 @@ Además de las medidas de tendencia central y dispersión se consideró importan
 
 Otra variable que es importante analizar para conocer la frecuencia relativa es la Inseguridad alimentaria en el hogar (IA). En la Gráfica 11 se muestra la frecuencia de si se presenta o no inseguridad alimentaria de acuerdo con los datos proporcionados por la base de datos.
 
-![Grafica de ia)(./assets/grafica_ia.png)
+![Grafica de ia](./assets/grafica_ia.png)
 ia
 
 Gráfica 11, se muestra que el 74% de las familias que participaron en la muestra presentan inseguridad alimentaria en el hogar. Por lo tanto, el 26% restante no presentó inseguridad alimentaria.
