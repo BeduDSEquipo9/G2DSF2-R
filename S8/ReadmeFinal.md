@@ -104,3 +104,149 @@ En la Gráfica X, se muestra que el 74% de las familias que participaron en la m
 En esta segunda sección, primero se realizó un análisis visual de los datos, para después realizar un análisis descriptivo de los datos. Los resultados obtenidos en los coeficientes de variación indican que el promedio no es confiable para dar respuesta a las cuestiones planteadas en la sección uno, incluso la mediana y las medidas de posición no son concluyentes debido a la cantidad de datos atípicos que muestra la base de datos utilizada. Por lo tanto realizaremos en la siguiente sección un análisis probabilístico que nos permite explicar el problema.
 
 #### 3. Cálculo de probabilidades para entender el problema en México
+
+#### 5. Estima un modelo de regresión, lineal o logístico, para identificar los determinantes de la inseguridad alimentaria en México
+
+Como se busca entender qué factores influyen en la inseguridad alimentaria se define IA como la variable objetivo o dependiente. Debido a que ésta es de tipo dicotómico, se sugiere utilizar una regresión logística como modelo, pues la regresión lineal es apropiada para variables numéricas continuas. Para una mejor interpretación, en la modelación se transformarán los logaritmos de gasto en alimentos saludables y no saludables, aplicando la exponencial, su función inversa, para que queden los gastos en unidades regulares.
+
+Como primera aproximación, se compararon dos modelos: uno que explica la inseguridad alimentaria en términos de todas las variables disponibles como predictores y otro que, además, utilice todos los posibles términos de interacción con las variables categóricas  refin, nse5f, sexojef y area.
+
+Modelo 1: IA ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + als + alns
+
+Modelo 2: y ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + als + alns + numpeho:refin + añosedu:refin + edadjef:refin + als:refin + alns:refin + nse5f:refin + area:refin + sexojef:refin + numpeho:area + añosedu:area + edadjef:area + als:area + alns:area + nse5f:area + sexojef:area + numpeho:sexojef + añosedu:sexojef + edadjef:sexojef + als:sexojef + alns:sexojef + nse5f:sexojef + numpeho:nse5f + añosedu:nse5f + edadjef:nse5f + als:nse5f + alns:nse5f
+
+Los resultados fueron:
+
+Modelo
+AIC
+Pseudo R2
+Modelo 1
+22168
+0.09125799
+Modelo 2
+22116
+0.09555227
+
+Como el AIC es menor y la bondad de ajuste es más grande, se tiene que el modelo 2 es mejor que el 1; considerando además que hay términos de interacciones cuyos coeficientes son significativamente distintos de cero, se puede concluir que las interacciones sí aportan a la explicación de la variable objetivo.
+
+No obstante, existen términos con un valor p mayor a 0.05, lo que indica que no hay evidencia estadística para rechazar que el valor de sus coeficientes es igual a cero, es decir, no son significativos, por lo que deben ser eliminados del modelo. Así pues, se sugiere un tercer modelo con las siguientes variables explicativas:
+
+Modelo 3: IA ~ numpeho + refin + edadjef + sexojef + añosedu + als + alns + numpeho:area + añosedu:sexojef + edadjef:sexojef + añosedu:nse5f + edadjef:nse5f
+
+Éste arroja un AIC de 22087 y una bondad de ajuste de 0.09483598, que si bien es menor que la del modelo 2, no se considera una diferencia tan significativa como sí lo es la del AIC a favor de este modelo, por lo que hasta ahora se proclama como el mejor. Cabe señalar que se probó este mismo modelo pero con la transformación logarítmica para als y alns, pero al arrojar un AIC de 22092 y una bondad de ajuste de 0.09463171, resulta peor.
+
+Ahora bien, pese a que el modelo 3 resultó ser el de mejores métricas, tiene un problema grave de multicolinealidad que se descubrió aplicando la prueba de inflación de varianza (VIF). Como es importante tener un modelo que cumpla con los supuestos de la regresión logística, se eliminó el término sexojef, que tenía VIF de 27.01, el mayor de todos. Hay que recordar que VIF’s mayores a 10 son indicadores de multicolinealidad.  Así, se tiene.
+
+Modelo 4:  IA ~ numpeho + refin + edadjef + añosedu + als + alns + numpeho:area + añosedu:sexojef + edadjef:sexojef + añosedu:nse5f + edadjef:nse5f
+
+A continuación se validaron los supuestos para el modelo 4:
+Multicolinealidad: No se obtuvo ningún VIF mayor que 10 para ninguno de los predictores, de modo que no hay evidencias de multicolinealidad y el supuesto se cumple.
+Independencia:
+
+<!-- ![gráfica de densidad de probabilidad plot alns](./assets/residuales.png) -->
+
+<img src="https://github.com/BeduDSEquipo9/G2DSF2-R/blob/S8Dev/S8/assets/residuales.png" height="500" alt="Tabla 1. Descripción de los datos proporcionados."/>
+En el gráfico de residuales se observan más residuos negativos que positivos, sin embargo, no se ve ningún patrón definido que pudiera indicar un grado de dependencia entre las observaciones, por lo que el supuesto se cumple.
+Linealidad: Para contrastar este supuesto se necesita ejecutar la regresión logística pero incluyendo como predictores adicionales el producto entre cada predictor y el logaritmo de sí mismo. Luego de crear dichos términos y correr el modelo correspondiente, se tiene que no existe evidencia estadística para rechazar la hipótesis de que los productos son igual a cero, de modo que el supuesto de linealidad se cumple.
+
+Así pues, ¡el modelo 4 cumple con todos los supuestos de la regresión logística!
+
+Comparando ambos modelos, se tiene lo siguiente:
+
+Modelo
+AIC
+Pseudo R2
+Modelo 3
+ 22087
+0.09483598
+Modelo 4
+22089
+0.09467564
+
+Nótese que incluso cuando ambas métricas del modelo 4 son ligeramente peores, es más importante que el modelo cumpla los supuestos debidos porque, de lo contrario, no podría concluirse nada con él. Entonces, se concluye que el modelo que cumple los supuestos de regresión logística y explica mejor el fenómeno de la inseguridad alimentaria en el hogar es el modelo 4 y que los factores que influyen en él son: el número de personas en el hogar, si se tiene o no recursos financieros distintos al ingreso laboral, los años de educación del jefe de familia, el gasto en alimentos saludables y el gasto en alimentos no saludables; también importan algunas interacciones como la edad y el sexo del jefe de familia y los años de educación con el nivel socioeconómico.
+
+Una vez que se conocen las variables explicativas, tiene mérito establecer si influyen de manera positiva o negativa sobre la variable objetivo. Para ello, se analizan los coeficientes, pero deben ser elevados a la exponencial pues la regresión logística arroja coeficientes que tienen aplicados logaritmos:
+
+Variable
+Coeficiente
+Variable
+Coeficiente
+Intercepto
+2.4644254
+alns
+0.9994064
+numpeho
+1.2080799
+numpeho:area
+0.9662002
+refin
+1.4956810
+añosedu:sexojef
+1.0320940
+edadjef
+1.0226579
+edadjef:sexojef
+0.9957723
+añosedu
+0.9695440
+añosedu:nse5f
+0.9917262
+als
+0.9997761
+edadjef:nse5f
+0.9938537
+
+Si el valor es mayor que 1, entonces indica que a medida que aumenta el predictor, las probabilidades de los resultados aumentan. A la inversa, un valor menor que 1 indica que a medida que aumenta el predictor, las probabilidades de los resultados disminuyen. Para efectos de esta investigación, se puede decir, por ejemplo, que las probabilidades de que un hogar sufra inseguridad alimentaria aumentarán 1.49 veces si está en una zona rural y no en una urbana. También se identifica que las variables con relación directa con la inseguridad alimentaria son numpeho, refin, edadjef y la interacción añosedu:sexojef, mientras que el resto tiene una relación inversa.
+
+Finalmente, se calculan los intervalos de confianza para los coeficientes de los predictores:
+
+Variable
+2.5%
+97.5%
+Variable
+2.5%
+97.5%
+Intercepto
+1.9933520
+3.0480279
+alns
+0.9991845
+0.9996264
+numpeho
+1.1820358
+1.2349334
+numpeho:area
+0.9481619
+0.9846686
+refin
+1.3706795
+1.6334161
+añosedu:sexojef
+1.0199859
+1.0443211
+edadjef
+1.0184790
+1.0268991
+edadjef:sexojef
+0.9929893
+0.9985863
+añosedu
+0.9526730
+0.9865828
+añosedu:nse5f
+0.9879187
+0.9955657
+als
+0.9996744
+0.9998777
+edadjef:nse5f
+0.9929008
+0.9947976
+
+Como ninguno de los intervalos de confianza cruza el 1, se puede afirmar con un 97.5% de confianza que la dirección de las relaciones observadas para cada variable es cierta en la población.
+
+De este modo, se recomendó un modelo que explica el fenómeno de la inseguridad alimentaria en los hogares, identificando los factores que influyen más y en qué proporción, así como su relación con la variable estudiada.
+
+## Recursos
+
+Consultado en: ![Inseguridad Alimentaria casi un cuarto de la población mexicana] (<https://unamglobal.unam.mx/inseguridad-alimentaria-casi-un-cuarto-de-la-poblacion-mexicana/> ). Fecha de consulta: 12/12/2022.
