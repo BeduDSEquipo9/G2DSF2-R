@@ -107,40 +107,76 @@ En esta segunda sección, primero se realizó un análisis visual de los datos, 
 
 Cálculo de probabilidad de que una familia presente o no inseguridad alimentaria
 
-A partir de la Gráfica 11 que presenta la frecuencia relativa de que una familia pertenezca  o no al grupo de inseguridad alimentaria, se presenta un modelo probabilístico basado en el ensayo de Bernoulli y la distribución normal.
+A partir de la Gráfica 11 que presenta la frecuencia relativa de que una familia pertenezca  o no al grupo de inseguridad alimentaria, se presenta un modelo probabilístico basado en el ensayo de Bernoulli y la distribución binomial.
+
 Si se considera que una familia tiene una probabilidad de 0.74 (ver Gráfica 11) de presentar Inseguridad Alimentaria en el hogar en México. Si partimos del supuesto de que en el centro de salud nutricional se realizan 10 estudios a familias para determinar si presentan Inseguridad Alimentaria  (IA), ¿Cuál es la probabilidad de que menos de 4 familias presenten IA?
 
 Para dar respuesta a esta pregunta, primero se realiza un distribución binomial de acuerdo a los datos de IA. Por lo que la Gráfica 12 presenta el resultado de dicha distribución.
-![gráfica de distribucion ia)(./assets/distribucion_is.png)
 
-![gráfica de densidad de alns)(./assets/densidad_alns.png)
-alns
+![gráfica de distribucion ia](./assets/distribucion_ia.png)
 
-Gráfica 9
-![gráfica de densidad de probabilidad alns)(./assets/densidad_prob_alns.png)
+Gráfica 12. Distribución Binomial resultante. La media = 0.74091 y la desviación estándar = 0.43815. La media teórica esperad es 0.74 y la desviación estándar es = $\sqrt{0.74 * (1-0.74)} =  0.43863$.
 
-Gráfica 10
-DESC
+Por lo que con la función de distribución acumulada binomial podemos responder a la pregunta, se tien una probabilidad de  0.00446 que menos de 4 familias de las 10 atendidas en el centro de salud nutricional presenten IA.
 
-"Calcula P(X <= 312): (salario mínimo 2023 frontera, 207 resto país) "
-Probabilidad =  0.9192906
+Además, podemos calcular otros probabilidades, por ejemplo:
 
-![gráfica de densidad de probabilidad plot alns)(./assets/densidad_prob_plot_alns_p1.png)
+La probabilidad de que más de 8 de 10 familias presenten Inseguridad Alimentaria en el hogar es de 0.22224.
+La probabilidad de que 7 familias presenten Inseguridad Alimentaria en el hogar es de  0.25628.
 
-Gráfica 11
-"Calcula P(X <= 312): (salario mínimo 2023)"
-probabilidad: 0.9192906
-"Calcula P(0 <= X <= 312):"
-probabilidad: 0.689698
-![gráfica de densidad de probabilidad plot alns)(./assets/densidad_prob_plot_alns_p2.png)
+Cálculo de probabilidad de los gastos en alimentos no saludables de una familia de acuerdo a su nivel socioeconómico.
 
-Gráfica 12
-"Calcula P(X >= 312):"
-probabilidad:  0.08070942
+A partir de los gastos de alimentos no saludables (Gráfica 10) se realizan un análisis probabilístico basado una distribución normal.
 
-![gráfica de densidad de probabilidad plot alns)(./assets/densidad_prob_plot_alns_p3.png)
+Si se considera que los gastos promedio de familia en alimentos no saludables de la Tabla 2, los datos se ajustan a una distribución normal.
 
-Gráfica 13
+Tabla 2. Promedio y varianza de gasto de alimentos no saludables
+
+|Nivel socioeconómico|Media|Mediana|Moda|Varianza|
+|--------------------|-----|-------|----|--------|
+|Bajo|3.68|3.58|2.99|0.94|
+|Medio bajo|3.9|3.91|3.40|0.94|
+|Medio|4.05|3.91|3.40|0.98|
+|Medio alto|4.23|4.17|3.91|1.02|
+|Alto|4.61|4.6|4.60|1.05|
+
+Por lo que si en México el salario mínimo para 2023 será de $207.00 pesos, se plantean las siguientes preguntas:
+
+¿Cuál es la probabilidad de que el gasto en alimentos no saludables sea menor o igual a medio salario mínimo en cada nivel socioeconómico?
+
+Para dar respuesta a esta pregunta, primero se utiliza la distribución normal para dar respuesta a la probabilidad del intervalo de valor P(X <= 103.5 ), dado que los datos estan en logaritmo natural se realiza la conversión a  P(X <= 4.63).  Las Gráficas 13, 14, 15, 16 y 17, muestran las probabilidades para los niveles socioeconómicos; bajo, medio bajo, medio, medio alto y alto, respectivamente.
+
+![gráfica de densidad de alns)](./assets/prob_alns_bajo.png)
+
+Gráfica 13. Probabilidad de que una familia de nivel bajo gaste 4.63 unidades equivalentes a $103.5 es  P(X <= 4.63) = 0.84105.
+
+![gráfica de densidad de alns](./assets/prob_alns_medio_bajo.png)
+
+Gráfica 14. Probabilidad de que una familia de nivel medio bajo gaste 4.63 unidades equivalentes a $103.5 es  P(X <= 4.63) = 0.77619.
+
+![gráfica de densidad de alns](./assets/prob_alns_medio.png)
+
+Gráfica 15. Probabilidad de que una familia de nivel medio gaste 4.63 unidades equivalentes a $103.5 es  P(X <= 4.63) = 0.72141.
+
+![gráfica de densidad de alns](./assets/prob_alns_medio_alto.png)
+
+Gráfica 16. Probabilidad de que una familia de nivel medio alto gaste 4.63 unidades equivalentes a $103.5 es  P(X <= 4.63) = 0.65151.
+
+![gráfica de densidad de alns](./assets/prob_alns_alto.png)
+
+Gráfica 17. Probabilidad de que una familia de nivel medio alto gaste 4.63 unidades equivalentes a $103.50 es  P(X <= 4.63) = 0.50718.
+
+Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos.
+
+|Nivel socioeconómico|Probabilidad|
+|--------------------|------------|
+|Bajo|0.84105|
+|Medio bajo|0.77619|
+|Medio|0.72141|
+|Medio alto|0.65151|
+|Alto|0.50718|
+
+En la Tabla 3 se muestran que el nivel socioeconómico con mayor probabilidad de gastar $103.50 es el nivel bajo (0.84105), y conforme se aumenta el nivel socioeconómico la probabilidad reduce, hasta llegar a la probabilidad mas baja por el nivel socioeconómico alto (0.50718).
 
 #### 4.Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
 
@@ -158,15 +194,10 @@ Modelo 2: IA ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + a
 
 Los resultados fueron:
 
-Modelo
-AIC
-Pseudo R2
-Modelo 1
-22168
-0.09125799
-Modelo 2
-22116
-0.09555227
+|Modelo|AIC|Pseudo R2|
+|------|---|---------|
+|Modelo 1|22168|0.09125799|
+|Modelo 2|22116|0.09555227|
 
 Como el AIC es menor y la bondad de ajuste es más grande, se tiene que el modelo 2 es mejor que el 1; considerando además que hay términos de interacciones cuyos coeficientes son significativamente distintos de cero, se puede concluir que las interacciones sí aportan a la explicación de la variable objetivo.
 
@@ -184,7 +215,7 @@ A continuación se validaron los supuestos para el modelo 4:
 Multicolinealidad: No se obtuvo ningún VIF mayor que 10 para ninguno de los predictores, de modo que no hay evidencias de multicolinealidad y el supuesto se cumple.
 Independencia:
 
-![gráfica de densidad de probabilidad plot alns)(./assets/densidad_prob_plot_alns_p3.png)
+![Residuales del modelo ajustado](./assets/residuales.png)
 
 En el gráfico de residuales se observan más residuos negativos que positivos, sin embargo, no se ve ningún patrón definido que pudiera indicar un grado de dependencia entre las observaciones, por lo que el supuesto se cumple.
 Linealidad: Para contrastar este supuesto se necesita ejecutar la regresión logística pero incluyendo como predictores adicionales el producto entre cada predictor y el logaritmo de sí mismo. Luego de crear dichos términos y correr el modelo correspondiente, se tiene que no existe evidencia estadística para rechazar la hipótesis de que los productos son igual a cero, de modo que el supuesto de linealidad se cumple.
@@ -193,95 +224,36 @@ Así pues, ¡el modelo 4 cumple con todos los supuestos de la regresión logíst
 
 Comparando ambos modelos, se tiene lo siguiente:
 
-Modelo
-AIC
-Pseudo R2
-Modelo 3
- 22087
-0.09483598
-Modelo 4
-22089
-0.09467564
+|Modelo|AIC|Pseudo R2|
+|------|---|---------|
+|Modelo 3| 22087|0.09483598|
+|Modelo 4|22089|0.09467564|
 
 Nótese que incluso cuando ambas métricas del modelo 4 son ligeramente peores, es más importante que el modelo cumpla los supuestos debidos porque, de lo contrario, no podría concluirse nada con él. Entonces, se concluye que el modelo que cumple los supuestos de regresión logística y explica mejor el fenómeno de la inseguridad alimentaria en el hogar es el modelo 4 y que los factores que influyen en él son: el número de personas en el hogar, si se tiene o no recursos financieros distintos al ingreso laboral, los años de educación del jefe de familia, el gasto en alimentos saludables y el gasto en alimentos no saludables; también importan algunas interacciones como la edad y el sexo del jefe de familia y los años de educación con el nivel socioeconómico.
 
 Una vez que se conocen las variables explicativas, tiene mérito establecer si influyen de manera positiva o negativa sobre la variable objetivo. Para ello, se analizan los coeficientes, pero deben ser elevados a la exponencial pues la regresión logística arroja coeficientes que tienen aplicados logaritmos:
 
-Variable
-Coeficiente
-Variable
-Coeficiente
-Intercepto
-2.4644254
-alns
-0.9994064
-numpeho
-1.2080799
-numpeho:area
-0.9662002
-refin
-1.4956810
-añosedu:sexojef
-1.0320940
-edadjef
-1.0226579
-edadjef:sexojef
-0.9957723
-añosedu
-0.9695440
-añosedu:nse5f
-0.9917262
-als
-0.9997761
-edadjef:nse5f
-0.9938537
+|Variable|Coeficiente|Variable|Coeficiente|
+|---|---|----|----|----|
+|Intercepto|2.4644254|alns|0.9994064|
+|numpeho|1.2080799|numpeho:area|0.9662002|
+|refin|1.4956810|añosedu:sexojef|1.0320940|
+|edadjef|1.0226579|edadjef:sexojef|0.9957723|
+|añosedu|0.9695440|añosedu:nse5f|0.9917262|
+|als|0.9997761|edadjef:nse5f|0.9938537|
 
 Si el valor es mayor que 1, entonces indica que a medida que aumenta el predictor, las probabilidades de los resultados aumentan. A la inversa, un valor menor que 1 indica que a medida que aumenta el predictor, las probabilidades de los resultados disminuyen. Para efectos de esta investigación, se puede decir, por ejemplo, que las probabilidades de que un hogar sufra inseguridad alimentaria aumentarán 1.49 veces si está en una zona rural y no en una urbana. También se identifica que las variables con relación directa con la inseguridad alimentaria son numpeho, refin, edadjef y la interacción añosedu:sexojef, mientras que el resto tiene una relación inversa.
 
 Finalmente, se calculan los intervalos de confianza para los coeficientes de los predictores:
 
-Variable
-2.5%
-97.5%
-Variable
-2.5%
-97.5%
-Intercepto
-1.9933520
-3.0480279
-alns
-0.9991845
-0.9996264
-numpeho
-1.1820358
-1.2349334
-numpeho:area
-0.9481619
-0.9846686
-refin
-1.3706795
-1.6334161
-añosedu:sexojef
-1.0199859
-1.0443211
-edadjef
-1.0184790
-1.0268991
-edadjef:sexojef
-0.9929893
-0.9985863
-añosedu
-0.9526730
-0.9865828
-añosedu:nse5f
-0.9879187
-0.9955657
-als
-0.9996744
-0.9998777
-edadjef:nse5f
-0.9929008
-0.9947976
+|Variable|2.5%|97.5%|Variable|2.5%|97.5%|
+|--------|----|-----|--------|----|-----|
+|Intercepto|1.9933520|3.0480279|alns|0.9991845|0.9996264|
+|numpeho|1.1820358|1.2349334|numpeho:area|0.9481619|0.9846686|
+|refin|1.3706795|1.6334161|añosedu:sexojef|1.0199859|1.0443211|
+|edadjef|1.0184790|1.0268991|edadjef:sexojef|0.9929893|0.9985863|
+|añosedu|0.9526730|0.9865828|añosedu:nse5f|0.9879187|0.9955657|
+|als|0.9996744|0.9998777|edadjef:nse5f|0.9929008|0.9947976|
 
 Como ninguno de los intervalos de confianza cruza el 1, se puede afirmar con un 97.5% de confianza que la dirección de las relaciones observadas para cada variable es cierta en la población.
 
