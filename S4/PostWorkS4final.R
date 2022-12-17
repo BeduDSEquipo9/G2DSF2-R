@@ -95,14 +95,24 @@ b
 # [1] 2.726777
 
 # ¿Cuáles son los valores del total de cargos internacionales que dejan exactamente al centro el 80% de probabilidad?
-qnorm(p=0.10, mean=df.mean, sd=df.sd)
 
-qnorm(p=0.80, mean=df.mean, sd=df.sd)
+"Buscamos el 80% de area bajo la curva, en rango que va de un valor limiteinferior  definido por liminf
+a un valor limite superior definido por limsup. Tenemos entonces que el 20% restante deberá quedar fuera del rango que buscamos.
+Dividimos entre 2, queda .20/2 =.10. Es decir 10% se aloja fuera del rango, antes del limite inferior y otro 10% después del limite superior del rango.
+Entonces queremos el area bajo la curva para el 90% y el area bajo la curva del 10%
+Calculamos qnorm para p=10% p=.10 y p=90% p=.90"
 
+"Para p=.1"
 liminf<-qnorm(p=0.10, mean=df.mean, sd=df.sd)
 liminf;
+
+"Para p=.9" 
 limsup<-qnorm(p=0.90, mean=df.mean, sd=df.sd)
 limsup;
+
+El rango va de (limite inferior, limite superior)
+liminf;limsup
+
 
 "Probando la secuencia de resultados"
 ?seq
