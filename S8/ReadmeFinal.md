@@ -121,7 +121,7 @@ En esta segunda sección, primero se realizó un análisis visual de los datos, 
 
 #### 3. Cálculo de probabilidades para entender el problema en México
 
-Cálculo de probabilidad de que una familia presente o no inseguridad alimentaria
+__Cálculo de probabilidad de que una familia presente o no inseguridad alimentaria__
 
 A partir de la Gráfica 11 que presenta la frecuencia relativa de que una familia pertenezca  o no al grupo de inseguridad alimentaria, se presenta un modelo probabilístico basado en el ensayo de Bernoulli y la distribución binomial.
 
@@ -207,9 +207,9 @@ Como se busca entender qué factores influyen en la inseguridad alimentaria se d
 
 Como primera aproximación, se compararon dos modelos: uno que explica la inseguridad alimentaria en términos de todas las variables disponibles como predictores y otro que, además, utilice todos los posibles términos de interacción con las variables categóricas  refin, nse5f, sexojef y area.
 
-Modelo 1: IA ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + als + alns
+__Modelo 1__: IA ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + als + alns
 
-Modelo 2: IA ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + als + alns + numpeho:refin + añosedu:refin + edadjef:refin + als:refin + alns:refin + nse5f:refin + area:refin + sexojef:refin + numpeho:area + añosedu:area + edadjef:area + als:area + alns:area + nse5f:area + sexojef:area + numpeho:sexojef + añosedu:sexojef + edadjef:sexojef + als:sexojef + alns:sexojef + nse5f:sexojef + numpeho:nse5f + añosedu:nse5f + edadjef:nse5f + als:nse5f + alns:nse5f
+__Modelo 2__: IA ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + als + alns + numpeho:refin + añosedu:refin + edadjef:refin + als:refin + alns:refin + nse5f:refin + area:refin + sexojef:refin + numpeho:area + añosedu:area + edadjef:area + als:area + alns:area + nse5f:area + sexojef:area + numpeho:sexojef + añosedu:sexojef + edadjef:sexojef + als:sexojef + alns:sexojef + nse5f:sexojef + numpeho:nse5f + añosedu:nse5f + edadjef:nse5f + als:nse5f + alns:nse5f
 
 Los resultados fueron:
 
@@ -222,13 +222,13 @@ Como el AIC es menor y la bondad de ajuste es más grande, se tiene que el model
 
 No obstante, existen términos con un valor p mayor a 0.05, lo que indica que no hay evidencia estadística para rechazar que el valor de sus coeficientes es igual a cero, es decir, no son significativos, por lo que deben ser eliminados del modelo. Así pues, se sugiere un tercer modelo con las siguientes variables explicativas:
 
-Modelo 3: IA ~ numpeho + refin + edadjef + sexojef + añosedu + als + alns + numpeho:area + añosedu:sexojef + edadjef:sexojef + añosedu:nse5f + edadjef:nse5f
+__Modelo 3__: IA ~ numpeho + refin + edadjef + sexojef + añosedu + als + alns + numpeho:area + añosedu:sexojef + edadjef:sexojef + añosedu:nse5f + edadjef:nse5f
 
 Éste arroja un AIC de 22087 y una bondad de ajuste de 0.09483598, que si bien es menor que la del modelo 2, no se considera una diferencia tan significativa como sí lo es la del AIC a favor de este modelo, por lo que hasta ahora se proclama como el mejor. Cabe señalar que se probó este mismo modelo pero con la transformación logarítmica para als y alns, pero al arrojar un AIC de 22092 y una bondad de ajuste de 0.09463171, resulta peor.
 
 Ahora bien, pese a que el modelo 3 resultó ser el de mejores métricas, tiene un problema grave de multicolinealidad que se descubrió aplicando la prueba de inflación de varianza (VIF). Como es importante tener un modelo que cumpla con los supuestos de la regresión logística, se eliminó el término sexojef, que tenía VIF de 27.01, el mayor de todos. Hay que recordar que VIF’s mayores a 10 son indicadores de multicolinealidad.  Así, se tiene.
 
-Modelo 4:  IA ~ numpeho + refin + edadjef + añosedu + als + alns + numpeho:area + añosedu:sexojef + edadjef:sexojef + añosedu:nse5f + edadjef:nse5f
+__Modelo 4__:  IA ~ numpeho + refin + edadjef + añosedu + als + alns + numpeho:area + añosedu:sexojef + edadjef:sexojef + añosedu:nse5f + edadjef:nse5f
 
 A continuación se validaron los supuestos para el modelo 4:
 Multicolinealidad: No se obtuvo ningún VIF mayor que 10 para ninguno de los predictores, de modo que no hay evidencias de multicolinealidad y el supuesto se cumple.
@@ -242,7 +242,7 @@ Independencia:
 En el gráfico de residuales se observan más residuos negativos que positivos, sin embargo, no se ve ningún patrón definido que pudiera indicar un grado de dependencia entre las observaciones, por lo que el supuesto se cumple.
 Linealidad: Para contrastar este supuesto se necesita ejecutar la regresión logística pero incluyendo como predictores adicionales el producto entre cada predictor y el logaritmo de sí mismo. Luego de crear dichos términos y correr el modelo correspondiente, se tiene que no existe evidencia estadística para rechazar la hipótesis de que los productos son igual a cero, de modo que el supuesto de linealidad se cumple.
 
-Así pues, ¡el modelo 4 cumple con todos los supuestos de la regresión logística!
+Así pues, __¡el modelo 4 cumple con todos los supuestos de la regresión logística!__
 
 Comparando ambos modelos, se tiene lo siguiente:
 
