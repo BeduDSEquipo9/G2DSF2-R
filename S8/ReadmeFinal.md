@@ -18,21 +18,18 @@ En el presente trabajo, se analizará la información disponible a fin de conclu
 
 La base de datos proporcionada contiene un total de 40,809 observaciones con 10 variables. En la Tabla 1 se describen las variables.
 
-<!-- ![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png) -->
-
-<img src="https://github.com/BeduDSEquipo9/G2DSF2-R/blob/S8Dev/S8/assets/Tabla_de_Variables.png" height="500" alt="Tabla 1. Descripción de los datos proporcionados."/>
+Tabla 1. Descripción de los datos proporcionados.
+![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png)
 
 Después de revisar los datos  originales en R, se realizó la limpieza de los datos y el cambio de algunos tipos de datos para facilitar la manipulación del análisis. En particular, se realizó el cambio de las variables: logaritmo natural de gastos en alimentos saludables y logaritmo natural de gastos en alimentos no saludables aplicando el antilogaritmo para una mejor interpretación de las cifras. Por último, se eliminaron 20,529 registros que presentaron datos incompletos en alguna variable.  
 Dado que en los requisitos del problema se solicita analizar los patrones de los gastos en alimentos saludables (aln) y gastos en alimentos no saludables (alns)  en los hogares mexicanos en relación a la variables: nivel socioeconómico (nse), si el hogar tienen recursos financieros extras al ingreso (refin) y si presenta o no inseguridad alimentaria (IA). Se presentan las siguientes gráficas para realizar un análisis exploratorio de los datos previo al cálculo de las medidas descriptivas de las variables mencionadas anteriormente.
 
 En la siguiente sección nos enfocamos en primer lugar, en las variables: als, alns.
-<!-- ![gráfica de boxplot de als](./assets/boxplot_als.png) -->
-<img src="https://github.com/BeduDSEquipo9/G2DSF2-R/blob/S8Dev/S8//assets/boxplot_als.png" height="500" alt="Tabla 1. Descripción de los datos proporcionados."/>
+![gráfica de boxplot de als](./assets/boxplota_ls.png)
 
 Gráfica 1. Los gasto en alimentos saludables (ln_als)  muestran un mínimo: 1.09, primer cuartil: 5.84, media: 6.19 , mediana: 6.27, tercer cuartil: 6.63 y máximo: 8.6
 
-<!-- ![gráfica de boxplot de alns](./assets/boxplot_alns.png) -->
-<img src="https://github.com/BeduDSEquipo9/G2DSF2-R/blob/S8Dev/S8/assets/boxplot_alns.png" height="500" alt="Tabla 1. Descripción de los datos proporcionados."/>
+![gráfica de boxplot de alns](./assets/boxplot_alns.png)
 
 Gráfica 2. Los gastos en alimentos saludables (alns) muestran un mínimo: 0.0, primer cuartil: 3.4, media: 4.11 , mediana: 4.0, tercer cuartil: 4.86 y máximo: 8.29
 
@@ -64,7 +61,7 @@ Gráfica 6. El gráfico muestra  las medidas de tendencia central de alns según
 
 Se observa que los promedios de consumo de als se incrementan conforme aumenta el nivel socioeconómico, sin embargo, ???.
 
-![gráfica de boxplot de alns vs  refin](./assets/boxplot_alns_vs_refin.png)
+![gráfica de boxplot de alns vs  refin)(./assets/boxplot_alns_vs_refin.png)
 
 Gráfica 7. Muestra las medidas de tendencia central de alns, con respecto a las familia que indicaron recursos financieros distintos al ingreso laboral. Media ( No = 4.12, Si =  4.10), Desviación estándar (No = 1.04, Si = 1.04. Coeficiente de variación (No =  25.33%, Si = 25.44%).
 
@@ -76,34 +73,73 @@ Gráfica 8. Se observa que las medidas de tendencia central de alns, con respect
 
 Las medias muestran niveles de consumo promedio similares, con una  gasto promedio mayor de alns por las familias que no presentaron IA.
 
-En las Graficas 3 y 6 permiten comparar los gastos promedio en alimentos saludables y no saludables en los distintos niveles socioeconómicos. Se observa que a mayor nivel socioeconómico el promedio de gasto es mayor.
-En cuanto al gasto promedio de alimentos saludables y no saludables de acuerdo a si existe recursos financieros distintos al ingreso labora, son muy similares por lo que no parece se un indicador de comparación. En la gráfica 4 y 6 se observan una tendencia de promedios iguales, para ambos tipos de alimentos (saludables y no saludables).
-Con respecto a al gasto promedio de alimentos saludables y no saludables de acuerdo a si presenta o no seguridad alimentaria, el análisis mostro que quienes gastan más en alimentos saludables son lo que pertenecen al grupo de que no presentan seguridad alimentaria (ver Gráfica 5). pero también son los que más gastan en alimentos no saludables (Gráfica 8).
+En las Gráficas 3 y 6 permiten comparar los gastos promedio en alimentos saludables y no saludables en los distintos niveles socioeconómicos. Se observa que a mayor nivel socioeconómico el promedio de gasto es mayor.
+En cuanto al gasto promedio de alimentos saludables y no saludables de acuerdo a si existe recursos financieros distintos al ingreso laboral, son muy similares por lo que no parece se un indicador de comparación. En la gráfica 4 y 6 se observan una tendencia de promedios iguales, para ambos tipos de alimentos (saludables y no saludables).
+Con respecto a al gasto promedio de alimentos saludables y no saludables de acuerdo a si presenta o no seguridad alimentaria, el análisis mostró que quienes gastan más en alimentos saludables son lo que pertenecen al grupo de que no presentan seguridad alimentaria (ver Gráfica 5). pero también son los que más gastan en alimentos no saludables (Gráfica 8).
 
 Para continuar el análisis de als y alns se realizaron histogramas que permitan conocer la frecuencia de los gastos que reportaron las familias, tanto de alimentos saludables y no saludables.
 
-![Histograma de als](./assets/histograma_als.png)
-als
+![Histograma de als)(./assets/histograma_als.png)
 
-![Histograma de als](./assets/histograma_alns.png)
-alns
+Gráfico 9. Histograma de frecuencia de gasto de alimentos saludables (als). Las medidas de forma indican que tienen un sesgo a la izquierda (skewness = -1.19) y una forma leptocúrtica (curtosis = 6.6).
 
-![Histograma de als](./assets/histograma_als_alns.png)
-als - alns
+![Histograma de als)(./assets/histograma_alns.png)
+
+Gráfico 10. Histograma de frecuencia de gasto de alimentos no saludables (alns). Las medidas de forma indican que es simétrica (skewness = 0.24 ) y una forma platocúrtica (curtosis = 2.57).
 
 Además de las medidas de tendencia central y dispersión se consideró importante calcular las medidas de forma. En el caso de als se tiene un skewness de 1.69 y una kurtosis de, lo que confirma la existencia de un sesgo de los datos a la izquierda; y además, un forma leptocúrtica.  Para alns se obtuvo un skewnwss de 4.91 y una kurtosis de 57.41, es decir, presenta un sesgo a la derecha y una forma leptocúrtica.
 
-Otra variable que es importante analizar para conocer la frecuencia relativa es la Inseguridad alimentaria en el hogar (IA). En la Gráfica X. se muestra la frecuencia de si se presenta o no inseguridad alimentaria en los datos proporcionados de la base de datos
+Otra variable que es importante analizar para conocer la frecuencia relativa es la Inseguridad alimentaria en el hogar (IA). En la Gráfica 11 se muestra la frecuencia de si se presenta o no inseguridad alimentaria de acuerdo con los datos proporcionados por la base de datos.
 
-![Grafica de ia](./assets/grafica_ia.png)
+![Grafica de ia)(./assets/grafica_ia.png)
 ia
 
---Aquí se ocupa gráfica de frecuencia de IA---
-En la Gráfica X, se muestra que el 74% de las familias que participaron en la muestra presentan inseguridad alimentaria en el hogar. Por lo tanto, el 26% restante no presentó riesgo.
+Gráfica 11, se muestra que el 74% de las familias que participaron en la muestra presentan inseguridad alimentaria en el hogar. Por lo tanto, el 26% restante no presentó inseguridad alimentaria.
 
-En esta segunda sección, primero se realizó un análisis visual de los datos, para después realizar un análisis descriptivo de los datos. Los resultados obtenidos en los coeficientes de variación indican que el promedio no es confiable para dar respuesta a las cuestiones planteadas en la sección uno, incluso la mediana y las medidas de posición no son concluyentes debido a la cantidad de datos atípicos que muestra la base de datos utilizada. Por lo tanto realizaremos en la siguiente sección un análisis probabilístico que nos permite explicar el problema.
+En esta segunda sección, primero se realizó un análisis visual de los datos, para después realizar un análisis descriptivo de los datos. Los resultados obtenidos en los coeficientes de variación indican que el promedio es confiable para realizar comparaciones entre distintos grupos (caso de Gráficas ) .
 
 #### 3. Cálculo de probabilidades para entender el problema en México
+
+Cálculo de probabilidad de que una familia presente o no inseguridad alimentaria
+
+A partir de la Gráfica 11 que presenta la frecuencia relativa de que una familia pertenezca  o no al grupo de inseguridad alimentaria, se presenta un modelo probabilístico basado en el ensayo de Bernoulli y la distribución normal.
+Si se considera que una familia tiene una probabilidad de 0.74 (ver Gráfica 11) de presentar Inseguridad Alimentaria en el hogar en México. Si partimos del supuesto de que en el centro de salud nutricional se realizan 10 estudios a familias para determinar si presentan Inseguridad Alimentaria  (IA), ¿Cuál es la probabilidad de que menos de 4 familias presenten IA?
+
+Para dar respuesta a esta pregunta, primero se realiza un distribución binomial de acuerdo a los datos de IA. Por lo que la Gráfica 12 presenta el resultado de dicha distribución.
+![gráfica de distribucion ia)(./assets/distribucion_is.png)
+
+![gráfica de densidad de alns)(./assets/densidad_alns.png)
+alns
+
+Gráfica 9
+![gráfica de densidad de probabilidad alns)(./assets/densidad_prob_alns.png)
+
+Gráfica 10
+DESC
+
+"Calcula P(X <= 312): (salario mínimo 2023 frontera, 207 resto país) "
+Probabilidad =  0.9192906
+
+![gráfica de densidad de probabilidad plot alns)(./assets/densidad_prob_plot_alns_p1.png)
+
+Gráfica 11
+"Calcula P(X <= 312): (salario mínimo 2023)"
+probabilidad: 0.9192906
+"Calcula P(0 <= X <= 312):"
+probabilidad: 0.689698
+![gráfica de densidad de probabilidad plot alns)(./assets/densidad_prob_plot_alns_p2.png)
+
+Gráfica 12
+"Calcula P(X >= 312):"
+probabilidad:  0.08070942
+
+![gráfica de densidad de probabilidad plot alns)(./assets/densidad_prob_plot_alns_p3.png)
+
+Gráfica 13
+
+#### 4.Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
+
+sss
 
 #### 5. Estima un modelo de regresión, lineal o logístico, para identificar los determinantes de la inseguridad alimentaria en México
 
@@ -113,7 +149,7 @@ Como primera aproximación, se compararon dos modelos: uno que explica la insegu
 
 Modelo 1: IA ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + als + alns
 
-Modelo 2: y ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + als + alns + numpeho:refin + añosedu:refin + edadjef:refin + als:refin + alns:refin + nse5f:refin + area:refin + sexojef:refin + numpeho:area + añosedu:area + edadjef:area + als:area + alns:area + nse5f:area + sexojef:area + numpeho:sexojef + añosedu:sexojef + edadjef:sexojef + als:sexojef + alns:sexojef + nse5f:sexojef + numpeho:nse5f + añosedu:nse5f + edadjef:nse5f + als:nse5f + alns:nse5f
+Modelo 2: IA ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + als + alns + numpeho:refin + añosedu:refin + edadjef:refin + als:refin + alns:refin + nse5f:refin + area:refin + sexojef:refin + numpeho:area + añosedu:area + edadjef:area + als:area + alns:area + nse5f:area + sexojef:area + numpeho:sexojef + añosedu:sexojef + edadjef:sexojef + als:sexojef + alns:sexojef + nse5f:sexojef + numpeho:nse5f + añosedu:nse5f + edadjef:nse5f + als:nse5f + alns:nse5f
 
 Los resultados fueron:
 
@@ -143,9 +179,8 @@ A continuación se validaron los supuestos para el modelo 4:
 Multicolinealidad: No se obtuvo ningún VIF mayor que 10 para ninguno de los predictores, de modo que no hay evidencias de multicolinealidad y el supuesto se cumple.
 Independencia:
 
-<!-- ![gráfica de densidad de probabilidad plot alns](./assets/residuales.png) -->
+![gráfica de densidad de probabilidad plot alns)(./assets/densidad_prob_plot_alns_p3.png)
 
-<img src="https://github.com/BeduDSEquipo9/G2DSF2-R/blob/S8Dev/S8/assets/residuales.png" height="500" alt="Tabla 1. Descripción de los datos proporcionados."/>
 En el gráfico de residuales se observan más residuos negativos que positivos, sin embargo, no se ve ningún patrón definido que pudiera indicar un grado de dependencia entre las observaciones, por lo que el supuesto se cumple.
 Linealidad: Para contrastar este supuesto se necesita ejecutar la regresión logística pero incluyendo como predictores adicionales el producto entre cada predictor y el logaritmo de sí mismo. Luego de crear dichos términos y correr el modelo correspondiente, se tiene que no existe evidencia estadística para rechazar la hipótesis de que los productos son igual a cero, de modo que el supuesto de linealidad se cumple.
 
