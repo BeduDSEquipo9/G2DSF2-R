@@ -61,9 +61,8 @@ Para continuar con el análisis de estas dos variables se analizan  visualmente 
 Gráfica 3. En esta gráfica se muestran las medidas descriptivas de aln en cada nivel socioeconómico. Las medias son: (bajo = 5.8, medio bajo = 6.03, medio = 6.17, medio alto = 6.32 y alto = 6.53). Desviación estándar (bajo = 0.76, medio bajo = 0.66, medio = 0.60, medio alto = 0.59 y alto =  0.58). Coeficiente de variación (bajo =13.18%, medio bajo = 11.08%, medio = 9.84%, medio alto =  9.43% y alto =  8.93%).
 </div>
 
-Los promedio en la Gráfica 3 muestran que el promedio de __gasto de alimentos saludables__ (__als__) se incrementa de acuerdo al nivel socioeconómico.
+Los promedio en la Gráfica 3 muestran que el promedio de __gasto de alimentos saludables__ (*__als__*) se incrementa de acuerdo al nivel socioeconómico.
 
-<br/>
 <div style="text-align: center;">
 
 ![gráfica de boxplot de als vs refin](./assets/boxplot_als_vs_refin.png)
