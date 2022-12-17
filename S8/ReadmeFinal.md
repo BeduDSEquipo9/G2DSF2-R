@@ -22,7 +22,9 @@ La base de datos proporcionada contiene un total de 40,809 observaciones con 10 
 Tabla 1. Descripción de los datos proporcionados.
 <!-- ![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png) -->
 
-<center><img src="./assets/Tabla_de_Variables.png" height="400" alt="Tabla 1. Descripción de los datos proporcionados."/></center>
+<center>
+<img src="./assets/Tabla_de_Variables.png" height="400" alt="Tabla 1. Descripción de los datos proporcionados."/>
+</center>
 
 Después de revisar los datos  originales en R, se realizó la limpieza de los datos y el cambio de algunos tipos de datos para facilitar la manipulación del análisis. En particular, se realizó el cambio de las variables: __logaritmo natural de gastos en alimentos saludables__ y __logaritmo natural de gastos en alimentos no saludables__ aplicando el antilogaritmo para una mejor interpretación de las cifras. Por último, se eliminaron 20,529 registros que presentaron datos incompletos en alguna variable.
 
@@ -32,9 +34,11 @@ En la siguiente sección nos enfocamos en primer lugar, en las variables: als, a
 <div style="text-align: center;">
 
 ![gráfica de boxplot de als](./assets/boxplot_als.png)
+
 Gráfica 1. Los gasto en alimentos saludables (ln_als)  muestran un mínimo: 1.09, primer cuartil: 5.84, media: 6.19 , mediana: 6.27, tercer cuartil: 6.63 y máximo: 8.6
 
 ![gráfica de boxplot de alns](./assets/boxplot_alns.png)
+
 Gráfica 2. Los gastos en alimentos saludables (alns) muestran un mínimo: 0.0, primer cuartil: 3.4, media: 4.11 , mediana: 4.0, tercer cuartil: 4.86 y máximo: 8.29
 </div>
 
