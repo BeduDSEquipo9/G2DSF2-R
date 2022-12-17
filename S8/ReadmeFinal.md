@@ -234,7 +234,7 @@ Nótese que incluso cuando ambas métricas del modelo 4 son ligeramente peores, 
 Una vez que se conocen las variables explicativas, tiene mérito establecer si influyen de manera positiva o negativa sobre la variable objetivo. Para ello, se analizan los coeficientes, pero deben ser elevados a la exponencial pues la regresión logística arroja coeficientes que tienen aplicados logaritmos:
 
 |Variable|Coeficiente|Variable|Coeficiente|
-|---|---|----|----|----|
+|--------|-----------|--------|-----------|
 |Intercepto|2.4644254|alns|0.9994064|
 |numpeho|1.2080799|numpeho:area|0.9662002|
 |refin|1.4956810|añosedu:sexojef|1.0320940|
