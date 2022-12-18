@@ -297,11 +297,11 @@ Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no salud
 |Medio|0.72141|
 |Medio alto|0.65151|
 |Alto|0.50718| -->
-
-En la Tabla 3 se muestran que el nivel socioeconómico con mayor probabilidad de gastar $103.50 es el nivel bajo (0.84105), y conforme se aumenta el nivel socioeconómico la probabilidad reduce, hasta llegar a la probabilidad mas baja por el nivel socioeconómico alto (0.50718).
 </div>
 </br>
 
+En la Tabla 3 se muestran que el nivel socioeconómico con mayor probabilidad de gastar $103.50 es el nivel bajo (0.84105), y conforme se aumenta el nivel socioeconómico la probabilidad reduce, hasta llegar a la probabilidad mas baja por el nivel socioeconómico alto (0.50718).
+    
 ### 4. Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
 
 Parte del objetivo del presente trabajo es explorar la veracidad de la siguiente creencia popular:
