@@ -2,7 +2,7 @@
 
 ## Equipo 9
 
-- [Cristian Millán](https://github.com/christiane-millan)
+- [Christian E. Millán Hernández](https://github.com/christiane-millan)
 
 - [José Luis Rodríguez Gallardo](https://github.com/gallardohjl2)
 
