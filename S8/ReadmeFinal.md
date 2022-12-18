@@ -315,7 +315,7 @@ Independencia:
 <!-- ![Residuales del modelo ajustado](./assets/residuales.png) -->
 
 <p align="center" width="100%">
-    <img src="./assets/residuales.png" width="70%" alt="Residuales del modelo ajustado."/>
+    <img src="./assets/residuales.png" width="60%" alt="Residuales del modelo ajustado."/>
 </p>
 
 En el gráfico de residuales se observan más residuos negativos que positivos, sin embargo, no se ve ningún patrón definido que pudiera indicar un grado de dependencia entre las observaciones, por lo que el supuesto se cumple.
