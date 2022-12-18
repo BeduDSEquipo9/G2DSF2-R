@@ -168,7 +168,7 @@ Además de las medidas de tendencia central y dispersión se consideró importan
 
 Otra variable que es importante analizar para conocer la frecuencia relativa es la Inseguridad alimentaria en el hogar (IA). En la Gráfica 11 se muestra la frecuencia de si se presenta o no inseguridad alimentaria de acuerdo con los datos proporcionados por la base de datos.
 
-<!-- ![Grafica de ia](./assets/grafica_ia.png) -->
+<!-- ![Grafica de ia](./assets/histograma_ia.png) -->
 <p align="center" width="100%">
     <img src="./assets/grafica_ia.png" width="60%" alt="Grafica de ia"/>
 </p>
