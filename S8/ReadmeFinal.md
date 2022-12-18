@@ -187,12 +187,17 @@ A partir de la Gráfica 11 que presenta la frecuencia relativa de que una famili
 Si se considera que una familia tiene una probabilidad de 0.74 (ver Gráfica 11) de presentar Inseguridad Alimentaria en el hogar en México. Si partimos del supuesto de que en el centro de salud nutricional se realizan 10 estudios a familias para determinar si presentan Inseguridad Alimentaria  (IA), ¿Cuál es la probabilidad de que menos de 4 familias presenten IA?
 
 Para dar respuesta a esta pregunta, primero se realiza un distribución binomial de acuerdo a los datos de IA. Por lo que la Gráfica 12 presenta el resultado de dicha distribución.
-<div style="text-align: center;">
 
-![gráfica de distribucion ia](./assets/distribucion_ia.png)
-
+<!-- ![gráfica de distribucion ia](./assets/distribucion_ia.png) -->
+<p align="center" width="100%">
+    <img src="./assets/distribucion_ia.png" width="60%" alt="Gráfica de distribucion ia"/>
+</p>
+<br>
+<div align="center" width="100%">
 Gráfica 12. Distribución Binomial resultante. La media = 0.74091 y la desviación estándar = 0.43815. La media teórica esperad es 0.74 y la desviación estándar es = $\sqrt{0.74 * (1-0.74)} =  0.43863$.
 </div>
+<br>
+
 Por lo que con la función de distribución acumulada binomial podemos responder a la pregunta, se tien una probabilidad de  0.00446 que menos de 4 familias de las 10 atendidas en el centro de salud nutricional presenten IA.
 
 Además, podemos calcular otros probabilidades, por ejemplo:
@@ -222,28 +227,57 @@ Por lo que si en México el salario mínimo para 2023 será de $207.00 pesos, se
 ¿Cuál es la probabilidad de que el gasto en alimentos no saludables sea menor o igual a medio salario mínimo en cada nivel socioeconómico?
 
 Para dar respuesta a esta pregunta, primero se utiliza la distribución normal para dar respuesta a la probabilidad del intervalo de valor P(X <= 103.5 ), dado que los datos estan en logaritmo natural se realiza la conversión a  P(X <= 4.63).  Las Gráficas 13, 14, 15, 16 y 17, muestran las probabilidades para los niveles socioeconómicos; bajo, medio bajo, medio, medio alto y alto, respectivamente.
-<div style="text-align: center;">
 
-![gráfica de densidad de alns)](./assets/prob_alns_bajo.png)
-
+<!-- ![gráfica de densidad de alns)](./assets/prob_alns_bajo.png) -->
+<p align="center" width="100%">
+    <img src="./assets/prob_alns_bajo.png" width="60%" alt="Gráfica de densidad de alns"/>
+</p>
+<br>
+<div align="center" width="100%">
 Gráfica 13. Probabilidad de que una familia de nivel bajo gaste 4.63 unidades equivalentes a $103.5 es  P(X <= 4.63) = 0.84105.
+</div>
+<br>
 
-![gráfica de densidad de alns](./assets/prob_alns_medio_bajo.png)
-
+<!-- ![gráfica de densidad de alns](./assets/prob_alns_medio_bajo.png) -->
+<p align="center" width="100%">
+    <img src="./assets/prob_alns_medio_bajo.png" width="60%" alt="Gráfica de densidad de alns"/>
+</p>
+<br>
+<div align="center" width="100%">
 Gráfica 14. Probabilidad de que una familia de nivel medio bajo gaste 4.63 unidades equivalentes a $103.5 es  P(X <= 4.63) = 0.77619.
+</div>
+<br>
 
-![gráfica de densidad de alns](./assets/prob_alns_medio.png)
-
+<!-- ![gráfica de densidad de alns](./assets/prob_alns_medio.png) -->
+<p align="center" width="100%">
+    <img src="./assets/prob_alns_medio.png" width="60%" alt="Gráfica de densidad de alns"/>
+</p>
+<br>
+<div align="center" width="100%">
 Gráfica 15. Probabilidad de que una familia de nivel medio gaste 4.63 unidades equivalentes a $103.5 es  P(X <= 4.63) = 0.72141.
+</div>
+<br>
 
-![gráfica de densidad de alns](./assets/prob_alns_medio_alto.png)
-
+<!-- ![gráfica de densidad de alns](./assets/prob_alns_medio_alto.png) -->
+<p align="center" width="100%">
+    <img src="./assets/prob_alns_medio_alto.png" width="60%" alt="Gráfica de densidad de alns"/>
+</p>
+<br>
+<div align="center" width="100%">
 Gráfica 16. Probabilidad de que una familia de nivel medio alto gaste 4.63 unidades equivalentes a $103.5 es  P(X <= 4.63) = 0.65151.
+</div>
+<br>
 
-![gráfica de densidad de alns](./assets/prob_alns_alto.png)
-
+<!-- ![gráfica de densidad de alns](./assets/prob_alns_alto.png) -->
+<p align="center" width="100%">
+    <img src="./assets/prob_alns_alto.png" width="60%" alt="Gráfica de densidad de alns"/>
+</p>
+<br>
+<div align="center" width="100%">
 Gráfica 17. Probabilidad de que una familia de nivel medio alto gaste 4.63 unidades equivalentes a $103.50 es  P(X <= 4.63) = 0.50718.
 </div>
+</br>
+
 Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos.
 
 |Nivel socioeconómico|Probabilidad|
