@@ -228,7 +228,52 @@ En la Tabla 3 se muestran que el nivel socioeconómico con mayor probabilidad de
 
 #### 4.Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
 
-sss
+Parte del objetivo del presente trabajo es explorar la veracidad de la siguiente creencia popular:
+
+*__"La mayoría de las personas afirman que los hogares con menor nivel socioeconómico
+tienden a gastar más en productos no saludables que las personas con mayores
+niveles socioeconómicos y que esto, entre otros determinantes, lleva a que un hogar presente cierta inseguridad alimentaria."__*
+
+Para ello, se pueden utilizar los datos disponibles para realizar pruebas de hipótesis que permitan emitir alguna conclusión. Primero, se transforman las variables __ln_als__ y __ln_alns__ aplicando su función inversa, a modo que se tenga información sobre el gasto real en alimentos saludables y no saludables.
+
+Enseguida se le realizan pruebas de normalidad (tanto Lillie como Shapiro), que arrojan que estas variables no se distribuyen de manera normal pues, al tener un valor p muy pequeño, se rechaza la hipótesis nula de normalidad. Por tal motivo, para todas las siguientes pruebas de hipótesis se utilizará la distribución t de Student.
+
+Se busca saber si, en promedio, quienes pertenecen al nivel socioeconómico más bajo gastan más en alimentos no saludables que los del nivel más alto.
+
+- Ho: *prom_alns_nse5f_bajo >= prom_alns_nse5f_alto*
+
+- Ha: *prom_alns_nse5f_bajo < prom_alns_nse5f_alto*
+
+Como se van a comparar dos medias y los datos no son normales sino distribuidos por una t de Student, siempre es necesario verificar primero si las desviaciones estándar de cada grupo son iguales o diferentes en la población. Aplicando la prueba de cociente de varianzas, se concluye que, como el valor p es menor a 0.01, con una confianza de 99%, las varianzas de ambos niveles socioeconómicos son diferentes.
+
+Con ese supuesto validado, se procede a aplicar una prueba T de diferencia de medias que arroja un valor p muy pequeño, por lo que existe evidencia estadística para rechazar la hipótesis nula de la prueba, concluyendo no sólo que, en promedio, el nivel socioeconómico bajo no gasta lo mismo que el alto en alimentos no saludables sino también que, contrario a la creencia popular, *__las personas de mayor nivel socioeconómico gastan, en promedio, más que las de menor nivel en alimentos no saludables__*.
+
+Como la prueba anterior compara únicamente al nivel socioeconómico más bajo con el más alto, tiene mérito ver si las conclusiones se mantienen agrupando en dos únicos estratos los cinco niveles, considerándose ahora como “Bajo” los niveles “Bajo, “Medio bajo” y “Medio” y como “Alto” a quienes pertenecen a “Medio alto” y “Alto”. Las pruebas arrojan que las varianzas son significativamente diferentes y que hay evidencia estadística para rechazar la hipótesis nula. Por lo tanto, aún agrupando los niveles, en promedio, quienes pertenecen a los 3 niveles socioeconómicos más bajos gastan menos en alimentos no saludables que los de los dos niveles más altos.
+
+Lo anterior se complementa con lo visto en los análisis de probabilidades (ver Tabla 3) y coincide con lo observado en la realidad, pues las personas de nivel socioeconómico más bajo son más propensos a adquirir alimentos no saludables tan sólo por tener más fácil y rápido acceso (geográfico y económico) a ellos que a los saludables, como ejemplo los puestos de garnachas, frituras, etc. No obstante, en la práctica y a pesar de ser menos propensos a ello, quienes efectivamente gastan más en alimentos no saludables son los que pertenecen a mayores niveles socioeconómicos, lo cual tiene sentido, pues cuentan con más dinero disponible para gastar y tienen acceso a comida más refinada y procesada que no necesariamente es saludable.
+
+A continuación se analiza si existe evidencia estadística para determinar si, en promedio, el nivel socioeconómico tiene efectos sobre el gasto en alimentos no saludables.
+
+- Ho: *prom_alns_bajo = prom_alns_medio_bajo = prom_alns_medio = prom_alns_medio_alto = prom_alns_alto*
+- Ha: *Al menos uno es diferente*
+
+El análisis de varianza (ANOVA)  arroja un p-value muy pequeño, por lo que, a nivel de confianza de 99%, existe evidencia estadística para rechazar la hipótesis nula y, así, al menos una de las medias entre grupos es diferente y el nivel socioeconómico sí es un factor que influye en el gasto en alimentos no saludables.
+
+Ahora bien, tiene mérito analizar si la zona geográfica (area) y los ingresos extra (refin) también tienen influencia en el consumo de alimentos no saludables, por lo que se repitieron las pruebas anteriores, ahora diferenciando por éstas variables.
+
+En relación a la zona geográfica, se concluye que las varianzas de gastos entre la zona rural y urbana son diferentes; asimismo, al no existir evidencia estadística significativa, no se puede rechazar la hipótesis de que en la zona urbana gastan más o igual que en la rural en alimentos no saludables; por último, con el ANOVA se tiene que la zona geográfica sí es un factor determinante en el gasto promedio en alimentos no saludables. De hecho, al rechazarse la hipótesis de igualdad de medias, se puede asegurar que, en promedio, en las zonas urbanas se gasta más en alimentos no saludables que en las rurales. Esto hace sentido con hallazgos anteriores porque es en estas zonas donde normalmente viven las personas con mayor nivel socioeconómico.
+
+Hablando de la variable indicadora de ingresos extra, se obtuvo que las varianzas efectivamente son diferentes y que no hay evidencia estadística para rechazar que las personas con ingreso extra gastan más o igual que las que no lo tienen en alimentos no saludables. El ANOVA arroja un valor p mayor a 0.01, por lo que no se rechaza la hipótesis de que las medias son iguales. Así, el ingreso extra no sería una variable significativa ni determinante en el gasto en alimentos no saludables.
+
+Cabe señalar que todos los análisis anteriores sobre el nivel socioeconómico, la zona geográfica y los ingresos extra se repitieron pero ahora para el gasto en alimentos saludables. Los resultados fueron muy similares:
+
+- El nivel socioeconómico sí es una variable influyente en este gasto (al menos en uno de los grupos la media es distinta) y, en promedio, los niveles altos gastan más en alimentos saludables que los bajos, lo cual tiene sentido porque tienen los medios económicos y sociales para acceder a ellos, basta recordar el dicho de que “Comer sano cuesta caro”.
+
+- Existen diferencias en el gasto promedio en alimentos saludables según la zona geográfica, siendo la zona urbana donde se presenta un gasto mayor, lo cual es lógico pues allí viven personas con más nivel socioeconómico.
+
+- No existe evidencia estadística para rechazar que las personas con ingresos extra gastan, en promedio, más o igual en alimentos saludables que las que no los tienen. Sin embargo, sí hay evidencia para rechazar la hipótesis de igualdad de medias, por lo que se puede concluir que las personas con ingresos extra gastan más en alimentos saludables que las que no tienen, contrario a lo que pasa en alimentos no saludables. Lo anterior sugiere que las personas que tienen ingresos extra prefieren gastarlo en alimentos saludables antes que en no saludables.
+
+Por último, con todo lo realizado hasta ahora, se comprueba que el gasto en alimentos no saludables sí influye en la seguridad alimentaria en el hogar.
 
 #### 5. Estima un modelo de regresión, lineal o logístico, para identificar los determinantes de la inseguridad alimentaria en México
 
