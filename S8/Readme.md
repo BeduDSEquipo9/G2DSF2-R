@@ -19,8 +19,10 @@ En el presente trabajo, se analizará la información disponible a fin de conclu
 ### 2. Realiza un análisis descriptivo de la información
 
 La base de datos proporcionada contiene un total de 40,809 observaciones con 10 variables. En la Tabla 1 se describen las variables.
-
+<div align="center" width="100%">
 Tabla 1. Descripción de los datos proporcionados.
+</div>
+<br>
 <!-- ![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png) -->
 
 <p align="center" width="100%">
@@ -74,7 +76,7 @@ Los promedio en la Gráfica 3 muestran que el promedio de __gasto de alimentos s
 </p>
 <br>
 <div align="center" width="100%">
-Gráfico 4. Muestra las medidas de tendencia central de als, si la familia indicó recursos financieros distintos al ingreso laboral. Media ( No = 6.17, Si =  6.24), Desviación estándar (No = 0.68, Si = 0.69. Coeficiente de variación (No = 11.20%, Si = 11.08%).
+Gráfica 4. Muestra las medidas de tendencia central de als, si la familia indicó recursos financieros distintos al ingreso laboral. Media ( No = 6.17, Si =  6.24), Desviación estándar (No = 0.68, Si = 0.69. Coeficiente de variación (No = 11.20%, Si = 11.08%).
 </div>
 <br>
 
@@ -148,7 +150,7 @@ Para continuar el análisis de als y alns se realizaron histogramas que permitan
 </p>
 <br>
 <div align="center" width="100%">
-Gráfico 9. Histograma de frecuencia de gasto de alimentos saludables (als). Las medidas de forma indican que tienen un sesgo a la izquierda (skewness = -1.19) y una forma leptocúrtica (curtosis = 6.6).
+Gráfica 9. Histograma de frecuencia de gasto de alimentos saludables (als). Las medidas de forma indican que tienen un sesgo a la izquierda (skewness = -1.19) y una forma leptocúrtica (curtosis = 6.6).
 </div>
 <br>
 
@@ -158,7 +160,7 @@ Gráfico 9. Histograma de frecuencia de gasto de alimentos saludables (als). Las
 </p>
 <br>
 <div align="center" width="100%">
-Gráfico 10. Histograma de frecuencia de gasto de alimentos no saludables (alns). Las medidas de forma indican que es simétrica (skewness = 0.24 ) y una forma platocúrtica (curtosis = 2.57).
+Gráfica 10. Histograma de frecuencia de gasto de alimentos no saludables (alns). Las medidas de forma indican que es simétrica (skewness = 0.24 ) y una forma platocúrtica (curtosis = 2.57).
 </div>
 <br>
 
