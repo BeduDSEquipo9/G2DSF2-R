@@ -390,6 +390,7 @@ __Modelo 4__:  *IA ~ numpeho + refin + edadjef + añosedu + als + alns + numpeho
 A continuación se validaron los supuestos para el modelo 4:
 
 a) Multicolinealidad: No se obtuvo ningún VIF mayor que 10 para ninguno de los predictores, de modo que no hay evidencias de multicolinealidad y el supuesto se cumple.
+
 b) Independencia:
 
 <!-- ![Residuales del modelo ajustado](./assets/residuales.png) -->
