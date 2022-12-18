@@ -13,13 +13,13 @@
 ###############################################################################
 
 # Bibliotecas necesarias para el proyecto
+install.packages('nortest')
+install.packages('car')
 library(dplyr)
 library(DescTools)
 library(ggplot2)
 library(moments)
-#install.packages('car')
 library('car')
-#install.packages('nortest')
 library('nortest')
 
 
