@@ -107,7 +107,7 @@ Gráfica 6. Medidas de tendencia central y dispersión de alns según el nivel s
 </div>
 <br>
 
-En la Gráfica 6, se observa que los promedios de consumo de als se incrementan conforme aumenta el nivel socioeconómico. Además, todos los grupos presentan un coeficiente de variación menos al 25$, lo que nos indica la posibilidad de realizar comparaciones entre los cinco grupos de niveles socioecónomicos en relación al gasto alimentario no saludable.
+En la Gráfica 6, se observa que los promedios de consumo de als se incrementan conforme aumenta el nivel socioeconómico. Además, todos los grupos presentan un coeficiente de variación menor al 25%, lo que nos indica la posibilidad de realizar comparaciones entre los cinco grupos de niveles socioecónomicos en relación al gasto alimentario no saludable.
 
 <br>
 
@@ -174,7 +174,7 @@ Otra variable que es importante analizar para conocer la frecuencia relativa es 
 </p>
 <br>
 <div align="center" width="100%">
-Gráfica 11. Se muestra que el 71% de las familias que participaron en la muestra presentan inseguridad alimentaria en el hogar. Por lo tanto, el 28% restante no presentó inseguridad alimentaria.
+Gráfica 11. Se muestra que el 71% de las familias que participaron en la muestra presentan inseguridad alimentaria en el hogar. Por lo tanto, el 29% restante no presentó inseguridad alimentaria.
 </div>
 <br>
 
