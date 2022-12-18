@@ -210,18 +210,23 @@ Cálculo de probabilidad de los gastos en alimentos no saludables de una familia
 A partir de los gastos de alimentos no saludables (Gráfica 10) se realizan un análisis probabilístico basado una distribución normal.
 
 Si se considera que los gastos promedio de familia en alimentos no saludables de la Tabla 2, los datos se ajustan a una distribución normal.
-<div style="text-align: center;">
-
+<div align="center" width="100%">
 Tabla 2. Promedio y varianza de gasto de alimentos no saludables
+</div>
+<br>
+<p align="center" width="100%">
+    <img src="./assets/Table33.png" width="60%" alt="Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos."/>
+</p>
+<br>
 
-|Nivel socioeconómico|Media|Mediana|Moda|Varianza|
+<!-- |Nivel socioeconómico|Media|Mediana|Moda|Varianza|
 |:--------------------|:-----:|:-------:|:----:|:--------:|
 |Bajo|3.68|3.58|2.99|0.94|
 |Medio bajo|3.9|3.91|3.40|0.94|
 |Medio|4.05|3.91|3.40|0.98|
 |Medio alto|4.23|4.17|3.91|1.02|
-|Alto|4.61|4.6|4.60|1.05|
-</div>
+|Alto|4.61|4.6|4.60|1.05| -->
+
 Por lo que si en México el salario mínimo para 2023 será de $207.00 pesos, se plantean las siguientes preguntas:
 
 ¿Cuál es la probabilidad de que el gasto en alimentos no saludables sea menor o igual a medio salario mínimo en cada nivel socioeconómico?
@@ -277,18 +282,26 @@ Gráfica 16. Probabilidad de que una familia de nivel medio alto gaste 4.63 unid
 Gráfica 17. Probabilidad de que una familia de nivel medio alto gaste 4.63 unidades equivalentes a $103.50 es  P(X <= 4.63) = 0.50718.
 </div>
 </br>
-
+<div align="center" width="100%">
 Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos.
-
-|Nivel socioeconómico|Probabilidad|
+</div>
+<br>
+<p align="center" width="100%">
+    <img src="./assets/Table33.png" width="60%" alt="Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos."/>
+</p>
+<br>
+<div align="center" width="100%">
+<!-- |Nivel socioeconómico|Probabilidad|
 |:--------------------|:------------:|
 |Bajo|0.84105|
 |Medio bajo|0.77619|
 |Medio|0.72141|
 |Medio alto|0.65151|
-|Alto|0.50718|
+|Alto|0.50718| -->
 
 En la Tabla 3 se muestran que el nivel socioeconómico con mayor probabilidad de gastar $103.50 es el nivel bajo (0.84105), y conforme se aumenta el nivel socioeconómico la probabilidad reduce, hasta llegar a la probabilidad mas baja por el nivel socioeconómico alto (0.50718).
+</div>
+</br>
 
 ### 4.Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
 
