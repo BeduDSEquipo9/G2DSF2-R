@@ -174,7 +174,7 @@ Otra variable que es importante analizar para conocer la frecuencia relativa es 
 </p>
 <br>
 <div align="center" width="100%">
-Gráfica 11, se muestra que el 74% de las familias que participaron en la muestra presentan inseguridad alimentaria en el hogar. Por lo tanto, el 26% restante no presentó inseguridad alimentaria.
+Gráfica 11. Se muestra que el 74% de las familias que participaron en la muestra presentan inseguridad alimentaria en el hogar. Por lo tanto, el 26% restante no presentó inseguridad alimentaria.
 </div>
 <br>
 
@@ -196,7 +196,7 @@ Para dar respuesta a esta pregunta, primero se realiza un distribución binomial
 </p>
 <br>
 <div align="center" width="100%">
-Gráfica 12. Distribución Binomial resultante. La media = 0.74091 y la desviación estándar = 0.43815. La media teórica esperad es 0.74 y la desviación estándar es =  0.43863$.
+Gráfica 12. Distribución Binomial resultante. La media = 0.74091 y la desviación estándar = 0.43815. La media teórica esperad es 0.74 y la desviación estándar es =  0.43863.
 </div>
 <br>
 
