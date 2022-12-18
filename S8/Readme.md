@@ -398,11 +398,10 @@ b) Independencia:
 <p align="center" width="100%">
     <img src="./assets/residuales.png" width="50%" alt="Residuales del modelo ajustado."/>
 </p>
-<br>
 <div align="center" width="100%">
 Gráfica 18. Residuales del modelo ajustado.
 </div>
-
+<br>
 En el gráfico de residuales se observan más residuos negativos que positivos, sin embargo, no se ve ningún patrón definido que pudiera indicar un grado de dependencia entre las observaciones, por lo que el supuesto se cumple.
 
 c) Linealidad: Para contrastar este supuesto se necesita ejecutar la regresión logística pero incluyendo como predictores adicionales el producto entre cada predictor y el logaritmo de sí mismo. Luego de crear dichos términos y correr el modelo correspondiente, se tiene que no existe evidencia estadística para rechazar la hipótesis de que los productos son igual a cero, de modo que el supuesto de linealidad se cumple.
