@@ -418,7 +418,7 @@ Tabla 4. Comparativa de resultados de los modelos 3 y 4.
 <br>
     
 <p align="center" width="100%">
-    <img src="./assets/Tabla52.png" width="70%" alt="Tabla 52. Descripción de los datos proporcionados."/>
+    <img src="./assets/Tabla52.PNG" width="70%" alt="Tabla 52. Descripción de los datos proporcionados."/>
 </p>
 
 <!-- |Modelo|AIC|Pseudo R2|
@@ -431,7 +431,7 @@ Nótese que incluso cuando ambas métricas del modelo 4 son ligeramente peores, 
 Una vez que se conocen las variables explicativas, tiene mérito establecer si influyen de manera positiva o negativa sobre la variable objetivo. Para ello, se analizan los coeficientes, pero deben ser elevados a la exponencial pues la regresión logística arroja coeficientes que tienen aplicados logaritmos.
 
 <div align="center" width="100%">
-Tabla 5. Variables involucradas y coeficientes del modelo campeón
+Tabla 5. Variables involucradas y coeficientes del modelo campeón.
 </div>
 <br>
 <p align="center" width="100%">
