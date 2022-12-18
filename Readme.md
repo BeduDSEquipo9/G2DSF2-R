@@ -4,7 +4,7 @@
 
 - [Christian E. Millán Hernández](https://github.com/christiane-millan)
 
-- [José Luis Rodríguez Gallardo](https://github.com/gallardohjl2)
+- [José Luis Herrera Gallardo](https://github.com/gallardohjl2)
 
 - [Gustavo Gutiérrez](https://github.com/gusgtzh)
 
