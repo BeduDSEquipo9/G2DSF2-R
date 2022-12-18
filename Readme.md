@@ -16,14 +16,14 @@
 
 ## Proyecto S8
 
-- ![Postwork Sesión 8](./S8/)
+- [Postwork Sesión 8](./S8/)
 
 ## Otros entregables
 
-- ![Postwork Sesión 1](./S1/)
-- ![Postwork Sesión 2](./S2/)
-- ![Postwork Sesión 3](./S3/)
-- ![Postwork Sesión 4](./S4/)
-- ![Postwork Sesión 5](./S5/)
-- ![Postwork Sesión 6](./S6/)
-- ![Postwork Sesión 7](./S7/)
+- [Postwork Sesión 1](./S1/)
+- [Postwork Sesión 2](./S2/)
+- [Postwork Sesión 3](./S3/)
+- [Postwork Sesión 4](./S4/)
+- [Postwork Sesión 5](./S5/)
+- [Postwork Sesión 6](./S6/)
+- [Postwork Sesión 7](./S7/)
