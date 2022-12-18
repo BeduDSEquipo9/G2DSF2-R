@@ -388,8 +388,9 @@ Ahora bien, pese a que el modelo 3 resultó ser el de mejores métricas, tiene u
 __Modelo 4__:  *IA ~ numpeho + refin + edadjef + añosedu + als + alns + numpeho:area + añosedu:sexojef + edadjef:sexojef + añosedu:nse5f + edadjef:nse5f*
 
 A continuación se validaron los supuestos para el modelo 4:
-Multicolinealidad: No se obtuvo ningún VIF mayor que 10 para ninguno de los predictores, de modo que no hay evidencias de multicolinealidad y el supuesto se cumple.
-Independencia:
+
+a) Multicolinealidad: No se obtuvo ningún VIF mayor que 10 para ninguno de los predictores, de modo que no hay evidencias de multicolinealidad y el supuesto se cumple.
+b) Independencia:
 
 <!-- ![Residuales del modelo ajustado](./assets/residuales.png) -->
 
@@ -398,7 +399,8 @@ Independencia:
 </p>
 
 En el gráfico de residuales se observan más residuos negativos que positivos, sin embargo, no se ve ningún patrón definido que pudiera indicar un grado de dependencia entre las observaciones, por lo que el supuesto se cumple.
-Linealidad: Para contrastar este supuesto se necesita ejecutar la regresión logística pero incluyendo como predictores adicionales el producto entre cada predictor y el logaritmo de sí mismo. Luego de crear dichos términos y correr el modelo correspondiente, se tiene que no existe evidencia estadística para rechazar la hipótesis de que los productos son igual a cero, de modo que el supuesto de linealidad se cumple.
+
+c) Linealidad: Para contrastar este supuesto se necesita ejecutar la regresión logística pero incluyendo como predictores adicionales el producto entre cada predictor y el logaritmo de sí mismo. Luego de crear dichos términos y correr el modelo correspondiente, se tiene que no existe evidencia estadística para rechazar la hipótesis de que los productos son igual a cero, de modo que el supuesto de linealidad se cumple.
 
 Así pues, __¡el modelo 4 cumple con todos los supuestos de la regresión logística!__
 
