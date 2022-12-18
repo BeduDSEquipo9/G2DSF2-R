@@ -455,7 +455,7 @@ Tabla 6. Intervalos de confianza para los coeficientes de los predictores.
 <br>
     
 <p align="center" width="100%">
-    <img src="./assets/Table54.PNG" width="70%" alt="Tabla 54. Descripción de los datos proporcionados."/>
+    <img src="./assets/Tabla54.PNG" width="70%" alt="Tabla 54. Descripción de los datos proporcionados."/>
 </p>
 
 <!-- |Variable|2.5%|97.5%|Variable|2.5%|97.5%|
