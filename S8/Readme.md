@@ -370,7 +370,7 @@ Tabla 4. Comparativa de métricas de desempeño de los modelos con y sin interac
 <br>
 
 <p align="center" width="100%">
-    <img src="./assets/Tabla51.png" width="70%" alt="Tabla 51. Descripción de los datos proporcionados."/>
+    <img src="./assets/Tabla51.PNG" width="70%" alt="Tabla 51. Descripción de los datos proporcionados."/>
 </p>
 
 <!-- |Modelo|AIC|Pseudo R2|
@@ -435,7 +435,7 @@ Tabla 5. Variables involucradas y coeficientes del modelo campeón.
 </div>
 <br>
 <p align="center" width="100%">
-    <img src="./assets/Tabla53.png" width="70%" alt="Tabla 53. Descripción de los datos proporcionados."/>
+    <img src="./assets/Tabla53.PNG" width="70%" alt="Tabla 53. Descripción de los datos proporcionados."/>
 </p>
 
 <!-- |Variable|Coeficiente|Variable|Coeficiente|
@@ -455,7 +455,7 @@ Tabla 6. Intervalos de confianza para los coeficientes de los predictores.
 <br>
     
 <p align="center" width="100%">
-    <img src="./assets/Table54.png" width="70%" alt="Tabla 54. Descripción de los datos proporcionados."/>
+    <img src="./assets/Table54.PNG" width="70%" alt="Tabla 54. Descripción de los datos proporcionados."/>
 </p>
 
 <!-- |Variable|2.5%|97.5%|Variable|2.5%|97.5%|
