@@ -29,11 +29,11 @@ Tabla 1. Descripción de los datos proporcionados.
     <img src="./assets/Tabla_de_Variables.PNG" width="70%" alt="Tabla 1. Descripción de los datos proporcionados."/>
 </p>
 
-Después de revisar los datos  originales en R, se realizó la limpieza de los datos y el cambio de algunos tipos de datos para facilitar la manipulación del análisis. En particular, se realizó el cambio de las variables: __logaritmo natural de gastos en alimentos saludables__ y __logaritmo natural de gastos en alimentos no saludables__ aplicando el antilogaritmo para una mejor interpretación de las cifras. Por último, se eliminaron 20,529 registros que presentaron datos incompletos en alguna variable.
+Después de revisar los datos  originales en R, se realizó la limpieza de los datos y el cambio de algunos tipos de datos para facilitar la manipulación del análisis. En particular, se agegarón dos variables basadas en: __logaritmo natural de gastos en alimentos saludables__ y __logaritmo natural de gastos en alimentos no saludables__ aplicando el antilogaritmo para una mejor interpretación de las cifras. Por último, se eliminaron 20,529 registros que presentaron datos incompletos en alguna variable.
 
 Dado que en los requisitos del problema se solicita analizar los patrones de los __gastos en alimentos saludables (aln)__ y __gastos en alimentos no saludables (alns)__  en los hogares mexicanos en relación a la variables: nivel socioeconómico (nse), si el hogar tienen recursos financieros extras al ingreso (refin) y si presenta o no inseguridad alimentaria (IA). Se presentan las siguientes gráficas para realizar un análisis exploratorio de los datos previo al cálculo de las medidas descriptivas de las variables mencionadas anteriormente.
 
-En la siguiente sección nos enfocamos en primer lugar, en las variables: als, alns.
+En la siguiente sección nos enfocamos en primer lugar, en las variables: ln_als, ln_alns.
 
 <!-- ![Gráfica de boxplot de als](./assets/boxplot_als.png) -->
 <p align="center" width="100%">
@@ -55,7 +55,7 @@ En las Gráficas 1 y 2, se muestran las medidas de tendencia central y de posici
 
 <br>
 
-Para continuar con el análisis de estas dos variables se analizan  visualmente las gráficas de caja de aln de acuerdo al __nivel socioeconómico__ (__nse5f__), ver Gráfica 3,  de acuerdo al recursos financieros distintos al ingreso laboral (ver Gráfica 4) y de la misma forma para inseguridad alimentaria .
+Para continuar con el análisis de estas dos variables se analizan  visualmente las gráficas de caja de aln de acuerdo al __nivel socioeconómico__ (__nse5f__), ver Gráfica 3,  de acuerdo al recursos financieros distintos al ingreso laboral (ver Gráfica 4) y de la misma forma para inseguridad alimentaria.
 
 <br>
 <!-- ![Gráfica de boxplot de als vs nes5f](./assets/boxplot_als_vs_nes5f.png) -->
@@ -67,7 +67,7 @@ Gráfica 3. En esta gráfica se muestran las medidas descriptivas de aln en cada
 </div>
 <br>
 
-Los promedio en la Gráfica 3 muestran que el promedio de __gasto de alimentos saludables__ (*__als__*) se incrementa de acuerdo al nivel socioeconómico.
+Los promedio en la Gráfica 3 muestran que el promedio de __gasto de alimentos saludables__ (*__als__*) se incrementa de acuerdo al nivel socioeconómico. Esto análisis exploratorio de datos proporciona información para  el análisis de la sección 3 y 4.
 
 <br>
 <!-- ![Gráfica de boxplot de als vs refin](./assets/boxplot_als_vs_refin.png) -->
@@ -80,7 +80,7 @@ Gráfica 4. Muestra las medidas de tendencia central de als, si la familia indic
 </div>
 <br>
 
-Las medias muestran niveles de consumo promedio similares tanto para los que individuos que reportaron ingresos financieros extra distintos al laboral y los que no los tienen. Por lo que se puede anticipar que esta variable no proporciona suficiente información para determinar el consumo de als.
+En la Gráfica 4, las medias muestran niveles de consumo promedio similares tanto para los que individuos que reportaron ingresos financieros extra distintos al laboral y los que no los tienen. Por lo que es importante considerar este análisis para las próximas secciones.
 
 <br>
 
@@ -94,7 +94,7 @@ Gráfica 5. Muestra las medidas de tendencia central de als, de acuerdo a si pre
 </div>
 <br>
 
-Las medias muestran niveles de consumo promedio similares, con una ligero gasto mayor de als por las familias que no presentaron IA.
+De acuerdo con la Gráfica 5, las medias muestran niveles de consumo promedio similares, con un gasto ligeramente mayor de als por las familias que no presentaron IA.
 
 <br>
 <!-- ![gráfica de boxplot de alns vs nes5f](./assets/boxplot_alns_vs_nes5f.png) -->
@@ -107,7 +107,7 @@ Gráfica 6. El gráfico muestra  las medidas de tendencia central de alns según
 </div>
 <br>
 
-Se observa que los promedios de consumo de als se incrementan conforme aumenta el nivel socioeconómico, sin embargo, ???.
+En la Gráfica 6, se observa que los promedios de consumo de als se incrementan conforme aumenta el nivel socioeconómico. Además, todos los grupos presentan un coeficiente de variación menos al 25$, lo que nos indica la posibilidad de realizar comparaciones entre los cinco grupos de niveles socioecónomicos en relación al gasto alimentario no saludable.
 
 <br>
 
@@ -129,15 +129,15 @@ En la gráfica 7 se puede observar que las medias muestran niveles de consumo pr
 </p>
 <br>
 <div align="center" width="100%">
-Gráfica 8. Se observa que las medidas de tendencia central de alns, con respecto a las familias que presentan Inseguridad se acercan. Media ( No = 4.33, Si =  4.03), Desviación estándar (No = 1.07, Si = 1.07). Coeficiente de variación (No = 24.81%, Si = 26.64%).
+Gráfica 8. Medidas de tendencia central de alns, con respecto a las familias que presentan Inseguridad se acercan. Media ( No = 4.33, Si =  4.03), Desviación estándar (No = 1.07, Si = 1.07). Coeficiente de variación (No = 24.81%, Si = 26.64%).
 </div>
 <br>
 
-Las medias muestran niveles de consumo promedio similares, con una  gasto promedio mayor de alns por las familias que no presentaron IA.
+En la Gráfica 8, las medias muestran niveles de consumo promedio similares. En el caso de las familias que si presentaron IA el gasto promedio es menor de alns por las familias que no presentaron IA. Esto puede indicar que no hay una relación en el promedio de gasto en alns con respecto a tener IA.
 
-En las Gráficas 3 y 6 permiten comparar los gastos promedio en alimentos saludables y no saludables en los distintos niveles socioeconómicos. Se observa que a mayor nivel socioeconómico el promedio de gasto es mayor.
+Es importante mencionar que en las Gráficas 3 y 6 se comparan visualmente los gastos promedio en alimentos saludables y no saludables en los distintos niveles socioeconómicos. Se observa que a mayor nivel socioeconómico el promedio de gasto es mayor.
 
-En cuanto al gasto promedio de alimentos saludables y no saludables de acuerdo a si existe recursos financieros distintos al ingreso laboral, son muy similares por lo que no parece se un indicador de comparación. En la gráfica 4 y 6 se observan una tendencia de promedios iguales, para ambos tipos de alimentos (saludables y no saludables).
+En cuanto al gasto promedio de alimentos saludables y no saludables de acuerdo a si existe recursos financieros distintos al ingreso laboral, son muy similares por lo que en principio no parece se un indicador de comparación. En la gráfica 4 y 6 se observan una tendencia de promedios iguales, para ambos tipos de alimentos (saludables y no saludables).
 
 Con respecto a al gasto promedio de alimentos saludables y no saludables de acuerdo a si presenta o no seguridad alimentaria, el análisis mostró que quienes gastan más en alimentos saludables son lo que pertenecen al grupo de que no presentan seguridad alimentaria (ver Gráfica 5). pero también son los que más gastan en alimentos no saludables (Gráfica 8).
 
@@ -164,7 +164,7 @@ Gráfica 10. Histograma de frecuencia de gasto de alimentos no saludables (alns)
 </div>
 <br>
 
-Además de las medidas de tendencia central y dispersión se consideró importante calcular las medidas de forma. En el caso de als se tiene un skewness de 1.69 y una curtosis de, lo que confirma la existencia de un sesgo de los datos a la izquierda; y además, un forma leptocúrtica.  Para alns se obtuvo un skewnwss de 4.91 y una curtosis de 57.41, es decir, presenta un sesgo a la derecha y una forma leptocúrtica.
+Además de las medidas de tendencia central y dispersión se consideró importante calcular las medidas de forma. En el caso de als se tiene un skewness de 1.69 y una curtosis de, lo que confirma la existencia de un sesgo de los datos a la izquierda; y además, un forma leptocúrtica (ver Gráfica 9).  Para alns se obtuvo un skewnwss de 4.91 y una curtosis de 57.41, es decir, presenta un sesgo a la derecha y una forma leptocúrtica (ver Gráfica 10).
 
 Otra variable que es importante analizar para conocer la frecuencia relativa es la Inseguridad alimentaria en el hogar (IA). En la Gráfica 11 se muestra la frecuencia de si se presenta o no inseguridad alimentaria de acuerdo con los datos proporcionados por la base de datos.
 
@@ -196,20 +196,20 @@ Para dar respuesta a esta pregunta, primero se realiza un distribución binomial
 </p>
 <br>
 <div align="center" width="100%">
-Gráfica 12. Distribución Binomial resultante. La media = 0.74091 y la desviación estándar = 0.43815. La media teórica esperad es 0.74 y la desviación estándar es = $\sqrt{0.74 * (1-0.74)} =  0.43863$.
+Gráfica 12. Distribución Binomial resultante. La media = 0.74091 y la desviación estándar = 0.43815. La media teórica esperad es 0.74 y la desviación estándar es =  0.43863$.
 </div>
 <br>
 
-Por lo que con la función de distribución acumulada binomial podemos responder a la pregunta, se tien una probabilidad de  0.00446 que menos de 4 familias de las 10 atendidas en el centro de salud nutricional presenten IA.
+Por lo que con la implementación de una función de distribución acumulada binomial podemos responder a la pregunta, de acuerdo con el cáclulo, se obtiene una probabilidad de 0.00446 que menos de 4 familias de las 10 atendidas en el centro de salud nutricional presenten IA.
 
 Además, podemos calcular otros probabilidades, por ejemplo:
 
-La probabilidad de que más de 8 de 10 familias presenten Inseguridad Alimentaria en el hogar es de 0.22224.
-La probabilidad de que 7 familias presenten Inseguridad Alimentaria en el hogar es de  0.25628.
+- La probabilidad de que más de 8 de 10 familias presenten Inseguridad Alimentaria en el hogar es de 0.22224.
+- La probabilidad de que 7 familias presenten Inseguridad Alimentaria en el hogar es de  0.25628.
 
-Cálculo de probabilidad de los gastos en alimentos no saludables de una familia de acuerdo a su nivel socioeconómico.
+__Cálculo de probabilidad de los gastos en alimentos no saludables de una familia de acuerdo a su nivel socioeconómico.__
 
-A partir de los gastos de alimentos no saludables (Gráfica 10) se realizan un análisis probabilístico basado una distribución normal.
+A partir de los gastos de alimentos no saludables (Gráfica 10) se realizan un análisis probabilístico basado en una distribución normal.
 
 Si se considera que los gastos promedio de familia en alimentos no saludables de la Tabla 2, los datos se ajustan a una distribución normal.
 <div align="center" width="100%">
@@ -227,9 +227,9 @@ Tabla 2. Promedio, mediana, moda y varianza de gasto de alimentos no saludables.
 |Medio alto|4.23|4.17|3.91|1.02|
 |Alto|4.61|4.6|4.60|1.05| -->
 
-Por lo que si en México el salario mínimo para 2023 será de $207.00 pesos, se plantean las siguientes preguntas:
+Por lo que si se considerá que en México el salario mínimo para 2023 será de $207.00 pesos, se plantean las siguiente pregunta:
 
-¿Cuál es la probabilidad de que el gasto en alimentos no saludables sea menor o igual a medio salario mínimo en cada nivel socioeconómico?
+- ¿Cuál es la probabilidad de que el gasto en alimentos no saludables sea menor o igual a medio salario mínimo en cada nivel socioeconómico?
 
 Para dar respuesta a esta pregunta, primero se utiliza la distribución normal para dar respuesta a la probabilidad del intervalo de valor P(X <= 103.5 ), dado que los datos estan en logaritmo natural se realiza la conversión a  P(X <= 4.63).  Las Gráficas 13, 14, 15, 16 y 17, muestran las probabilidades para los niveles socioeconómicos; bajo, medio bajo, medio, medio alto y alto, respectivamente.
 
