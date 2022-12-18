@@ -2,17 +2,17 @@
 
 ## Equipo 9
 
-- [Cristian Millán](https://github.com/orgs/BeduDSEquipo9/people/christiane-millan)
+- [Cristian Millán](https://github.com/christiane-millan)
 
-- [FrankTII](https://github.com/orgs/BeduDSEquipo9/people/)
+- [José Luis Rodríguez Gallardo](https://github.com/gallardohjl2)
 
-- [gallardohjl2](https://github.com/orgs/BeduDSEquipo9/people/gallardohjl2)
+- [Gustavo Gutiérrez](https://github.com/gusgtzh)
 
-- [gusgtzh](https://github.com/orgs/BeduDSEquipo9/people/)
+- [Isidro Amaro](https://github.com/iamaro82)
 
-- [Isidro Amaro](https://github.com/orgs/BeduDSEquipo9/people/iamaro82)
+- [Tomás Hernández](https://github.com/TomsHdez)
 
-- [Tomás Hernández](https://github.com/orgs/BeduDSEquipo9/people/TomsHdez)
+- [Frank/Francisco](https://github.com/FrankTII)
 
 ## Proyecto S8
 
