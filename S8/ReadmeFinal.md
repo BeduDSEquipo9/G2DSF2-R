@@ -24,7 +24,7 @@ Tabla 1. Descripción de los datos proporcionados.
 <!-- ![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png) -->
 
 <p align="center" width="100%">
-    <img src="./assets/Tabla_de_Variables.png" width="80%" alt="Tabla 1. Descripción de los datos proporcionados."/>
+    <img src="./assets/Tabla_de_Variables.png" width="70%" alt="Tabla 1. Descripción de los datos proporcionados."/>
 </p>
 
 Después de revisar los datos  originales en R, se realizó la limpieza de los datos y el cambio de algunos tipos de datos para facilitar la manipulación del análisis. En particular, se realizó el cambio de las variables: __logaritmo natural de gastos en alimentos saludables__ y __logaritmo natural de gastos en alimentos no saludables__ aplicando el antilogaritmo para una mejor interpretación de las cifras. Por último, se eliminaron 20,529 registros que presentaron datos incompletos en alguna variable.
@@ -35,13 +35,13 @@ En la siguiente sección nos enfocamos en primer lugar, en las variables: als, a
 
 <!-- ![Gráfica de boxplot de als](./assets/boxplot_als.png) -->
 <p align="center" width="100%">
-    <img src="./assets/boxplot_als.png" width="80%" alt="Gráfica de boxplot de als"/>
+    <img src="./assets/boxplot_als.png" width="70%" alt="Gráfica de boxplot de als"/>
 </p>
 Gráfica 1. Los gasto en alimentos saludables (ln_als)  muestran un mínimo: 1.09, primer cuartil: 5.84, media: 6.19 , mediana: 6.27, tercer cuartil: 6.63 y máximo: 8.6
 
 <!-- ![Gráfica de boxplot de alns](./assets/boxplot_alns.png) -->
 <p align="center" width="100%">
-    <img src="./assets/boxplot_alns.png" width="80%" alt="Gráfica de boxplot de alns."/>
+    <img src="./assets/boxplot_alns.png" width="70%" alt="Gráfica de boxplot de alns."/>
 </p>
 
 <div align="center" width="100%">
@@ -53,41 +53,62 @@ En las Gráficas 1 y 2, se muestran las medidas de tendencia central y de posici
 <br>
 Para continuar con el análisis de estas dos variables se analizan  visualmente las gráficas de caja de aln de acuerdo al __nivel socioeconómico__ (__nse5f__), ver Gráfica 3,  de acuerdo al recursos financieros distintos al ingreso laboral (ver Gráfica 4) y de la misma forma para inseguridad alimentaria .
 
+<br>
 <!-- ![Gráfica de boxplot de als vs nes5f](./assets/boxplot_als_vs_nes5f.png) -->
 <p align="center" width="100%">
-    <img src="./assets/boxplot_als_vs_nes5f.png" width="80%" alt="Gráfica de boxplot de als vs nes5f"/>
+    <img src="./assets/boxplot_als_vs_nes5f.png" width="70%" alt="Gráfica de boxplot de als vs nes5f"/>
 </p>
-
+<div align="center" width="100%">
 Gráfica 3. En esta gráfica se muestran las medidas descriptivas de aln en cada nivel socioeconómico. Las medias son: (bajo = 5.8, medio bajo = 6.03, medio = 6.17, medio alto = 6.32 y alto = 6.53). Desviación estándar (bajo = 0.76, medio bajo = 0.66, medio = 0.60, medio alto = 0.59 y alto =  0.58). Coeficiente de variación (bajo =13.18%, medio bajo = 11.08%, medio = 9.84%, medio alto =  9.43% y alto =  8.93%).
 </div>
-
+<br>
 Los promedio en la Gráfica 3 muestran que el promedio de __gasto de alimentos saludables__ (*__als__*) se incrementa de acuerdo al nivel socioeconómico.
 
-<div style="text-align: center;">
-
-![gráfica de boxplot de als vs refin](./assets/boxplot_als_vs_refin.png)
-
+<br>
+<!-- ![Gráfica de boxplot de als vs refin](./assets/boxplot_als_vs_refin.png) -->
+<p align="center" width="100%">
+    <img src="./assets/boxplot_als_vs_refin.png" width="70%" alt="Gráfica de boxplot de als vs refin"/>
+</p>
+<br>
+<div align="center" width="100%">
 Gráfico 4. Muestra las medidas de tendencia central de als, si la familia indicó recursos financieros distintos al ingreso laboral. Media ( No = 6.17, Si =  6.24), Desviación estándar (No = 0.68, Si = 0.69. Coeficiente de variación (No = 11.20%, Si = 11.08%).
 </div>
+<br>
 Las medias muestran niveles de consumo promedio similares tanto para los que individuos que reportaron ingresos financieros extra distintos al laboral y los que no los tienen. Por lo que se puede anticipar que esta variable no proporciona suficiente información para determinar el consumo de als.
-<div style="text-align: center;">
 
-![gráfica de boxplot de als vs IA](./assets/boxplot_als_vs_IA.png)
+<br>
 
+<!-- ![gráfica de boxplot de als vs IA](./assets/boxplot_als_vs_IA.png) -->
+<p align="center" width="100%">
+    <img src="./assets/boxplot_als_vs_IA.png" width="70%" alt="Gráfica de boxplot de als vs IA"/>
+</p>
+<br>
+<div align="center" width="100%">
 Gráfica 5. Muestra las medidas de tendencia central de als, de acuerdo a si presentaron o no inseguridad alimentaria en el hogar (IA). Media ( No = 6.29, Si =  6.14), Desviación estándar (No = 0.69, Si = 0.69). Coeficiente de variación (No = 10.96%, Si = 11.22%).
 </div>
+<br>
 Las medias muestran niveles de consumo promedio similares, con una ligero gasto mayor de als por las familias que no presentaron IA.
-<div style="text-align: center;">
+<br>
 
-![gráfica de boxplot de alns vs nes5f](./assets/boxplot_alns_vs_nes5f.png)
-
+<!-- ![gráfica de boxplot de alns vs nes5f](./assets/boxplot_alns_vs_nes5f.png) -->
+<p align="center" width="100%">
+    <img src="./assets/boxplot_alns_vs_nes5f.png" width="70%" alt="Gráfica de boxplot de alns vs nes5f"/>
+</p>
+<br>
+<div align="center" width="100%">
 Gráfica 6. El gráfico muestra  las medidas de tendencia central de alns según el nivel socioeconómico de los hogares consultados. Las medias son: (bajo = 3.58, medio bajo = 3.91, medio = 3.91, medio alto = 4.17 y alto = 4.6). , Desviación estándar (bajo = 0.94, medio bajo = 0.94, medio = 0.98, medio alto = 1.02 y alto = 1.05). Coeficiente de variación (bajo =16.24%, medio bajo = 15.72%, medio = 15.89%, medio alto = 16.14% y alto = 16.19%).
 </div>
+<br>
 Se observa que los promedios de consumo de als se incrementan conforme aumenta el nivel socioeconómico, sin embargo, ???.
-<div style="text-align: center;">
 
-![gráfica de boxplot de alns vs  refin](./assets/boxplot_alns_vs_refin.png?width=2000)
+<br>
 
+<!-- ![gráfica de boxplot de alns vs  refin](./assets/boxplot_alns_vs_refin.png?width=2000) -->
+<p align="center" width="100%">
+    <img src="./assets/boxplot_alns_vs_refin.png" width="70%" alt="Gráfica de boxplot de alns vs  refin"/>
+</p>
+<br>
+<div align="center" width="100%">
 Gráfica 7. Muestra las medidas de tendencia central de alns, con respecto a las familia que indicaron recursos financieros distintos al ingreso laboral. Media ( No = 4.12, Si =  4.10), Desviación estándar (No = 1.04, Si = 1.04. Coeficiente de variación (No =  25.33%, Si = 25.44%).
 </div>
 En la gráfica 7 se puede observar que las medias muestran niveles de consumo promedio similares, sin embargo, el promedio de gastos de aquellos que no presentan recursos financieros al ingreso laborales es ligeramente mayor a los que sí lo presentan.
