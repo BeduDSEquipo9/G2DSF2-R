@@ -217,7 +217,7 @@ Tabla 2. Promedio, mediana, moda y varianza de gasto de alimentos no saludables.
 </div>
 <br>
 <p align="center" width="100%">
-    <img src="./assets/Table32.PNG" width="60%" alt="Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos."/>
+    <img src="./assets/Table32.PNG" width="60%" alt="Tabla 2. Promedio, mediana, moda y varianza de gasto de alimentos no saludables."/>
 </p>
 <br>
 
