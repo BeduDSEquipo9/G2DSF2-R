@@ -213,11 +213,11 @@ A partir de los gastos de alimentos no saludables (Gráfica 10) se realizan un a
 
 Si se considera que los gastos promedio de familia en alimentos no saludables de la Tabla 2, los datos se ajustan a una distribución normal.
 <div align="center" width="100%">
-Tabla 2. Promedio y varianza de gasto de alimentos no saludables
+Tabla 2. Promedio, mediana, moda y varianza de gasto de alimentos no saludables.
 </div>
 <br>
 <p align="center" width="100%">
-    <img src="./assets/Table33.png" width="60%" alt="Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos."/>
+    <img src="./assets/Table32.PNG" width="60%" alt="Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos."/>
 </p>
 <br>
 
@@ -289,7 +289,7 @@ Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no salud
 </div>
 <br>
 <p align="center" width="100%">
-    <img src="./assets/Table33.png" width="60%" alt="Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos."/>
+    <img src="./assets/Table33.PNG" width="60%" alt="Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos."/>
 </p>
 <br>
 <div align="center" width="100%">
