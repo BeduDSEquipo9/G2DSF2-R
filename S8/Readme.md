@@ -67,7 +67,7 @@ Gráfica 3. En esta gráfica se muestran las medidas descriptivas de aln en cada
 </div>
 <br>
 
-Los promedio en la Gráfica 3 muestran que el promedio de __gasto de alimentos saludables__ (*__als__*) se incrementa de acuerdo al nivel socioeconómico. Esto análisis exploratorio de datos proporciona información para  el análisis de la sección 3 y 4.
+En la Gráfica 3 se muestra que el promedio de __gasto de alimentos saludables__ (*__als__*) se incrementa de acuerdo al nivel socioeconómico. Esto análisis exploratorio de datos proporciona información para  el análisis de la sección 3 y 4.
 
 <br>
 <!-- ![Gráfica de boxplot de als vs refin](./assets/boxplot_als_vs_refin.png) -->
