@@ -291,10 +291,10 @@ Los resultados fueron:
     <img src="./assets/Tabla51.png" width="70%" alt="Tabla 51. Descripción de los datos proporcionados."/>
 </p>
 
-|Modelo|AIC|Pseudo R2|
+<!-- |Modelo|AIC|Pseudo R2|
 |:------|:---:|:---------:|
 |Modelo 1|22168|0.09125799|
-|Modelo 2|22116|0.09555227|
+|Modelo 2|22116|0.09555227| -->
 
 Como el AIC es menor y la bondad de ajuste es más grande, se tiene que el modelo 2 es mejor que el 1; considerando además que hay términos de interacciones cuyos coeficientes son significativamente distintos de cero, se puede concluir que las interacciones sí aportan a la explicación de la variable objetivo.
 
@@ -311,11 +311,12 @@ __Modelo 4__:  *IA ~ numpeho + refin + edadjef + añosedu + als + alns + numpeho
 A continuación se validaron los supuestos para el modelo 4:
 Multicolinealidad: No se obtuvo ningún VIF mayor que 10 para ninguno de los predictores, de modo que no hay evidencias de multicolinealidad y el supuesto se cumple.
 Independencia:
-<div style="text-align: center;">
 
 ![Residuales del modelo ajustado](./assets/residuales.png)
 
-</div>
+<p align="center" width="100%">
+    <img src="./assets/residuales.png" width="70%" alt="Residuales del modelo ajustado."/>
+</p>
 
 En el gráfico de residuales se observan más residuos negativos que positivos, sin embargo, no se ve ningún patrón definido que pudiera indicar un grado de dependencia entre las observaciones, por lo que el supuesto se cumple.
 Linealidad: Para contrastar este supuesto se necesita ejecutar la regresión logística pero incluyendo como predictores adicionales el producto entre cada predictor y el logaritmo de sí mismo. Luego de crear dichos términos y correr el modelo correspondiente, se tiene que no existe evidencia estadística para rechazar la hipótesis de que los productos son igual a cero, de modo que el supuesto de linealidad se cumple.
@@ -327,10 +328,10 @@ Comparando ambos modelos, se tiene lo siguiente:
     <img src="./assets/Tabla52.png" width="70%" alt="Tabla 52. Descripción de los datos proporcionados."/>
 </p>
 
-|Modelo|AIC|Pseudo R2|
+<!-- |Modelo|AIC|Pseudo R2|
 |:------|:---:|:---------:|
 |Modelo 3| 22087|0.09483598|
-|Modelo 4|22089|0.09467564|
+|Modelo 4|22089|0.09467564| -->
 
 Nótese que incluso cuando ambas métricas del modelo 4 son ligeramente peores, es más importante que el modelo cumpla los supuestos debidos porque, de lo contrario, no podría concluirse nada con él. Entonces, se concluye que el modelo que cumple los supuestos de regresión logística y explica mejor el fenómeno de la inseguridad alimentaria en el hogar es el modelo 4 y que los factores que influyen en él son: el número de personas en el hogar, si se tiene o no recursos financieros distintos al ingreso laboral, los años de educación del jefe de familia, el gasto en alimentos saludables y el gasto en alimentos no saludables; también importan algunas interacciones como la edad y el sexo del jefe de familia y los años de educación con el nivel socioeconómico.
 
@@ -340,31 +341,31 @@ Una vez que se conocen las variables explicativas, tiene mérito establecer si i
     <img src="./assets/Tabla53.png" width="70%" alt="Tabla 53. Descripción de los datos proporcionados."/>
 </p>
 
-|Variable|Coeficiente|Variable|Coeficiente|
+<!-- |Variable|Coeficiente|Variable|Coeficiente|
 |:--------|:-----------:|:--------|:-----------:|
 |Intercepto|2.4644254|alns|0.9994064|
 |numpeho|1.2080799|numpeho:area|0.9662002|
 |refin|1.4956810|añosedu:sexojef|1.0320940|
 |edadjef|1.0226579|edadjef:sexojef|0.9957723|
 |añosedu|0.9695440|añosedu:nse5f|0.9917262|
-|als|0.9997761|edadjef:nse5f|0.9938537|
+|als|0.9997761|edadjef:nse5f|0.9938537| -->
 
 Si el valor es mayor que 1, entonces indica que a medida que aumenta el predictor, las probabilidades de los resultados aumentan. A la inversa, un valor menor que 1 indica que a medida que aumenta el predictor, las probabilidades de los resultados disminuyen. Para efectos de esta investigación, se puede decir, por ejemplo, que las probabilidades de que un hogar sufra inseguridad alimentaria aumentarán 1.49 veces si está en una zona rural y no en una urbana. También se identifica que las variables con relación directa con la inseguridad alimentaria son numpeho, refin, edadjef y la interacción añosedu:sexojef, mientras que el resto tiene una relación inversa.
 
 Finalmente, se calculan los intervalos de confianza para los coeficientes de los predictores:
 
 <p align="center" width="100%">
-    <img src="./assets/Tabla54.png" width="70%" alt="Tabla 54. Descripción de los datos proporcionados."/>
+    <img src="./assets/Table54.png" width="70%" alt="Tabla 54. Descripción de los datos proporcionados."/>
 </p>
 
-|Variable|2.5%|97.5%|Variable|2.5%|97.5%|
+<!-- |Variable|2.5%|97.5%|Variable|2.5%|97.5%|
 |:--------|:----:|:-----:|:--------|:----:|:-----:|
 |Intercepto|1.9933520|3.0480279|alns|0.9991845|0.9996264|
 |numpeho|1.1820358|1.2349334|numpeho:area|0.9481619|0.9846686|
 |refin|1.3706795|1.6334161|añosedu:sexojef|1.0199859|1.0443211|
 |edadjef|1.0184790|1.0268991|edadjef:sexojef|0.9929893|0.9985863|
 |añosedu|0.9526730|0.9865828|añosedu:nse5f|0.9879187|0.9955657|
-|als|0.9996744|0.9998777|edadjef:nse5f|0.9929008|0.9947976|
+|als|0.9996744|0.9998777|edadjef:nse5f|0.9929008|0.9947976| -->
 
 Como ninguno de los intervalos de confianza cruza el 1, se puede afirmar con un 97.5% de confianza que la dirección de las relaciones observadas para cada variable es cierta en la población.
 
