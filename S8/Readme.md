@@ -412,7 +412,11 @@ c) Linealidad: Para contrastar este supuesto se necesita ejecutar la regresión 
 
 Así pues, __¡el modelo 4 cumple con todos los supuestos de la regresión logística!__
 
-Comparando ambos modelos, se tiene lo siguiente:
+<div align="center" width="100%">
+Tabla 4. Comparativa de resultados de los modelos 3 y 4.
+</div>
+<br>
+    
 <p align="center" width="100%">
     <img src="./assets/Tabla52.png" width="70%" alt="Tabla 52. Descripción de los datos proporcionados."/>
 </p>
@@ -424,8 +428,12 @@ Comparando ambos modelos, se tiene lo siguiente:
 
 Nótese que incluso cuando ambas métricas del modelo 4 son ligeramente peores, es más importante que el modelo cumpla los supuestos debidos porque, de lo contrario, no podría concluirse nada con él. Entonces, se concluye que el modelo que cumple los supuestos de regresión logística y explica mejor el fenómeno de la inseguridad alimentaria en el hogar es el modelo 4 y que los factores que influyen en él son: el número de personas en el hogar, si se tiene o no recursos financieros distintos al ingreso laboral, los años de educación del jefe de familia, el gasto en alimentos saludables y el gasto en alimentos no saludables; también importan algunas interacciones como la edad y el sexo del jefe de familia y los años de educación con el nivel socioeconómico.
 
-Una vez que se conocen las variables explicativas, tiene mérito establecer si influyen de manera positiva o negativa sobre la variable objetivo. Para ello, se analizan los coeficientes, pero deben ser elevados a la exponencial pues la regresión logística arroja coeficientes que tienen aplicados logaritmos:
+Una vez que se conocen las variables explicativas, tiene mérito establecer si influyen de manera positiva o negativa sobre la variable objetivo. Para ello, se analizan los coeficientes, pero deben ser elevados a la exponencial pues la regresión logística arroja coeficientes que tienen aplicados logaritmos.
 
+<div align="center" width="100%">
+Tabla 5. Variables involucradas y coeficientes del modelo campeón
+</div>
+<br>
 <p align="center" width="100%">
     <img src="./assets/Tabla53.png" width="70%" alt="Tabla 53. Descripción de los datos proporcionados."/>
 </p>
@@ -441,8 +449,11 @@ Una vez que se conocen las variables explicativas, tiene mérito establecer si i
 
 Si el valor es mayor que 1, entonces indica que a medida que aumenta el predictor, las probabilidades de los resultados aumentan. A la inversa, un valor menor que 1 indica que a medida que aumenta el predictor, las probabilidades de los resultados disminuyen. Para efectos de esta investigación, se puede decir, por ejemplo, que las probabilidades de que un hogar sufra inseguridad alimentaria aumentarán 1.49 veces si está en una zona rural y no en una urbana. También se identifica que las variables con relación directa con la inseguridad alimentaria son numpeho, refin, edadjef y la interacción añosedu:sexojef, mientras que el resto tiene una relación inversa.
 
-Finalmente, se calculan los intervalos de confianza para los coeficientes de los predictores:
-
+<div align="center" width="100%">
+Tabla 6. Intervalos de confianza para los coeficientes de los predictores.
+</div>
+<br>
+    
 <p align="center" width="100%">
     <img src="./assets/Table54.png" width="70%" alt="Tabla 54. Descripción de los datos proporcionados."/>
 </p>
