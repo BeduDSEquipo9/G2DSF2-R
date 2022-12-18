@@ -164,7 +164,7 @@ Gráfica 10. Histograma de frecuencia de gasto de alimentos no saludables (alns)
 </div>
 <br>
 
-Además de las medidas de tendencia central y dispersión se consideró importante calcular las medidas de forma. En el caso de als se tiene un skewness de 1.69 y una kurtosis de, lo que confirma la existencia de un sesgo de los datos a la izquierda; y además, un forma leptocúrtica.  Para alns se obtuvo un skewnwss de 4.91 y una kurtosis de 57.41, es decir, presenta un sesgo a la derecha y una forma leptocúrtica.
+Además de las medidas de tendencia central y dispersión se consideró importante calcular las medidas de forma. En el caso de als se tiene un skewness de 1.69 y una curtosis de, lo que confirma la existencia de un sesgo de los datos a la izquierda; y además, un forma leptocúrtica.  Para alns se obtuvo un skewnwss de 4.91 y una curtosis de 57.41, es decir, presenta un sesgo a la derecha y una forma leptocúrtica.
 
 Otra variable que es importante analizar para conocer la frecuencia relativa es la Inseguridad alimentaria en el hogar (IA). En la Gráfica 11 se muestra la frecuencia de si se presenta o no inseguridad alimentaria de acuerdo con los datos proporcionados por la base de datos.
 
@@ -217,10 +217,9 @@ Tabla 2. Promedio, mediana, moda y varianza de gasto de alimentos no saludables.
 </div>
 <br>
 <p align="center" width="100%">
-    <img src="./assets/Table32.PNG" width="60%" alt="Tabla 2. Promedio, mediana, moda y varianza de gasto de alimentos no saludables."/>
+    <img src="./assets/Tabla32.PNG" width="60%" alt="Tabla 2. Promedio, mediana, moda y varianza de gasto de alimentos no saludables."/>
 </p>
 <br>
-
 <!-- |Nivel socioeconómico|Media|Mediana|Moda|Varianza|
 |:--------------------|:-----:|:-------:|:----:|:--------:|
 |Bajo|3.68|3.58|2.99|0.94|
@@ -289,7 +288,7 @@ Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no salud
 </div>
 <br>
 <p align="center" width="100%">
-    <img src="./assets/Table33.PNG" width="60%" alt="Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos."/>
+    <img src="./assets/Tabla33.PNG" width="60%" alt="Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no saludables por niveles socioeconómicos."/>
 </p>
 <br>
 <div align="center" width="100%">
