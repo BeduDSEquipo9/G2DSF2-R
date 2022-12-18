@@ -304,7 +304,7 @@ En la Tabla 3 se muestran que el nivel socioeconómico con mayor probabilidad de
 </div>
 </br>
 
-### 4.Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
+### 4. Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
 
 Parte del objetivo del presente trabajo es explorar la veracidad de la siguiente creencia popular:
 
