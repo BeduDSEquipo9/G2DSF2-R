@@ -182,7 +182,7 @@ En esta segunda sección, primero se realizó un análisis visual de los datos, 
 
 ### 3. Cálculo de probabilidades para entender el problema en México
 
-#### __Cálculo de probabilidad de que una familia presente o no inseguridad alimentaria__
+### __Cálculo de probabilidad de que una familia presente o no inseguridad alimentaria__
 
 A partir de la Gráfica 11 que presenta la frecuencia relativa de que una familia pertenezca  o no al grupo de inseguridad alimentaria, se presenta un modelo probabilístico basado en el ensayo de Bernoulli y la distribución binomial.
 
@@ -207,7 +207,7 @@ Además, podemos calcular otros probabilidades, por ejemplo:
 - La probabilidad de que más de 8 de 10 familias presenten Inseguridad Alimentaria en el hogar es de 0.22224.
 - La probabilidad de que 7 familias presenten Inseguridad Alimentaria en el hogar es de  0.25628.
 
-#### __Cálculo de probabilidad de los gastos en alimentos no saludables de una familia de acuerdo a su nivel socioeconómico.__
+### __Cálculo de probabilidad de los gastos en alimentos no saludables de una familia de acuerdo a su nivel socioeconómico.__
 
 A partir de los gastos de alimentos no saludables (Gráfica 10) se realizan un análisis probabilístico basado en una distribución normal.
 
