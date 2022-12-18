@@ -23,7 +23,7 @@ La base de datos proporcionada contiene un total de 40,809 observaciones con 10 
 Tabla 1. Descripción de los datos proporcionados.
 </div>
 <br>
-<!-- ![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.png) -->
+<!-- ![Tabla 1. Descripción de los datos proporcionados.](./assets/Tabla_de_Variables.PNG) -->
 
 <p align="center" width="100%">
     <img src="./assets/Tabla_de_Variables.png" width="70%" alt="Tabla 1. Descripción de los datos proporcionados."/>
