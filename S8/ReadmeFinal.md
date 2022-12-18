@@ -312,7 +312,7 @@ A continuación se validaron los supuestos para el modelo 4:
 Multicolinealidad: No se obtuvo ningún VIF mayor que 10 para ninguno de los predictores, de modo que no hay evidencias de multicolinealidad y el supuesto se cumple.
 Independencia:
 
-![Residuales del modelo ajustado](./assets/residuales.png)
+<!-- ![Residuales del modelo ajustado](./assets/residuales.png) -->
 
 <p align="center" width="100%">
     <img src="./assets/residuales.png" width="70%" alt="Residuales del modelo ajustado."/>
