@@ -4,9 +4,9 @@
 
 ## Análisis de la Inseguridad Alimentaria en México
 
-### DESARROLLO
+## Desarrollo
 
-#### 1. Plantea el problema del caso
+### 1. Plantea el problema del caso
 
 De acuerdo a (Shamah-Levy, 2014) la inseguridad alimentaria se define como la disponibilidad limitada o incierta de alimentos nutricionalmente adecuados e inocuos; o la capacidad limitada e incierta de adquirir alimentos adecuados en formas socialmente aceptables. En México, casi una cuarta parte de la población enfrenta algún nivel de inseguridad alimentaria. [^1]
 
@@ -16,7 +16,7 @@ Adicionalmente, se plantea el supuesto de que los hogares con menor nivel socioe
 
 En el presente trabajo, se analizará la información disponible a fin de concluir, con argumentos estadísticos y probabilísticos, si el supuesto planteado tiene mérito o no y se sugerirá un modelo que explique lo mejor posible el fenómeno de la inseguridad alimentaria en el hogar.
 
-#### 2. Realiza un análisis descriptivo de la información
+### 2. Realiza un análisis descriptivo de la información
 
 La base de datos proporcionada contiene un total de 40,809 observaciones con 10 variables. En la Tabla 1 se describen las variables.
 
@@ -178,7 +178,7 @@ Gráfica 11, se muestra que el 74% de las familias que participaron en la muestr
 
 En esta segunda sección, primero se realizó un análisis visual de los datos, para después realizar un análisis descriptivo de los datos. Los resultados obtenidos en los coeficientes de variación indican que el promedio es confiable para realizar comparaciones entre distintos grupos (caso de Gráficas ) .
 
-#### 3. Cálculo de probabilidades para entender el problema en México
+### 3. Cálculo de probabilidades para entender el problema en México
 
 __Cálculo de probabilidad de que una familia presente o no inseguridad alimentaria__
 
@@ -290,7 +290,7 @@ Tabla 3. Resumen de las probabilidades obtenidas de gastos de alimentos no salud
 
 En la Tabla 3 se muestran que el nivel socioeconómico con mayor probabilidad de gastar $103.50 es el nivel bajo (0.84105), y conforme se aumenta el nivel socioeconómico la probabilidad reduce, hasta llegar a la probabilidad mas baja por el nivel socioeconómico alto (0.50718).
 
-#### 4.Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
+### 4.Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
 
 Parte del objetivo del presente trabajo es explorar la veracidad de la siguiente creencia popular:
 
@@ -339,7 +339,7 @@ Cabe señalar que todos los análisis anteriores sobre el nivel socioeconómico,
 
 Por último, con todo lo realizado hasta ahora, se comprueba que el gasto en alimentos no saludables sí influye en la seguridad alimentaria en el hogar.
 
-#### 5. Estima un modelo de regresión, lineal o logístico, para identificar los determinantes de la inseguridad alimentaria en México
+### 5. Estima un modelo de regresión, lineal o logístico, para identificar los determinantes de la inseguridad alimentaria en México
 
 Como se busca entender qué factores influyen en la inseguridad alimentaria se define IA como la variable objetivo o dependiente. Debido a que ésta es de tipo dicotómico, se sugiere utilizar una regresión logística como modelo, pues la regresión lineal es apropiada para variables numéricas continuas. Para una mejor interpretación, en la modelación se transformarán los logaritmos de gasto en alimentos saludables y no saludables, aplicando la exponencial, su función inversa, para que queden los gastos en unidades regulares.
 
