@@ -364,7 +364,10 @@ __Modelo 1__: *IA ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosed
 
 __Modelo 2__: *IA ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + als + alns + numpeho:refin + añosedu:refin + edadjef:refin + als:refin + alns:refin + nse5f:refin + area:refin + sexojef:refin + numpeho:area + añosedu:area + edadjef:area + als:area + alns:area + nse5f:area + sexojef:area + numpeho:sexojef + añosedu:sexojef + edadjef:sexojef + als:sexojef + alns:sexojef + nse5f:sexojef + numpeho:nse5f + añosedu:nse5f + edadjef:nse5f + als:nse5f + alns:nse5f*
 
-Los resultados fueron:
+<div align="center" width="100%">
+Tabla 4. Comparativa de métricas de desempeño de los modelos con y sin interacciones de variables dicotómicas.
+</div>
+<br>
 
 <p align="center" width="100%">
     <img src="./assets/Tabla51.png" width="70%" alt="Tabla 51. Descripción de los datos proporcionados."/>
