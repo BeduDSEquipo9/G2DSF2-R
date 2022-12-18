@@ -170,7 +170,7 @@ Otra variable que es importante analizar para conocer la frecuencia relativa es 
 
 <!-- ![Grafica de ia](./assets/histograma_ia.png) -->
 <p align="center" width="100%">
-    <img src="./assets/grafica_ia.png" width="60%" alt="Grafica de ia"/>
+    <img src="./assets/histograma_ia.png" width="60%" alt="Histograma de ia"/>
 </p>
 <br>
 <div align="center" width="100%">
