@@ -311,7 +311,7 @@ niveles socioeconómicos y que esto, entre otros determinantes, lleva a que un h
 
 Para ello, se pueden utilizar los datos disponibles para realizar pruebas de hipótesis que permitan emitir alguna conclusión. Primero, se transforman las variables __ln_als__ y __ln_alns__ aplicando su función inversa, a modo que se tenga información sobre el gasto real en alimentos saludables y no saludables.
 
-Enseguida se le realizan pruebas de normalidad (tanto Lillie como Shapiro), que arrojan que estas variables no se distribuyen de manera normal pues, al tener un valor p muy pequeño, se rechaza la hipótesis nula de normalidad. Por tal motivo, para todas las siguientes pruebas de hipótesis se utilizará la distribución t de Student.
+Enseguida se le realizan pruebas de normalidad (tanto Lillie como Shapiro), que arrojan que estas variables no se distribuyen de manera normal pues, al tener un valor p muy pequeño, se rechaza la hipótesis nula de normalidad. Por tal motivo, para todas las siguientes pruebas de hipótesis se utilizará la distribución t de Student, que tiende a una Normal Estándar conforme las observaciones aumentan.
 
 Se busca saber si, en promedio, quienes pertenecen al nivel socioeconómico más bajo gastan más en alimentos no saludables que los del nivel más alto.
 
